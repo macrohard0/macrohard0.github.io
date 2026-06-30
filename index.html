@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">MacroHard 系统下载</title>
+  <meta name="keywords" content="Windows镜像,Windows下载,MSDN,系统下载,网盘下载,Office下载">
+  <meta name="description" content="MacroHard 系统下载站 —— 提供 Windows 11/10/8.1/7/XP 及 Office 原版镜像的网盘下载链接。">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- 左侧栏 -->
+    <aside class="side">
+      <div class="logo" id="brand">MacroHard<span class="dot">.</span></div>
+      <nav class="nav" id="nav"></nav>
+      <div class="side-foot" id="side-foot"></div>
+    </aside>
+    <div class="mask" id="mask"></div>
+
+    <!-- 主区 -->
+    <div class="main">
+      <header class="header">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div class="menu-btn" id="menu-btn"><span></span><span></span><span></span></div>
+          <div class="crumb" id="crumb">加载中…</div>
+        </div>
+        <div class="tools">
+          <span class="muted-tip">仅提供网盘下载 · 原版镜像</span>
+        </div>
+      </header>
+      <main class="container" id="container">
+        <div class="loading">正在加载镜像数据…</div>
+      </main>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/render.js"></script>
+</body>
+</html>
