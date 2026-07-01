@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://macrohard0.github.io/sitemap.xml

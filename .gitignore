@@ -1,8 +1,9 @@
 # 管理后台仅本地使用，不发布到 GitHub Pages（外人无法访问后台界面）
 admin/
 
-# 参考用的原始下载页，不需要上线
+# 参考用的原始下载页 / 竞品页面，仅本地参考，不上线
 Windows 11 26H1.html
+msdn.sjjzm.com/
 
 # Claude Code 本地配置，不应进入公开仓库
 .claude/

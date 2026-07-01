@@ -88,6 +88,14 @@
         {
           "id": "2024",
           "name": "2024"
+        },
+        {
+          "id": "2021",
+          "name": "2021"
+        },
+        {
+          "id": "2019",
+          "name": "2019"
         }
       ]
     }
@@ -5225,6 +5233,213 @@
         "SHA-1": "2d67becb6a7b3fc1f07e37aa5f3d58369160452e",
         "MD5": "a63ed9fe0f0d52cde0269722bfe6b85e",
         "文件大小": "3.98GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-004",
+      "category": "office",
+      "version": "2021",
+      "title": "Microsoft Office 2021 专业增强版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Access",
+        "Excel",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Publisher",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "ProPlus2021Retail.img",
+        "SHA-256": "43b25a7d4f534401d0dff2469bfa5dc86d16ae002cb6fd1abe437509157c7a3e",
+        "SHA-1": "bf523636c00e8e26951ee835f8996f661a515e9e",
+        "MD5": "55eb66f9019c66ae4fd332273ba4548c",
+        "文件大小": "4.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-005",
+      "category": "office",
+      "version": "2021",
+      "title": "Microsoft Office 2021 专业版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Access",
+        "Excel",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Publisher",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "Professional2021Retail.img",
+        "SHA-256": "d4cb931d54f04d847ce69da379614e0f2e6cfdd3c5efff42a812314d61b13320",
+        "SHA-1": "0b591e33ef0b95581fe690a4133a0299a2fc8cf7",
+        "MD5": "144a977addff58785152e38a33f40f80",
+        "文件大小": "4.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-006",
+      "category": "office",
+      "version": "2021",
+      "title": "Microsoft Office 2021 小型企业版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Excel",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "HomeBusiness2021Retail.img",
+        "SHA-256": "1010dcbd534239ebcf5409fb8881860b89366e3dbc7429321b18bdab88a63eea",
+        "SHA-1": "533478d547d4378a5706e7bda3bf7f66b79b076f",
+        "MD5": "fe4a9e00da2d5d39a88c60322c285ed9",
+        "文件大小": "4.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-007",
+      "category": "office",
+      "version": "2021",
+      "title": "Microsoft Office 2021 家庭和学生版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Excel",
+        "OneNote",
+        "PowerPoint",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "HomeStudent2021Retail.img",
+        "SHA-256": "fefdcfbb1368ee0c1864e6d27ba24ba1fe3421e30d0806eb56c588950b1129c9",
+        "SHA-1": "5d7c4740eafdf69f24ee26c3b6bc8846eb621437",
+        "MD5": "ada657b52ee8fd530964e6841d609a6c",
+        "文件大小": "4.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-008",
+      "category": "office",
+      "version": "2019",
+      "title": "Microsoft Office 2019 专业增强版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Access",
+        "Excel",
+        "Lync",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Publisher",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "ProPlus2019Retail.img",
+        "SHA-256": "6b28b9d3b5aa516921ce9a3d55466aa506d4e31c1e3a0a11789351abbc8e5e86",
+        "SHA-1": "57dbdf02d961793642dfb5bf6efa6939e4b97ac9",
+        "MD5": "73a87b237bedc039e184182a830b1b32",
+        "文件大小": "4.17GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-009",
+      "category": "office",
+      "version": "2019",
+      "title": "Microsoft Office 2019 专业版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Access",
+        "Excel",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Publisher",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "Professional2019Retail.img",
+        "SHA-256": "51d35bd147f9fdda9169706565834aff2a754824d02569e910cf221eec9bb492",
+        "SHA-1": "efefe79bfe904e731842c1d9dbc32108807439b2",
+        "MD5": "161b59bc03c9f3c80c86ad33ce7ef22b",
+        "文件大小": "4.17GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-010",
+      "category": "office",
+      "version": "2019",
+      "title": "Microsoft Office 2019 小型企业版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Excel",
+        "OneNote",
+        "Outlook",
+        "PowerPoint",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "HomeBusiness2019Retail.img",
+        "SHA-256": "48166287aa0cb750aabc3f181660a4d2e5dec9f7c779c97334339b599edb3979",
+        "SHA-1": "7bb9ef3c0364453b4bec1cdf274058411f5d1d4e",
+        "MD5": "1e77a3b827d7d5d175101b26c943897d",
+        "文件大小": "4.17GB"
+      },
+      "links": []
+    },
+    {
+      "id": "office-011",
+      "category": "office",
+      "version": "2019",
+      "title": "Microsoft Office 2019 家庭和学生版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "Excel",
+        "OneNote",
+        "PowerPoint",
+        "Word",
+        "OneDrive"
+      ],
+      "params": {
+        "文件名": "HomeStudent2019Retail.img",
+        "SHA-256": "4a29880182377482b288746a01b541e5ade0e6ffe3777b33db90215ce9dc2b07",
+        "SHA-1": "915ae496e2658bde6c0072c2dd58024e999c4341",
+        "MD5": "c8993f96f892f92c2c0988f6a2c98ae3",
+        "文件大小": "4.17GB"
       },
       "links": []
     }
