@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>镜像管理后台 · MacroHard</title>
+  <style>
+    :root { --primary:#1f6feb; --primary-dark:#1958c4; --line:#e3e7ee; --bg:#f3f5f9; --soft:#6b7280;
+            --ok:#1f9d54; --danger:#e5484d; --radius:10px; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:-apple-system,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+           background:var(--bg); color:#2b2f38; font-size:14px; line-height:1.6; }
+    a { color:var(--primary); }
+    .wrap { max-width:1080px; margin:0 auto; padding:20px 18px 80px; }
+    h1.title { font-size:20px; margin:6px 0 4px; }
+    .sub { color:var(--soft); font-size:13px; margin-bottom:18px; }
+    .card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:18px 20px; margin-bottom:16px;
+            box-shadow:0 1px 3px rgba(20,30,50,.05); }
+    .card h2 { font-size:15px; margin:0 0 14px; display:flex; align-items:center; gap:8px; }
+    .card h2 .badge { font-size:11px; font-weight:600; padding:2px 8px; border-radius:10px; background:#eef4ff; color:var(--primary); }
+    label.fld { display:block; margin-bottom:12px; }
+    label.fld > span { display:block; font-size:12.5px; color:var(--soft); margin-bottom:4px; }
+    input[type=text], input[type=password], select, textarea {
+      width:100%; padding:8px 10px; border:1px solid var(--line); border-radius:7px; font-size:13.5px;
+      font-family:inherit; outline:none; background:#fff; }
+    input:focus, select:focus, textarea:focus { border-color:var(--primary); }
+    textarea { resize:vertical; min-height:64px; font-family:"SFMono-Regular",Consolas,monospace; font-size:12.5px; }
+    .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:0 14px; }
+    .grid3 { display:grid; grid-template-columns:1fr 1fr 1fr; gap:0 14px; }
+    .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+    button { font-family:inherit; cursor:pointer; border:none; border-radius:7px; padding:8px 16px; font-size:13.5px; transition:.15s; }
+    .btn { background:var(--primary); color:#fff; }
+    .btn:hover { background:var(--primary-dark); }
+    .btn.ghost { background:#fff; color:#374151; border:1px solid var(--line); }
+    .btn.ghost:hover { border-color:var(--primary); color:var(--primary); }
+    .btn.ok { background:var(--ok); color:#fff; }
+    .btn.ok:hover { filter:brightness(.94); }
+    .btn.danger { background:#fff; color:var(--danger); border:1px solid #f3c6c8; }
+    .btn.danger:hover { background:var(--danger); color:#fff; }
+    .btn.sm { padding:5px 11px; font-size:12.5px; }
+    .status { font-size:12.5px; padding:6px 10px; border-radius:6px; display:inline-block; }
+    .status.idle { background:#f0f2f6; color:var(--soft); }
+    .status.busy { background:#fff3e0; color:#c47b1a; }
+    .status.good { background:#eaf7ee; color:var(--ok); }
+    .status.bad  { background:#fdecec; color:var(--danger); }
+    .muted { color:var(--soft); font-size:12.5px; }
+    hr { border:none; border-top:1px solid var(--line); margin:14px 0; }
+
+    /* 镜像列表 */
+    .catblock { margin-bottom:18px; }
+    .catblock > h3 { font-size:14px; margin:0 0 8px; padding-bottom:6px; border-bottom:2px solid var(--primary);
+                     display:inline-block; }
+    .imgrow { display:flex; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--line);
+              border-radius:8px; margin-bottom:8px; background:#fff; }
+    .imgrow .ti { flex:1; min-width:0; }
+    .imgrow .ti b { font-size:13.5px; font-weight:600; }
+    .imgrow .ti .meta { font-size:12px; color:var(--soft); margin-top:2px; }
+    .pill { display:inline-block; font-size:11px; padding:1px 7px; border-radius:9px; margin-right:5px; color:#fff; }
+
+    /* 弹窗 */
+    .modal-mask { display:none; position:fixed; inset:0; background:rgba(15,20,30,.5); z-index:100;
+                  align-items:flex-start; justify-content:center; overflow-y:auto; padding:30px 14px; }
+    .modal-mask.show { display:flex; }
+    .modal { background:#fff; border-radius:12px; width:100%; max-width:720px; padding:22px 24px;
+             box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .modal h2 { margin:0 0 16px; font-size:17px; }
+    .link-item { display:grid; grid-template-columns:130px 1fr 130px auto; gap:8px; align-items:center; margin-bottom:8px; }
+    .modal-foot { display:flex; justify-content:space-between; gap:10px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
+    .ver-item { display:grid; grid-template-columns:1fr 1fr auto; gap:8px; align-items:center; margin-bottom:8px; }
+    .toast { position:fixed; left:50%; bottom:34px; transform:translateX(-50%) translateY(18px); background:rgba(20,26,38,.95);
+             color:#fff; padding:10px 20px; border-radius:8px; opacity:0; pointer-events:none; transition:.25s; z-index:200; }
+    .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+    .topbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
+    .dirty-dot { color:var(--danger); font-weight:700; }
+    @media (max-width:640px){ .grid2,.grid3{grid-template-columns:1fr;} .link-item{grid-template-columns:1fr;} .ver-item{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="title">🗂️ 镜像管理后台</h1>
+  <div class="sub">编辑镜像信息与网盘链接，一键提交到 GitHub，<b>无需手动上传 HTML</b>。所有内容保存在 <code>data/images.json</code>。</div>
+
+  <!-- 1. GitHub 连接 -->
+  <div class="card">
+    <h2>① GitHub 连接 <span class="badge">直接提交</span></h2>
+    <div class="grid3">
+      <label class="fld"><span>用户名 / 组织</span><input type="text" id="cf-owner" placeholder="macrohard0"></label>
+      <label class="fld"><span>仓库名</span><input type="text" id="cf-repo" placeholder="macrohard0.github.io"></label>
+      <label class="fld"><span>分支</span><input type="text" id="cf-branch" placeholder="main"></label>
+    </div>
+    <div class="grid2">
+      <label class="fld"><span>数据文件路径</span><input type="text" id="cf-path" placeholder="data/images.json"></label>
+      <label class="fld"><span>Personal Access Token（需 repo / Contents 写权限）</span>
+        <input type="password" id="cf-token" placeholder="ghp_xxx 或 fine-grained token"></label>
+    </div>
+    <div class="row">
+      <button class="btn" id="btn-load">连接并加载数据</button>
+      <button class="btn ghost" id="btn-savecfg">记住设置</button>
+      <span class="status idle" id="conn-status">未连接</span>
+    </div>
+    <div class="muted" style="margin-top:8px;">
+      Token 仅保存在本浏览器 localStorage，不会上传。生成地址：
+      <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a>
+      （Fine-grained：仅授权该仓库的 <b>Contents = Read and write</b>）。
+    </div>
+  </div>
+
+  <!-- 2. 工具条 -->
+  <div class="card">
+    <div class="topbar">
+      <div class="row">
+        <button class="btn" id="btn-add">➕ 新增镜像</button>
+        <button class="btn ghost" id="btn-cats">🏷️ 管理分类</button>
+        <button class="btn ghost sm" id="btn-import">导入 JSON</button>
+        <button class="btn ghost sm" id="btn-export">导出 JSON</button>
+        <input type="file" id="file-import" accept="application/json,.json" style="display:none">
+      </div>
+      <div class="row">
+        <span class="muted" id="dirty-tip"></span>
+        <button class="btn ok" id="btn-commit">💾 保存到 GitHub</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. 镜像列表 -->
+  <div class="card">
+    <h2>② 镜像列表 <span class="badge" id="count-badge">0</span></h2>
+    <div id="img-list"><div class="muted">尚未加载数据。请先在上方连接 GitHub 并点击「连接并加载数据」，或使用「导入 JSON」。</div></div>
+  </div>
+</div>
+
+<!-- 镜像编辑弹窗 -->
+<div class="modal-mask" id="modal-edit">
+  <div class="modal">
+    <h2 id="edit-title">编辑镜像</h2>
+    <input type="hidden" id="e-id">
+    <label class="fld"><span>标题</span><input type="text" id="e-title" placeholder="Windows 11 消费者版本 26H1 x64"></label>
+    <div class="grid3">
+      <label class="fld"><span>分类</span><select id="e-cat"></select></label>
+      <label class="fld"><span>版本（子菜单）</span><select id="e-ver"></select></label>
+      <label class="fld"><span>架构</span><input type="text" id="e-arch" placeholder="64位 / ARM64"></label>
+    </div>
+    <div class="grid3">
+      <label class="fld"><span>语言</span><input type="text" id="e-lang" placeholder="中文简体"></label>
+      <label class="fld"><span>发布日期</span><input type="text" id="e-date" placeholder="2026-06-16"></label>
+      <label class="fld"><span>版本标签（逗号分隔）</span><input type="text" id="e-editions" placeholder="专业版,家庭版,教育版"></label>
+    </div>
+    <hr>
+    <div class="muted" style="margin-bottom:8px;">📋 文件参数</div>
+    <div id="param-fields"></div>
+    <hr>
+    <div class="row" style="justify-content:space-between;margin-bottom:8px;">
+      <div class="muted">🔗 网盘下载链接</div>
+      <button class="btn ghost sm" id="btn-addlink">+ 添加网盘</button>
+    </div>
+    <div id="link-list"></div>
+    <div class="modal-foot">
+      <button class="btn danger" id="btn-del-edit" style="visibility:hidden;">删除此镜像</button>
+      <div class="row">
+        <button class="btn ghost" data-close="modal-edit">取消</button>
+        <button class="btn" id="btn-save-edit">保存到列表</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 分类管理弹窗 -->
+<div class="modal-mask" id="modal-cats">
+  <div class="modal">
+    <h2>管理分类与版本</h2>
+    <div class="muted" style="margin-bottom:10px;">分类显示在左侧导航；版本显示为分类页内的子菜单（可留空）。</div>
+    <div id="cat-list"></div>
+    <button class="btn ghost sm" id="btn-addcat" style="margin-top:6px;">+ 新增分类</button>
+    <div class="modal-foot">
+      <span class="muted">⚠️ 删除分类不会删除其下镜像，请先迁移或删除对应镜像。</span>
+      <div class="row">
+        <button class="btn ghost" data-close="modal-cats">关闭</button>
+        <button class="btn" id="btn-save-cats">应用</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="../assets/js/config.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var LS = 'mh_admin_cfg';
+
+  var state = { data:null, sha:null, dirty:false, editVers:[], editCats:null };
+
+  /* ---------- 基础工具 ---------- */
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];}); }
+  var tT;
+  function toast(m){ var t=$('toast'); t.textContent=m; t.classList.add('show');
+    clearTimeout(tT); tT=setTimeout(function(){t.classList.remove('show');},1800); }
+  function setStatus(kind,msg){ var s=$('conn-status'); s.className='status '+kind; s.textContent=msg; }
+  function markDirty(d){ state.dirty=d; $('dirty-tip').innerHTML = d ? '<span class="dirty-dot">●</span> 有未保存改动' : ''; }
+
+  // UTF-8 <-> base64（兼容中文）
+  function utf8ToB64(str){ return btoa(unescape(encodeURIComponent(str))); }
+  function b64ToUtf8(b64){ return decodeURIComponent(escape(atob(String(b64).replace(/\s/g,'')))); }
+
+  /* ---------- 配置存取 ---------- */
+  function cfg(){ return {
+    owner:$('cf-owner').value.trim(), repo:$('cf-repo').value.trim(),
+    branch:$('cf-branch').value.trim()||'main', path:$('cf-path').value.trim()||'data/images.json',
+    token:$('cf-token').value.trim() }; }
+  function saveCfg(){ var c=cfg(); localStorage.setItem(LS, JSON.stringify(c)); toast('设置已记住'); }
+  function loadCfg(){
+    var c={}; try{ c=JSON.parse(localStorage.getItem(LS)||'{}'); }catch(e){}
+    $('cf-owner').value  = c.owner  || 'macrohard0';
+    $('cf-repo').value   = c.repo   || 'macrohard0.github.io';
+    $('cf-branch').value = c.branch || 'main';
+    $('cf-path').value   = c.path   || 'data/images.json';
+    $('cf-token').value  = c.token  || '';
+  }
+
+  /* ---------- GitHub API ---------- */
+  function apiUrl(c){ return 'https://api.github.com/repos/'+c.owner+'/'+c.repo+'/contents/'+c.path; }
+  function headers(c){
+    var h={ 'Accept':'application/vnd.github+json' };
+    if(c.token) h['Authorization']='Bearer '+c.token;
+    return h;
+  }
+  function ghLoad(){
+    var c=cfg();
+    if(!c.owner||!c.repo){ toast('请填写用户名与仓库名'); return; }
+    setStatus('busy','加载中…');
+    fetch(apiUrl(c)+'?ref='+encodeURIComponent(c.branch)+'&_='+Date.now(), { headers:headers(c) })
+      .then(function(r){
+        if(r.status===404) throw new Error('文件不存在（仓库/路径/分支不对，或文件尚未创建）');
+        if(r.status===401||r.status===403) throw new Error('鉴权失败，请检查 Token 权限');
+        if(!r.ok) throw new Error('HTTP '+r.status);
+        return r.json();
+      })
+      .then(function(j){
+        state.sha = j.sha;
+        var text = b64ToUtf8(j.content);
+        state.data = normalize(JSON.parse(text));
+        markDirty(false);
+        renderList();
+        setStatus('good','已连接 · 数据已加载');
+        toast('加载成功，共 '+state.data.images.length+' 个镜像');
+      })
+      .catch(function(e){ setStatus('bad','加载失败：'+e.message); toast('加载失败：'+e.message); });
+  }
+  function ghCommit(){
+    var c=cfg();
+    if(!state.data){ toast('没有可保存的数据'); return; }
+    if(!c.token){ toast('请先填写 Token 才能提交'); return; }
+    setStatus('busy','提交中…');
+    var content = JSON.stringify(state.data, null, 2);
+    var body = {
+      message:'chore(admin): 更新镜像数据 ('+new Date().toISOString().slice(0,19).replace('T',' ')+')',
+      content: utf8ToB64(content),
+      branch: c.branch
+    };
+    if(state.sha) body.sha = state.sha; // 已存在则更新，否则新建
+    fetch(apiUrl(c), { method:'PUT', headers:headers(c), body:JSON.stringify(body) })
+      .then(function(r){ return r.json().then(function(j){ return {ok:r.ok,status:r.status,j:j}; }); })
+      .then(function(res){
+        if(!res.ok) throw new Error((res.j&&res.j.message)||('HTTP '+res.status));
+        state.sha = res.j.content.sha;
+        markDirty(false);
+        setStatus('good','已提交 · GitHub Pages 稍后自动更新');
+        toast('✅ 已提交到 GitHub');
+      })
+      .catch(function(e){ setStatus('bad','提交失败：'+e.message); toast('提交失败：'+e.message); });
+  }
+
+  /* ---------- 数据规整 ---------- */
+  function normalize(d){
+    d=d||{};
+    d.site=d.site||{}; d.categories=d.categories||[]; d.images=d.images||[];
+    d.images.forEach(function(im){ im.editions=im.editions||[]; im.params=im.params||{}; im.links=im.links||[]; });
+    return d;
+  }
+
+  /* ---------- 渲染镜像列表 ---------- */
+  function renderList(){
+    var d=state.data; if(!d){ return; }
+    $('count-badge').textContent = d.images.length;
+    var host=$('img-list');
+    if(!d.images.length){ host.innerHTML='<div class="muted">还没有镜像，点击「➕ 新增镜像」开始。</div>'; return; }
+
+    // 按分类分组（保持 categories 顺序，未知分类归到“其他”）
+    var order={}; d.categories.forEach(function(c,i){ order[c.id]=i; });
+    var groups={};
+    d.images.forEach(function(im){ (groups[im.category]=groups[im.category]||[]).push(im); });
+    var catIds=Object.keys(groups).sort(function(a,b){
+      return (order[a]==null?999:order[a])-(order[b]==null?999:order[b]); });
+
+    var html='';
+    catIds.forEach(function(cid){
+      var cat=d.categories.filter(function(c){return c.id===cid;})[0];
+      var cname=cat?cat.name:(cid||'未分类');
+      html+='<div class="catblock"><h3>'+esc(cname)+' · '+groups[cid].length+'</h3>';
+      groups[cid].slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'');}).forEach(function(im){
+        var links=(im.links||[]).map(function(lk){ var t=window.panType(lk.type);
+          return '<span class="pill" style="background:'+t.color+'">'+esc(t.name)+'</span>'; }).join('');
+        html+='<div class="imgrow"><div class="ti"><b>'+esc(im.title||'(未命名)')+'</b>'+
+          '<div class="meta">'+esc(im.arch||'')+(im.version?' · '+esc(im.version):'')+
+          (im.date?' · '+esc(im.date):'')+' &nbsp; '+links+'</div></div>'+
+          '<button class="btn ghost sm" data-edit="'+esc(im.id)+'">编辑</button>'+
+          '<button class="btn danger sm" data-del="'+esc(im.id)+'">删除</button></div>';
+      });
+      html+='</div>';
+    });
+    host.innerHTML=html;
+
+    Array.prototype.forEach.call(host.querySelectorAll('[data-edit]'),function(b){
+      b.onclick=function(){ openEdit(b.getAttribute('data-edit')); }; });
+    Array.prototype.forEach.call(host.querySelectorAll('[data-del]'),function(b){
+      b.onclick=function(){ delImage(b.getAttribute('data-del')); }; });
+  }
+
+  function delImage(id){
+    var im=state.data.images.filter(function(x){return x.id===id;})[0];
+    if(!im) return;
+    if(!confirm('确认删除镜像：\n'+(im.title||id)+' ？')) return;
+    state.data.images=state.data.images.filter(function(x){return x.id!==id;});
+    markDirty(true); renderList(); toast('已从列表删除（记得保存到 GitHub）');
+  }
+
+  /* ---------- 编辑弹窗 ---------- */
+  function openModal(id){ $(id).classList.add('show'); }
+  function closeModal(id){ $(id).classList.remove('show'); }
+
+  function fillCatSelect(sel, current){
+    sel.innerHTML = state.data.categories.map(function(c){
+      return '<option value="'+esc(c.id)+'"'+(c.id===current?' selected':'')+'>'+esc(c.name)+'</option>';
+    }).join('');
+  }
+  function fillVerSelect(catId, current){
+    var cat=state.data.categories.filter(function(c){return c.id===catId;})[0];
+    var vers=(cat&&cat.versions)||[];
+    var opts='<option value="">（无 / 全部）</option>';
+    vers.forEach(function(v){ opts+='<option value="'+esc(v.id)+'"'+(v.id===current?' selected':'')+'>'+esc(v.name)+'</option>'; });
+    $('e-ver').innerHTML=opts;
+  }
+
+  function renderParamFields(params){
+    params=params||{};
+    $('param-fields').innerHTML = (window.PARAM_FIELDS||[]).map(function(k){
+      var big = (k==='文件名'||k==='SHA-256');
+      return '<label class="fld"><span>'+esc(k)+'</span>'+
+        (big? '<textarea data-pk="'+esc(k)+'" style="min-height:42px">'+esc(params[k]||'')+'</textarea>'
+            : '<input type="text" data-pk="'+esc(k)+'" value="'+esc(params[k]||'')+'">')+'</label>';
+    }).join('');
+  }
+
+  function linkRow(lk){
+    lk=lk||{type:'quark',url:'',password:''};
+    var opts=(window.PAN_ORDER||Object.keys(window.PAN_TYPES)).map(function(k){
+      return '<option value="'+k+'"'+(k===lk.type?' selected':'')+'>'+esc(window.PAN_TYPES[k].name)+'</option>'; }).join('');
+    var div=document.createElement('div');
+    div.className='link-item';
+    div.innerHTML='<select class="lk-type">'+opts+'</select>'+
+      '<input type="text" class="lk-url" placeholder="网盘分享链接" value="'+esc(lk.url)+'">'+
+      '<input type="text" class="lk-pass" placeholder="提取码(可空)" value="'+esc(lk.password||'')+'">'+
+      '<button class="btn danger sm lk-del">删除</button>';
+    div.querySelector('.lk-del').onclick=function(){ div.remove(); };
+    var urlInput=div.querySelector('.lk-url');
+    div.querySelector('.lk-type').onchange=function(){
+      urlInput.placeholder = window.panType(this.value).hint || '网盘分享链接'; };
+    urlInput.placeholder = window.panType(lk.type).hint || '网盘分享链接';
+    return div;
+  }
+
+  function openEdit(id){
+    var im = id ? state.data.images.filter(function(x){return x.id===id;})[0] : null;
+    var isNew = !im;
+    if(isNew) im = { id:'', category:(state.data.categories[0]||{}).id||'', version:'',
+                     title:'', arch:'64位', lang:'中文简体', date:'', editions:[], params:{}, links:[] };
+    $('edit-title').textContent = isNew ? '新增镜像' : '编辑镜像';
+    $('e-id').value = im.id;
+    $('e-title').value = im.title||'';
+    fillCatSelect($('e-cat'), im.category);
+    fillVerSelect(im.category, im.version);
+    $('e-cat').onchange=function(){ fillVerSelect(this.value, ''); };
+    $('e-arch').value = im.arch||'';
+    $('e-lang').value = im.lang||'';
+    $('e-date').value = im.date||'';
+    $('e-editions').value = (im.editions||[]).join(',');
+    renderParamFields(im.params);
+    var ll=$('link-list'); ll.innerHTML='';
+    (im.links&&im.links.length?im.links:[{type:'quark',url:'',password:''}]).forEach(function(lk){ ll.appendChild(linkRow(lk)); });
+    $('btn-del-edit').style.visibility = isNew ? 'hidden':'visible';
+    $('btn-del-edit').onclick = function(){ closeModal('modal-edit'); delImage(im.id); };
+    openModal('modal-edit');
+  }
+
+  function saveEdit(){
+    var id=$('e-id').value;
+    var title=$('e-title').value.trim();
+    if(!title){ toast('请填写标题'); return; }
+    var cat=$('e-cat').value;
+    var params={};
+    Array.prototype.forEach.call($('param-fields').querySelectorAll('[data-pk]'),function(inp){
+      var v=inp.value.trim(); if(v) params[inp.getAttribute('data-pk')]=v; });
+    var links=[];
+    Array.prototype.forEach.call($('link-list').querySelectorAll('.link-item'),function(row){
+      var url=row.querySelector('.lk-url').value.trim();
+      if(!url) return;
+      links.push({ type:row.querySelector('.lk-type').value,
+                   url:url, password:row.querySelector('.lk-pass').value.trim() });
+    });
+    var editions=$('e-editions').value.split(/[,，\s]+/).map(function(s){return s.trim();}).filter(Boolean);
+    var obj={
+      id: id || (cat+'-'+Date.now().toString(36)),
+      category: cat,
+      version: $('e-ver').value,
+      title: title,
+      arch: $('e-arch').value.trim(),
+      lang: $('e-lang').value.trim(),
+      date: $('e-date').value.trim(),
+      editions: editions,
+      params: params,
+      links: links
+    };
+    if(id){
+      var i=state.data.images.map(function(x){return x.id;}).indexOf(id);
+      if(i>=0) state.data.images[i]=obj; else state.data.images.push(obj);
+    } else {
+      state.data.images.push(obj);
+    }
+    markDirty(true); closeModal('modal-edit'); renderList(); toast('已保存到列表（记得提交到 GitHub）');
+  }
+
+  /* ---------- 分类管理 ---------- */
+  function openCats(){
+    state.editCats = JSON.parse(JSON.stringify(state.data.categories));
+    renderCatEditor(); openModal('modal-cats');
+  }
+  function renderCatEditor(){
+    var host=$('cat-list');
+    host.innerHTML = state.editCats.map(function(c,ci){
+      var vers=(c.versions||[]).map(function(v,vi){
+        return '<div class="ver-item">'+
+          '<input type="text" data-c="'+ci+'" data-vk="id" data-v="'+vi+'" value="'+esc(v.id)+'" placeholder="版本id 如 26h1">'+
+          '<input type="text" data-c="'+ci+'" data-vk="name" data-v="'+vi+'" value="'+esc(v.name)+'" placeholder="显示名 如 26H1">'+
+          '<button class="btn danger sm" data-delver="'+ci+'_'+vi+'">删</button></div>';
+      }).join('');
+      return '<div class="card" style="margin-bottom:10px;padding:14px 16px;">'+
+        '<div class="grid2">'+
+        '<label class="fld"><span>分类 id（英文，勿与镜像引用冲突）</span>'+
+          '<input type="text" data-c="'+ci+'" data-ck="id" value="'+esc(c.id)+'" placeholder="win11"></label>'+
+        '<label class="fld"><span>分类名称</span>'+
+          '<input type="text" data-c="'+ci+'" data-ck="name" value="'+esc(c.name)+'" placeholder="Windows 11"></label>'+
+        '</div>'+
+        '<div class="muted" style="margin:4px 0 6px;">版本子菜单：</div>'+vers+
+        '<div class="row" style="margin-top:6px;">'+
+          '<button class="btn ghost sm" data-addver="'+ci+'">+ 版本</button>'+
+          '<button class="btn danger sm" data-delcat="'+ci+'">删除此分类</button>'+
+        '</div></div>';
+    }).join('') || '<div class="muted">还没有分类。</div>';
+
+    // 绑定输入同步
+    Array.prototype.forEach.call(host.querySelectorAll('[data-ck]'),function(inp){
+      inp.oninput=function(){ state.editCats[+inp.getAttribute('data-c')][inp.getAttribute('data-ck')]=inp.value; }; });
+    Array.prototype.forEach.call(host.querySelectorAll('[data-vk]'),function(inp){
+      inp.oninput=function(){ var c=+inp.getAttribute('data-c'),v=+inp.getAttribute('data-v');
+        state.editCats[c].versions[v][inp.getAttribute('data-vk')]=inp.value; }; });
+    Array.prototype.forEach.call(host.querySelectorAll('[data-addver]'),function(b){
+      b.onclick=function(){ var c=+b.getAttribute('data-addver'); state.editCats[c].versions=state.editCats[c].versions||[];
+        state.editCats[c].versions.push({id:'',name:''}); renderCatEditor(); }; });
+    Array.prototype.forEach.call(host.querySelectorAll('[data-delver]'),function(b){
+      b.onclick=function(){ var p=b.getAttribute('data-delver').split('_'); state.editCats[+p[0]].versions.splice(+p[1],1); renderCatEditor(); }; });
+    Array.prototype.forEach.call(host.querySelectorAll('[data-delcat]'),function(b){
+      b.onclick=function(){ if(confirm('删除此分类？其下镜像不会被删除。')){ state.editCats.splice(+b.getAttribute('data-delcat'),1); renderCatEditor(); } }; });
+  }
+  function saveCats(){
+    // 过滤空 id 的版本
+    state.editCats.forEach(function(c){ c.versions=(c.versions||[]).filter(function(v){return (v.id||'').trim();}); });
+    var bad=state.editCats.filter(function(c){return !(c.id||'').trim();});
+    if(bad.length){ toast('分类 id 不能为空'); return; }
+    state.data.categories=state.editCats;
+    markDirty(true); closeModal('modal-cats'); renderList(); toast('分类已更新（记得提交到 GitHub）');
+  }
+
+  /* ---------- 导入 / 导出 ---------- */
+  function exportJson(){
+    if(!state.data){ toast('没有数据'); return; }
+    var blob=new Blob([JSON.stringify(state.data,null,2)],{type:'application/json'});
+    var a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+    a.download='images.json'; a.click(); URL.revokeObjectURL(a.href);
+  }
+  function importJson(file){
+    var rd=new FileReader();
+    rd.onload=function(){
+      try{ state.data=normalize(JSON.parse(rd.result)); state.sha=state.sha||null;
+        markDirty(true); renderList(); toast('已导入（如需上线请保存到 GitHub）'); }
+      catch(e){ toast('JSON 解析失败：'+e.message); }
+    };
+    rd.readAsText(file);
+  }
+
+  /* ---------- 绑定 ---------- */
+  function bind(){
+    loadCfg();
+    $('btn-load').onclick=ghLoad;
+    $('btn-savecfg').onclick=saveCfg;
+    $('btn-commit').onclick=ghCommit;
+    $('btn-add').onclick=function(){ if(!state.data){ state.data=normalize({}); } openEdit(null); };
+    $('btn-cats').onclick=function(){ if(!state.data){ state.data=normalize({}); } openCats(); };
+    $('btn-addlink').onclick=function(){ $('link-list').appendChild(linkRow()); };
+    $('btn-save-edit').onclick=saveEdit;
+    $('btn-addcat').onclick=function(){ state.editCats.push({id:'',name:'',versions:[]}); renderCatEditor(); };
+    $('btn-save-cats').onclick=saveCats;
+    $('btn-export').onclick=exportJson;
+    $('btn-import').onclick=function(){ $('file-import').click(); };
+    $('file-import').onchange=function(){ if(this.files[0]) importJson(this.files[0]); this.value=''; };
+    Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(b){
+      b.onclick=function(){ closeModal(b.getAttribute('data-close')); }; });
+    Array.prototype.forEach.call(document.querySelectorAll('.modal-mask'),function(m){
+      m.onclick=function(e){ if(e.target===m) closeModal(m.id); }; });
+    window.addEventListener('beforeunload',function(e){ if(state.dirty){ e.preventDefault(); e.returnValue=''; } });
+  }
+  bind();
+})();
+</script>
+</body>
+</html>
