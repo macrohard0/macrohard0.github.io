@@ -204,27 +204,28 @@ table.param .param-value { word-break: break-all; font-family: "SFMono-Regular",
 .dl-copy {
   flex: 0 0 auto;
   border: none;
-  background: #2b323f;
-  color: #fff;
+  background: #e8ebf0;
+  color: var(--text);
   padding: 0 16px;
   font-size: 13px;
   cursor: pointer;
-  border-radius: 0 6px 6px 0;
+  border-radius: 0;
   transition: .15s;
 }
-.dl-copy:hover { background: #1b2230; }
+.dl-copy:hover { background: #d7dce3; }
 .dl-open {
   flex: 0 0 auto;
+  margin-left: 12px;
   border: none;
-  border-left: 1px solid rgba(255,255,255,.25);
-  background: #2b323f;
-  color: #fff;
+  background: #e8ebf0;
+  color: var(--text);
   padding: 0 14px;
   font-size: 13px;
   cursor: pointer;
+  border-radius: 0;
   transition: .15s;
 }
-.dl-open:hover { background: #1b2230; }
+.dl-open:hover { background: #d7dce3; }
 
 /* 空状态 */
 .empty { text-align: center; padding: 80px 20px; color: var(--text-soft); }
