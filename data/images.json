@@ -2167,7 +2167,13 @@
       "links": [
         {
           "type": "quark",
-          "url": "https://pan.quark.cn/s/c6eb30217db6"
+          "url": "https://pan.quark.cn/s/c6eb30217db6",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwXIQGglTh_0yp4MZDh6Qb0A1?pwd=xcjz#",
+          "password": ""
         }
       ]
     },
@@ -2189,7 +2195,13 @@
         "MD5": "eb51b4e43c2b5c396814c537fae772f7",
         "文件大小": "3.12GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/e72bd4cb9ac8",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win81-003",
