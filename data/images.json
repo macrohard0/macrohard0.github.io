@@ -393,7 +393,13 @@
       "links": [
         {
           "type": "quark",
-          "url": "https://pan.quark.cn/s/4801ed36ace5"
+          "url": "https://pan.quark.cn/s/4801ed36ace5",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwXEN6On64uvfjk3HvyP38QA1?pwd=uvnz#",
+          "password": ""
         }
       ]
     },
@@ -2546,7 +2552,18 @@
         "MD5": "adfcff7187115681d63d4da5cae0a296",
         "文件大小": "2.47GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/3c1d4f9c9f25",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwXDyYjpRUAX3pVvJi-8ZFNA1?pwd=v6jm#",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win7-005",
@@ -2569,7 +2586,13 @@
       "links": [
         {
           "type": "quark",
-          "url": "https://pan.quark.cn/s/1c484003d70f"
+          "url": "https://pan.quark.cn/s/1c484003d70f",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwXE48R5z5JMOnGoeH-nx3SA1?pwd=d3aa#",
+          "password": ""
         }
       ]
     },
