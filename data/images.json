@@ -2444,7 +2444,7 @@
       "lang": "中文简体",
       "date": "2011-05-12",
       "editions": [
-        "专业版"
+        "旗舰版"
       ],
       "params": {
         "文件名": "cn_windows_7_ultimate_with_sp1_x64_dvd_u_677408.iso",
@@ -2456,7 +2456,13 @@
       "links": [
         {
           "type": "quark",
-          "url": "https://pan.quark.cn/s/821ab06f12b1"
+          "url": "https://pan.quark.cn/s/821ab06f12b1",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwX8caag5apEDQPgd9oDNNgA1?pwd=ie4z#",
+          "password": ""
         }
       ]
     },
@@ -2469,7 +2475,7 @@
       "lang": "中文简体",
       "date": "2011-05-12",
       "editions": [
-        "专业版"
+        "旗舰版"
       ],
       "params": {
         "文件名": "cn_windows_7_ultimate_with_sp1_x86_dvd_u_677486.iso",
@@ -2478,7 +2484,18 @@
         "MD5": "faa364a36cddcbbfd65c0224f35fcfd0",
         "文件大小": "2.47GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/d1e53ba2cdb4",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwX8DkYCvJGGregJj3oT8T5A1?pwd=9t9g#",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win7-003",
@@ -2614,7 +2631,7 @@
       "lang": "中文简体",
       "date": "2011-05-12",
       "editions": [
-        "专业版"
+        "家庭高级版"
       ],
       "params": {
         "文件名": "cn_windows_7_home_premium_with_sp1_x64_dvd_u_676691.iso",
@@ -2634,7 +2651,7 @@
       "lang": "中文简体",
       "date": "2011-05-12",
       "editions": [
-        "专业版"
+        "家庭高级版"
       ],
       "params": {
         "文件名": "cn_windows_7_home_premium_with_sp1_x86_dvd_u_676770.iso",
@@ -2654,7 +2671,7 @@
       "lang": "中文简体",
       "date": "2011-05-12",
       "editions": [
-        "专业版"
+        "家庭普通版"
       ],
       "params": {
         "文件名": "cn_windows_7_home_basic_with_sp1_x86_dvd_u_676500.iso",
