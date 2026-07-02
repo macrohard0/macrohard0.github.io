@@ -3094,7 +3094,13 @@
         "MD5": "050843b928652f0f39d91ef9de2f3586",
         "文件大小": "8.08GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/5c5d987780f7",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win11-029",
