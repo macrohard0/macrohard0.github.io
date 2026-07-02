@@ -162,49 +162,6 @@
       ]
     },
     {
-      "id": "win11-003",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 消费者版本 26H1（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_26h1_updated_june_2026_arm64_dvd_72dd14a5.iso",
-        "SHA-256": "a93e57971884f1ea8c196507676bff7d9688e9cf90f8d3cc9651df3f217e4a16",
-        "SHA-1": "bde7d27b5e66024f286592d524c747117729a447",
-        "MD5": "b1089e03b0813f1aaf381c94ac2b4eb9",
-        "文件大小": "7.87GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-004",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 商业版 26H1（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_26h1_updated_june_2026_arm64_dvd_72dd14a5.iso",
-        "SHA-256": "d79bde33b0fb8580a8563d256e73f3dc3d52a1a0a88562d34d780ca51d168448",
-        "SHA-1": "5d0ee9b47db049fe7049ca72a96d93e1e1f0d49f",
-        "MD5": "b9799400fa54464bda51f2943eaa56a8",
-        "文件大小": "7.8GB"
-      },
-      "links": []
-    },
-    {
       "id": "win11-005",
       "category": "win11",
       "version": "26h1",
@@ -264,59 +221,6 @@
       ]
     },
     {
-      "id": "win11-007",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 消费者版本 26H1（2026年5月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-05-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_26h1_updated_may_2026_arm64_dvd_b733cc65.iso",
-        "SHA-256": "3a2cba48eb3e82dd567f36898b8194cb3af25e594b08f32f5cb29a512058deed",
-        "SHA-1": "057f7719f786cc815f7b0489308673bcae1c164c",
-        "MD5": "d6d697277e59e7a4154b80a3e413bd35",
-        "文件大小": "7.78GB"
-      },
-      "links": [
-        {
-          "type": "quark",
-          "url": "https://pan.quark.cn/s/1720f598c5fd"
-        }
-      ]
-    },
-    {
-      "id": "win11-008",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 商业版 26H1（2026年5月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-05-19",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_26h1_updated_may_2026_arm64_dvd_b733cc65.iso",
-        "SHA-256": "c08a6737e1a61cc9388ef87caa5598258819928c70a05fa2a260b09166bacef6",
-        "SHA-1": "bce39af89aed9ca73b2079b137a70e996b45415c",
-        "MD5": "1498efb4bd1aaeb10a481e9890b81c17",
-        "文件大小": "7.71GB"
-      },
-      "links": [
-        {
-          "type": "quark",
-          "url": "https://pan.quark.cn/s/213132e5d2a7"
-        }
-      ]
-    },
-    {
       "id": "win11-009",
       "category": "win11",
       "version": "26h1",
@@ -362,49 +266,6 @@
         "SHA-1": "fbd1692f47e79fc30cb7969e77e8a69d89b2a73f",
         "MD5": "bbdb4c3a7c0a79bb0b59e57bfff1b3c8",
         "文件大小": "7.31GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-011",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 消费者版本 26H1（2026年4月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-04-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_26h1_updated_april_2026_arm64_dvd_69ae07e3.iso",
-        "SHA-256": "eb9c02b86a9f77ca6bf76ba5d9fc4878d3f46122762bfccb3016bd55a840f532",
-        "SHA-1": "803a1fec5b15ea17c3c2e5411dc518b07661a447",
-        "MD5": "bc3d636dffd1a4fdbd9c594e9891191a",
-        "文件大小": "7.61GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-012",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 商业版 26H1（2026年4月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-04-21",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_26h1_updated_april_2026_arm64_dvd_ac820afd.iso",
-        "SHA-256": "1305358fa98aac1a4dd888fc31e04df608a948c5130b512af8543a9fc5bfdfac",
-        "SHA-1": "3876a9c84585848c3852a4a5341d63ff481c7379",
-        "MD5": "0f2a448e5a92f6a17880748a7419e614",
-        "文件大小": "7.54GB"
       },
       "links": []
     },
@@ -458,49 +319,6 @@
       "links": []
     },
     {
-      "id": "win11-015",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 消费者版本 26H1（2026年3月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-03-17",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_26h1_updated_march_2026_arm64_dvd_f163b1c8.iso",
-        "SHA-256": "ea40ccad1a7a0dbd995a4d1bb8283bef3637e4989141dbd962b02fc487cd836e",
-        "SHA-1": "83e720e5c0049e5c35e01ec7a21f7fb8d0cd3188",
-        "MD5": "58a57609e67a765d2522b7003fd0bb26",
-        "文件大小": "7.46GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-016",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 商业版 26H1（2026年3月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-03-17",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_26h1_updated_march_2026_arm64_dvd_d6bda57b.iso",
-        "SHA-256": "8dd4904b9a426e8913a8b7042ce4baad5753e283ed91bf020feccfc37fe24a37",
-        "SHA-1": "6dd4e73a716c557f25d901471895833b0f5a8055",
-        "MD5": "3071c0d3e9813f91190ccc5956477d96",
-        "文件大小": "7.39GB"
-      },
-      "links": []
-    },
-    {
       "id": "win11-017",
       "category": "win11",
       "version": "26h1",
@@ -550,49 +368,6 @@
       "links": []
     },
     {
-      "id": "win11-019",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 消费者版本 26H1 ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-02-10",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_26h1_arm64_dvd_900d64ce.iso",
-        "SHA-256": "f821b77ed27f29a58dfa1f065d2cc4409bb949c0c3ce09e9eb1c0faff4d64d03",
-        "SHA-1": "1df8ac775b193db76c97efee6b5ed7d74af6a395",
-        "MD5": "6a8f17d558254e235e55f3fc934ee9b2",
-        "文件大小": "6.49GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-020",
-      "category": "win11",
-      "version": "26h1",
-      "title": "Windows 11 商业版 26H1 ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-02-10",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_26h1_arm64_dvd_06885171.iso",
-        "SHA-256": "70c732f79691194590213e8b8c24ac0f32ea69855152293d81d4480744a7977d",
-        "SHA-1": "77154b30cb1013d53c307d352d121bc018c5eb79",
-        "MD5": "07103c30b4e7f12e170afc4fe49ec64c",
-        "文件大小": "6.43GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-001",
       "category": "win10",
       "version": "22h2",
@@ -621,31 +396,6 @@
           "url": "https://pan.quark.cn/s/4801ed36ace5"
         }
       ]
-    },
-    {
-      "id": "win10-002",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-10-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_oct_2025_x86_dvd_38efd00d.iso",
-        "SHA-256": "3a2ba8548c6bf76926b68ff3013fdd0bd94a42867f0e658caff2239efb5435bc",
-        "SHA-1": "150c30290389244041515d77b17beba6d7b3e36b",
-        "MD5": "48ff8bd4ab42f207ff50492cc433562b",
-        "文件大小": "4.66GB"
-      },
-      "links": []
     },
     {
       "id": "win10-003",
@@ -677,27 +427,6 @@
       ]
     },
     {
-      "id": "win10-004",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-10-21",
-      "editions": [
-        "专业版",
-        "家庭版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_oct_2025_x86_dvd_80ad3e99.iso",
-        "SHA-256": "1a9142046ad47759f5871dc21808f7f78c86f164981fd784e9d7088d035f9f33",
-        "SHA-1": "d7f506be3ef730ac55d62d29addab620b125664a",
-        "MD5": "c57e9e13193423f2f6100ec4c5a906fc",
-        "文件大小": "4.58GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-005",
       "category": "win10",
       "version": "22h2",
@@ -723,31 +452,6 @@
       "links": []
     },
     {
-      "id": "win10-006",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-09-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2025_x86_dvd_4a22741d.iso",
-        "SHA-256": "c0604b0f9703df480febaa3397ca0d4bbb14676ab51eb497c049925eee458951",
-        "SHA-1": "56a880b83b67d13fc65c06d2a40fdf3741373f69",
-        "MD5": "01a380f4f60f0228bbe82e72b2243891",
-        "文件大小": "4.66GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-007",
       "category": "win10",
       "version": "22h2",
@@ -768,30 +472,6 @@
         "SHA-1": "c5fccf1026debc898c0ebec8b96589091efa72c3",
         "MD5": "1af4450c1e2cea2c5b94c1d1bad65b31",
         "文件大小": "6.47GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-008",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-09-16",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_sep_2025_x86_dvd_a94e87f7.iso",
-        "SHA-256": "1ad224a4db13b7e376a00cfe640cab49715e6e13d41e9b2aec05b55b2be3992d",
-        "SHA-1": "26cb9044ab4d1d867eaaff0cde11810e9944bfc4",
-        "MD5": "640794f98c5160834c9a91009fe41ccd",
-        "文件大小": "4.57GB"
       },
       "links": []
     },
@@ -821,31 +501,6 @@
       "links": []
     },
     {
-      "id": "win10-010",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-08-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_aug_2025_x86_dvd_65bb5415.iso",
-        "SHA-256": "7229fcf3e670d03168fce96d27f6fea6de2d5856e9c1f921573421ab9a993595",
-        "SHA-1": "a821b8d5378c523de63da95f9fa3288289f42988",
-        "MD5": "e80219be721e29af956986d12e45d497",
-        "文件大小": "4.52GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-011",
       "category": "win10",
       "version": "22h2",
@@ -866,30 +521,6 @@
         "SHA-1": "af191139b9188736f5c1ecd6c8f40245dd33b2ef",
         "MD5": "edf2757c02f7d32772e4dc4476007631",
         "文件大小": "6.34GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-012",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-08-19",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_aug_2025_x86_dvd_1dd159bf.iso",
-        "SHA-256": "6b35bfdcc1a0a9fb4aba2dd18044c1407b7783f6cca8263b3ecf70216f020618",
-        "SHA-1": "e9981240947d0256e6e5cba5253c8df0a9f11156",
-        "MD5": "2f30bf29b3a234b6aa098b8051a9bc61",
-        "文件大小": "4.44GB"
       },
       "links": []
     },
@@ -919,31 +550,6 @@
       "links": []
     },
     {
-      "id": "win10-014",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-07-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_july_2025_x86_dvd_f841fba5.iso",
-        "SHA-256": "8f09930526afa6dfc6bed2a15f3e16a8e5f719cf4e7b4a49a59f233e988d5945",
-        "SHA-1": "6d4b04293673cd4ff9b3e9eaa602f691418245b3",
-        "MD5": "d056e18d2a019998d26efe3f805cdd74",
-        "文件大小": "4.52GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-015",
       "category": "win10",
       "version": "22h2",
@@ -964,30 +570,6 @@
         "SHA-1": "a821cb257d2376dfce85a4ab514567fc22e8b12b",
         "MD5": "f87947e820005124954baa9c161b5a97",
         "文件大小": "6.34GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-016",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-07-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_july_2025_x86_dvd_5648cb96.iso",
-        "SHA-256": "451bb1ed70e7d11adf78e71e6dcc2144b093d3e3c408416df2ae3dd1b7d0557e",
-        "SHA-1": "17ffae213cf7c75476cd77a3c7698d3467d5c950",
-        "MD5": "30cf56d27035e2cfc8d7591ca0bfc405",
-        "文件大小": "4.43GB"
       },
       "links": []
     },
@@ -1017,31 +599,6 @@
       "links": []
     },
     {
-      "id": "win10-018",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-06-17",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_june_2025_x86_dvd_aace2d00.iso",
-        "SHA-256": "516dcc6b2bcbe5e2f2570b5d773e448e2c9aaaec69734f8ec903e9dafe774f5b",
-        "SHA-1": "4e5acf1928b72d914c313c773e1f93e28ee007e5",
-        "MD5": "4dfa3a586cd6f365941e862a384da09a",
-        "文件大小": "4.52GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-019",
       "category": "win10",
       "version": "22h2",
@@ -1062,30 +619,6 @@
         "SHA-1": "b8619ce73991446f59b6ed52b9e83d0cc95cb581",
         "MD5": "f6380c9fff21ff84e7f9849587ecb66b",
         "文件大小": "6.31GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-020",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-06-17",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_june_2025_x86_dvd_86a33fb8.iso",
-        "SHA-256": "48c9fe3a86647c71812aebcc1aefe1cc336ad78ac200859f8fcb3c89c562239c",
-        "SHA-1": "302f199d3d8f7dbadc467b482bc60dbf16ed66cc",
-        "MD5": "60284f064749df765d92bb83f0cb30b5",
-        "文件大小": "4.43GB"
       },
       "links": []
     },
@@ -1115,31 +648,6 @@
       "links": []
     },
     {
-      "id": "win10-022",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-05-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_may_2025_x86_dvd_fefefb48.iso",
-        "SHA-256": "bcff2c421fb65bcaedb5e9a0b072cf825aadbd537914b3fd3e659c51afc3dd7a",
-        "SHA-1": "ca7a9c8b7f8e4921ec073b29c2dac14530e93633",
-        "MD5": "557405ec3b32b67166d7ba40eac7056c",
-        "文件大小": "4.72GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-023",
       "category": "win10",
       "version": "22h2",
@@ -1160,30 +668,6 @@
         "SHA-1": "36d45152af7654fde6fce186244c02ab8c17583a",
         "MD5": "f189f4c5798ed00f218b8acb6aba162c",
         "文件大小": "6.56GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-024",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-05-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_may_2025_x86_dvd_a20e855c.iso",
-        "SHA-256": "4d76c923571a875384d9911a743f0c625e3cacd2c9dd2f32a33f2d6ca88c16b4",
-        "SHA-1": "794ff846c095a3d4fea0d8a96dd74e6581e29b00",
-        "MD5": "1fcef57d093c689b92545cf85cd64d86",
-        "文件大小": "4.64GB"
       },
       "links": []
     },
@@ -1213,31 +697,6 @@
       "links": []
     },
     {
-      "id": "win10-026",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-04-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_april_2025_x86_dvd_a39ebe02.iso",
-        "SHA-256": "db71bf562b9e7d99422327424d3858200456f9a82f797b614d7169d39fc76086",
-        "SHA-1": "6b089902e50f3493a1989aefa6c43dc362e1cca8",
-        "MD5": "aa18327697407e5762fc65409f934895",
-        "文件大小": "4.73GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-027",
       "category": "win10",
       "version": "22h2",
@@ -1258,30 +717,6 @@
         "SHA-1": "62adb404f56997b3593c741f027c4b80de7bd803",
         "MD5": "69ecbed983ad052722535cc05eac25df",
         "文件大小": "6.56GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-028",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-04-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_april_2025_x86_dvd_3862a319.iso",
-        "SHA-256": "3686d024b320544c88e4c54f89c007f09fde6445344db7c080f1b0866a472841",
-        "SHA-1": "37dc604ef141342304ba36e70dd0898226b2a851",
-        "MD5": "53137f26103747c7b669fd5ba951d9f2",
-        "文件大小": "4.64GB"
       },
       "links": []
     },
@@ -1311,31 +746,6 @@
       "links": []
     },
     {
-      "id": "win10-030",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-03-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_march_2025_x86_dvd_fefab0a7.iso",
-        "SHA-256": "a03ea7be522ab390f7b18139a45200ea6da9bba5bc13415a758ed4d1f9806a37",
-        "SHA-1": "253245e6026f2f47de8bfe7f01ac6becdd0fb610",
-        "MD5": "5f755979409913e0418dc8b4bcc72012",
-        "文件大小": "4.7GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-031",
       "category": "win10",
       "version": "22h2",
@@ -1356,30 +766,6 @@
         "SHA-1": "926cba7b6b617a4cf6f042b6de023fc7e7033895",
         "MD5": "50c0fcaddf2765adacb35c01944d4e1c",
         "文件大小": "6.53GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-032",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-03-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_march_2025_x86_dvd_fd65b073.iso",
-        "SHA-256": "62ac771fe736f477b1261bdff1b85be6c808004afb54f34fa6b47bb173f22872",
-        "SHA-1": "cd42f017bfcf6944c5dc51e05c5b0a733220e78c",
-        "MD5": "d9d3940acf29c24bf05162906bb642de",
-        "文件大小": "4.61GB"
       },
       "links": []
     },
@@ -1409,30 +795,6 @@
       "links": []
     },
     {
-      "id": "win10-034",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-02-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_feb_2025_x86_dvd_16fa7261.iso",
-        "SHA-256": "f0f14b094085a7c1805958f634eb29248c7233cfd66d8b981090a1a2d61d00c5",
-        "SHA-1": "b7a9458e8be18eacf69543c36f5808ed67bf7bf8",
-        "MD5": "8627521e049d8d06b4601a4a0b431c3e",
-        "文件大小": "4.7GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-035",
       "category": "win10",
       "version": "22h2",
@@ -1453,30 +815,6 @@
         "SHA-1": "e9abcb0715ac3ddc3fafa7923d30ded5eede0d8d",
         "MD5": "39f65ff8091818b6b08bd0babcbbfcc4",
         "文件大小": "6.52GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-036",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-02-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_feb_2025_x86_dvd_f3fe949b.iso",
-        "SHA-256": "2b24e19294b61f69315c9c9c7c268ca546b190af711057a1cf8ba92c802130e1",
-        "SHA-1": "681f5d02def7ebf0fd07513bc0f00a7f95e4eca8",
-        "MD5": "b7b5595b7b57d180fd51413171601523",
-        "文件大小": "4.62GB"
       },
       "links": []
     },
@@ -1506,31 +844,6 @@
       "links": []
     },
     {
-      "id": "win10-038",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2025年1月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-01-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_jan_2025_x86_dvd_45152214.iso",
-        "SHA-256": "53cb1ce39dc452b13baea3924c615c551afb88abf7d6500e41207378a65426f6",
-        "SHA-1": "b11bc705dae64f93c65836590ab891825a52be79",
-        "MD5": "099a649067c029e7d48443a4ec2ceb4f",
-        "文件大小": "4.69GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-039",
       "category": "win10",
       "version": "22h2",
@@ -1551,30 +864,6 @@
         "SHA-1": "d528481e04502f3e42cef40e7d8000c1c5e3be2c",
         "MD5": "ec4625af8cddd6879eac1c1e3818b087",
         "文件大小": "6.51GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-040",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2025年1月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2025-01-21",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_jan_2025_x86_dvd_2851f0d0.iso",
-        "SHA-256": "f80e5013bc6fb89c168d3d9f0aee7db12ed89ca6b930936c9b6e0b4a4d99071e",
-        "SHA-1": "5b9b48295fa77e4126e631caa0915cbb955fdd8b",
-        "MD5": "c4165f484c80505cc68e083901251ffb",
-        "文件大小": "4.61GB"
       },
       "links": []
     },
@@ -1604,31 +893,6 @@
       "links": []
     },
     {
-      "id": "win10-042",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-12-17",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_dec_2024_x86_dvd_52d3c74b.iso",
-        "SHA-256": "b0ae7dc43caade32c925c32ae3ae76ef35f054bc43c2d742a864b4707b6626a8",
-        "SHA-1": "cf6774fb959e8357be9dce616ee09b38e6eb326e",
-        "MD5": "b96b3bc74c7914f5d6ae8700c2c3c9a5",
-        "文件大小": "4.7GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-043",
       "category": "win10",
       "version": "22h2",
@@ -1649,30 +913,6 @@
         "SHA-1": "4e2e617e8dddd0fb8d9821e0a570e1c207cd62fa",
         "MD5": "b1e068973bb3acbc616a1dd2398f750b",
         "文件大小": "6.51GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-044",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-12-17",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_dec_2024_x86_dvd_d7b26c55.iso",
-        "SHA-256": "b6d279bcff9f98fc017707f307868162daf165d532c5c88528ccb80ad123e8dd",
-        "SHA-1": "b11c8e472902f1af8a58528482b94df044b08764",
-        "MD5": "a2106e91aa377841fc27d729ae8e11cc",
-        "文件大小": "4.61GB"
       },
       "links": []
     },
@@ -1702,31 +942,6 @@
       "links": []
     },
     {
-      "id": "win10-046",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-11-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_nov_2024_x86_dvd_3eeacab9.iso",
-        "SHA-256": "9712343d3896031d34cf128b4c926b32f27c2694a80f0a36d5aaf0a48b9ee148",
-        "SHA-1": "d194e41e9d3ccd9d600c0bbaa1b14c3d0323e37d",
-        "MD5": "f16a4ad27538d034417e66850e4376b0",
-        "文件大小": "4.69GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-047",
       "category": "win10",
       "version": "22h2",
@@ -1747,30 +962,6 @@
         "SHA-1": "ebc677f59b692ebe76dd91c127acf1639837ec9c",
         "MD5": "09bec240d198e36e0c11c1d6be796d64",
         "文件大小": "6.53GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-048",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-11-19",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_nov_2024_x86_dvd_6f2c7c9a.iso",
-        "SHA-256": "7df50ade6cfba135a52815ddf7de44a1b206fffd051a4aa9bec2d3b790011a48",
-        "SHA-1": "240fd840086a6ebc7db2838ef2f1734eff56dc9e",
-        "MD5": "5ada2f7fe91f3fc882347d43c07ccdb0",
-        "文件大小": "4.61GB"
       },
       "links": []
     },
@@ -1800,31 +991,6 @@
       "links": []
     },
     {
-      "id": "win10-050",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-10-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_oct_2024_x86_dvd_d0cfb2e9.iso",
-        "SHA-256": "01d34c7175ef7d1dab991858f43fe445189416b44f5a719b8d6b35a42faddbdb",
-        "SHA-1": "27bb3b2ba4f3475d2bbaf570d3db04e1659be8b5",
-        "MD5": "3d0ba2f89820b75c39c3cbe6f6f14f8a",
-        "文件大小": "4.7GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-051",
       "category": "win10",
       "version": "22h2",
@@ -1845,30 +1011,6 @@
         "SHA-1": "9a37f45e191c2596804b3372bdf41795a77fbfd8",
         "MD5": "ed4825b60fb769d995d1c8106e17ca39",
         "文件大小": "6.53GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-052",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-10-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_oct_2024_x86_dvd_f31c055e.iso",
-        "SHA-256": "d63e07b07b94ae961c5a77c5687db75f6641968e3e4820365da0348c610bac1d",
-        "SHA-1": "c31c3fe3034615ea47c2678495e0c570d8430488",
-        "MD5": "9f0a37e615dac223556014d7343c05de",
-        "文件大小": "4.62GB"
       },
       "links": []
     },
@@ -1898,31 +1040,6 @@
       "links": []
     },
     {
-      "id": "win10-054",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-09-17",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2024_x86_dvd_377ddb19.iso",
-        "SHA-256": "64c347eccf93159bff4976e2908cd4af055d204f2822cc755984e52c6bc5332e",
-        "SHA-1": "02ff47e496cd7aa4a025485d0aec9fbb13ac6cf9",
-        "MD5": "fe97a6d3bbb05620b7ab1f0133a00a0d",
-        "文件大小": "4.68GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-055",
       "category": "win10",
       "version": "22h2",
@@ -1943,30 +1060,6 @@
         "SHA-1": "9f77a095e42281864a9616a44624b1d10cf2126a",
         "MD5": "dc015f497788a4d978ef038c6a4a032f",
         "文件大小": "6.5GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-056",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-09-17",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_sep_2024_x86_dvd_66abdd68.iso",
-        "SHA-256": "a1b72a530ff8581c6b52b105ed67d4bcf532e1ddd0e0eb1411c0e8e71866cfdf",
-        "SHA-1": "3dc036abda61980859ccc9a090fe5eddba35a38b",
-        "MD5": "db926007562bb39a55d96f3063b7dd4c",
-        "文件大小": "4.6GB"
       },
       "links": []
     },
@@ -1996,31 +1089,6 @@
       "links": []
     },
     {
-      "id": "win10-058",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-08-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_aug_2024_x86_dvd_2454bb57.iso",
-        "SHA-256": "b266098b2bd88ff550656d0b30f76a5897a87515f93e244017551d824c8f64a9",
-        "SHA-1": "b8de3e11e59429269efc38b43dad56b3e1e70b68",
-        "MD5": "7c4dcdad9020ca984ebe49d215db70ef",
-        "文件大小": "4.68GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-059",
       "category": "win10",
       "version": "22h2",
@@ -2041,30 +1109,6 @@
         "SHA-1": "17a6814c7f50d0b8e79348d275b7ad8f66304f18",
         "MD5": "7a3f94f08498898e145920f3945a29c6",
         "文件大小": "6.5GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-060",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-08-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_aug_2024_x86_dvd_8d7e500f.iso",
-        "SHA-256": "91d0d879e836b9df2116e09c46ae514f57b42f37b2727dbeaeef3bca1953c5fe",
-        "SHA-1": "44820580d4fa8661a52c9b1f390a3706a66de017",
-        "MD5": "d8d37161e48db18ddd89070650d4a2ae",
-        "文件大小": "4.6GB"
       },
       "links": []
     },
@@ -2094,31 +1138,6 @@
       "links": []
     },
     {
-      "id": "win10-062",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-07-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_july_2024_x86_dvd_3245b006.iso",
-        "SHA-256": "ea83542cadeb6035c7cb34b5211dff215c3a0078f2629bec7f7d3a3aee91dbbb",
-        "SHA-1": "2cf28a97d944dddd59708e11985d7decad1c0ea3",
-        "MD5": "24ca89599971d7e8ccff81c8f88be843",
-        "文件大小": "4.67GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-063",
       "category": "win10",
       "version": "22h2",
@@ -2139,30 +1158,6 @@
         "SHA-1": "cf09c70b43599909ff41593a2aae05d847f011b9",
         "MD5": "47d00e3dc4b57ef37e5e23009d1297e0",
         "文件大小": "6.49GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-064",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-07-16",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_july_2024_x86_dvd_be7cc642.iso",
-        "SHA-256": "894680633c2744c752c10857c7dd9a4732906c52765777d1f57d673f26c54582",
-        "SHA-1": "86fc5c3b2913bc7ac38ac0791726975a34d7d569",
-        "MD5": "2f1a1237d950d682d7b735cfd7563f1a",
-        "文件大小": "4.59GB"
       },
       "links": []
     },
@@ -2192,31 +1187,6 @@
       "links": []
     },
     {
-      "id": "win10-066",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-06-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_june_2024_x86_dvd_a8751094.iso",
-        "SHA-256": "80342e5e716abfc26a319ae5c07c2d4446acfa9c7393878d2b094bc9541aa615",
-        "SHA-1": "f64656573c791bcf2dd904e2a371d9c169aa8b5e",
-        "MD5": "c7786bcbcfd4ba11a7e23df4463f8614",
-        "文件大小": "4.66GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-067",
       "category": "win10",
       "version": "22h2",
@@ -2237,30 +1207,6 @@
         "SHA-1": "8d23b70054e0f5974ceb6dbd012a88846afd45c5",
         "MD5": "a59e59d0b6f2c62aa82956a135691191",
         "文件大小": "6.47GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-068",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-06-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_june_2024_x86_dvd_9a521472.iso",
-        "SHA-256": "fad425bc6b93fe63eddb091aaf09b176c8b837f2969ae5e2c06a9a6096f00bd2",
-        "SHA-1": "94581e8a91aea2b1f876943c960a2241d8f89bae",
-        "MD5": "c6c88f878221d008f8569596c87fb817",
-        "文件大小": "4.58GB"
       },
       "links": []
     },
@@ -2290,31 +1236,6 @@
       "links": []
     },
     {
-      "id": "win10-070",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-05-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_may_2024_x86_dvd_49ddadb6.iso",
-        "SHA-256": "2f971b581484ca97040e0e8754ff817882ab4170be57c0d218cb94aa7ea27b20",
-        "SHA-1": "05b135844bce789791c983d0a1488a0fa0df3e6d",
-        "MD5": "eaaffb6d33d4efe4ce55afa77703ea5f",
-        "文件大小": "4.66GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-071",
       "category": "win10",
       "version": "22h2",
@@ -2335,30 +1256,6 @@
         "SHA-1": "7ffa2fa2af8bfe1adef0b3bf2da118c037f28b64",
         "MD5": "2bdd1ec62b358a9cd6d445fb0b83dd80",
         "文件大小": "6.47GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-072",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-05-21",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_may_2024_x86_dvd_20e089ca.iso",
-        "SHA-256": "c3883d4231cadfa1da9d08f313e0d9592a19c2655d9613bd02791dafc69464a1",
-        "SHA-1": "445e2a3e7c1f9e51cb8bcf877b0898b506969112",
-        "MD5": "50fabb26100116caad6150b2042cdb58",
-        "文件大小": "4.57GB"
       },
       "links": []
     },
@@ -2388,31 +1285,6 @@
       "links": []
     },
     {
-      "id": "win10-074",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-04-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_april_2024_x86_dvd_9a92dc89.iso",
-        "SHA-256": "185e719f6d35cb19e781e7cc1a41723ae212ad7be578ca103ce165a190f81e1d",
-        "SHA-1": "3eef070cefee6617070867cb60016f2e8d0f3c2f",
-        "MD5": "4e043042550ff3c990d250012eb3ec1d",
-        "文件大小": "4.36GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-075",
       "category": "win10",
       "version": "22h2",
@@ -2433,30 +1305,6 @@
         "SHA-1": "e23d8755866e8b499e78c9535e080d44e1671466",
         "MD5": "48ca17061cec49c45eabf6aaf1d222f1",
         "文件大小": "5.99GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-076",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-04-16",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_april_2024_x86_dvd_8c597fc6.iso",
-        "SHA-256": "6079a0f2ef55ae64b1ca844c20727e16aa3769269d7c5306655df6ebaa066043",
-        "SHA-1": "4a7dbfbdda8c7dee0ae3ad4c91e6d851b84d9bcc",
-        "MD5": "8a9673f48455ac9d8c034c2201dd198c",
-        "文件大小": "4.27GB"
       },
       "links": []
     },
@@ -2486,31 +1334,6 @@
       "links": []
     },
     {
-      "id": "win10-078",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-03-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_march_2024_x86_dvd_2ff6c8a4.iso",
-        "SHA-256": "a1ce69014560c6ccbed5a72ca62e4b66f41ca09d4dd053804c78635c5cf095bc",
-        "SHA-1": "5bbcf3886d33bcf916dd69363dadc0521b8a35d3",
-        "MD5": "7ecbc982c3e55b4cebbfe00995cc8bdc",
-        "文件大小": "4.41GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-079",
       "category": "win10",
       "version": "22h2",
@@ -2531,30 +1354,6 @@
         "SHA-1": "954856b89ba7b97556893f65cfe95ae711bd3346",
         "MD5": "2a97feb2110d828dedccc74f2f1ecc50",
         "文件大小": "6.13GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-080",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-03-19",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_march_2024_x86_dvd_5b942d7f.iso",
-        "SHA-256": "7a284173f79beeb2efac7db540093736f6c11372232a0b9ca5090e114c305745",
-        "SHA-1": "931392e8a487a6c914b5b0066b96ce328ebed07c",
-        "MD5": "52455a245c5142e9bfa102435bed8c5b",
-        "文件大小": "4.33GB"
       },
       "links": []
     },
@@ -2584,31 +1383,6 @@
       "links": []
     },
     {
-      "id": "win10-082",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-02-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_feb_2024_x86_dvd_c937d96c.iso",
-        "SHA-256": "2fd995f56fe9a0142955b4307dd890cc8a7d87f90c43d2aba8e9db9f79b63f65",
-        "SHA-1": "e837f32cb7551500c01323b461d166e16c4303bb",
-        "MD5": "79bc31fc32951e9f08aaf195ef5c499b",
-        "文件大小": "4.38GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-083",
       "category": "win10",
       "version": "22h2",
@@ -2629,30 +1403,6 @@
         "SHA-1": "fd1468a7ed24dbbf07fb8fad5a7c188f6ced29d4",
         "MD5": "dde7d8d31f7c44b43603a8a3808ab7a7",
         "文件大小": "6.06GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-084",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-02-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_feb_2024_x86_dvd_21f49928.iso",
-        "SHA-256": "d2cc8c2bdd4796ce1874a97b4fd881ce4e8f5d9d0c148ed47a79b2df13bb5a20",
-        "SHA-1": "a6e8e9c7b9aa7839c4b0d9f83162268962cbc206",
-        "MD5": "3b28536c3df9141cc5c780014acc6e67",
-        "文件大小": "4.3GB"
       },
       "links": []
     },
@@ -2682,31 +1432,6 @@
       "links": []
     },
     {
-      "id": "win10-086",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2024年1月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-01-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_jan_2024_x86_dvd_940c1df1.iso",
-        "SHA-256": "1798f35326916a85b61dc35d21c941ac92a64ff704039e047c95bed374e5f070",
-        "SHA-1": "909d429ae553a90b059ca726c6222102b3699e33",
-        "MD5": "2489612b6ac7a80a30fd0275912f24dd",
-        "文件大小": "4.15GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-087",
       "category": "win10",
       "version": "22h2",
@@ -2727,30 +1452,6 @@
         "SHA-1": "651065257de3a7fb84228e52f8696093f0f6152d",
         "MD5": "894bfc34e723200dfb4847f748c8e409",
         "文件大小": "5.68GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-088",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2024年1月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2024-01-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_jan_2024_x86_dvd_00427300.iso",
-        "SHA-256": "57cb089e4649b9c10a06399cfc77fb5cee4fbe26a5787876c661c985c4035663",
-        "SHA-1": "e7c5b0a2d70d202c3f03558a1f79eae63bb7ccf0",
-        "MD5": "2d0ef2eb5454808b232a1dcf484a99ae",
-        "文件大小": "4.07GB"
       },
       "links": []
     },
@@ -2779,31 +1480,6 @@
       "links": []
     },
     {
-      "id": "win10-090",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-12-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_dec_2023_x86_dvd_3045f975.iso",
-        "SHA-256": "48148673fb519e9c3e6ddd3a5f5284b562905697198526272d1e449d65e8b4d2",
-        "SHA-1": "441d1ef508831e796873e5c6d8dd76da0440c9ca",
-        "MD5": "8897b09e136d8ec314573d45673ba255",
-        "文件大小": "4.15GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-091",
       "category": "win10",
       "version": "22h2",
@@ -2824,30 +1500,6 @@
         "SHA-1": "a66154acb8ec8c6169bf20f27e666ff341158b24",
         "MD5": "3a8a597ede7872ffcad3735df1260747",
         "文件大小": "5.68GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-092",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-12-19",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_dec_2023_x86_dvd_6575cd0a.iso",
-        "SHA-256": "2e90f24e75b5cf91aaec65f25aa3fcb88e5de4f0a9962742e798e2bf5aac0092",
-        "SHA-1": "2b9f7238f2bd20dbc2a0690e5d54d59e98814fb5",
-        "MD5": "093e56948dc0efe502ca61a34bd41953",
-        "文件大小": "4.07GB"
       },
       "links": []
     },
@@ -2877,31 +1529,6 @@
       "links": []
     },
     {
-      "id": "win10-094",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-11-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_nov_2023_x86_dvd_28571a1a.iso",
-        "SHA-256": "fd3c77e7814fab4e9aa243bdd9319c407634874d295fdba35d21305c31a0d8af",
-        "SHA-1": "c74449163dc2b357267886bafad946f2208bc2eb",
-        "MD5": "6d2e7b6f59988bde991567d8cb204591",
-        "文件大小": "4.15GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-095",
       "category": "win10",
       "version": "22h2",
@@ -2922,30 +1549,6 @@
         "SHA-1": "80a9aa027df8cf9afcd8a1be0425bec914833fa4",
         "MD5": "4c0f7c33122f7345aadbc4816fd7ea2a",
         "文件大小": "5.67GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-096",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-11-21",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_nov_2023_x86_dvd_dd9be5d1.iso",
-        "SHA-256": "41a2b5e3d1334ec5dc8706138d9a5b2f7899730030615cf77ba6563d8703ea27",
-        "SHA-1": "9c25bad4d2f945584836d07e303d0266f64baba6",
-        "MD5": "9519342fbd13352b8a0fc11b296b4df3",
-        "文件大小": "4.07GB"
       },
       "links": []
     },
@@ -2975,31 +1578,6 @@
       "links": []
     },
     {
-      "id": "win10-098",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-10-17",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_oct_2023_x86_dvd_eb811ccc.iso",
-        "SHA-256": "668d47bb261b0e84ed02121807a63768468f8e45d47ea7df9821d916fbfc6613",
-        "SHA-1": "918e48d2b2cc4d68ab686b4baf1d795a7d3edca9",
-        "MD5": "ff4d667dde95df26a44c64ac59ab51a7",
-        "文件大小": "4.37GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-099",
       "category": "win10",
       "version": "22h2",
@@ -3020,28 +1598,6 @@
         "SHA-1": "87c4eb7221b74e8562951542dd96ddcd387f4148",
         "MD5": "1c586638bee16cea787ffff2a7758727",
         "文件大小": "6.02GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-100",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年10月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-10-17",
-      "editions": [
-        "专业版",
-        "企业版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_oct_2023_x86_dvd_6cacc8f8.iso",
-        "SHA-256": "a7d922052b0c266973dd98c8ece3c90fcc83644a48cb3ba4021d33265fc9e0b3",
-        "SHA-1": "fda5fd9461609e498b96b97099e18cabdffdefe5",
-        "MD5": "10c917d6606a0850ec8f8243daf1eb65",
-        "文件大小": "4.29GB"
       },
       "links": []
     },
@@ -3071,31 +1627,6 @@
       "links": []
     },
     {
-      "id": "win10-102",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-09-19",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_sep_2023_x86_dvd_4cde879b.iso",
-        "SHA-256": "b6bbb79f4187bf77b7ba2eed95a91516a52978273277a2829131c0a834eac445",
-        "SHA-1": "9b528d2b0e48f1dd3cb0ff9967635b3b52288017",
-        "MD5": "100eda9c140028d387f241603ecb168a",
-        "文件大小": "4.35GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-103",
       "category": "win10",
       "version": "22h2",
@@ -3116,30 +1647,6 @@
         "SHA-1": "d1cae815b642bb61ea6255a51f3b66a7e682ce30",
         "MD5": "32f1057f576d1ee01e9ca33cd4cd356c",
         "文件大小": "6.01GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-104",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-09-19",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_sep_2023_x86_dvd_ae2309ec.iso",
-        "SHA-256": "0f05ac2f1eac09872fd7834036510696553e63c28f7ee1c9a61692e81eef85a3",
-        "SHA-1": "83cede27fe70526afe68b95d9f2bf6e5397f10f3",
-        "MD5": "d4b7de0bd657534284046a33a0d8afe8",
-        "文件大小": "4.27GB"
       },
       "links": []
     },
@@ -3169,31 +1676,6 @@
       "links": []
     },
     {
-      "id": "win10-106",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-08-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_aug_2023_x86_dvd_040b13d6.iso",
-        "SHA-256": "b5de6a06c2fab157263838edb56cac67324725cc8fc8d15117cd264c5c374de9",
-        "SHA-1": "e6aa4455edcc6c313bac0dd36c94edc37eb8c651",
-        "MD5": "81c51661be211642d7db112211a46b95",
-        "文件大小": "4.35GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-107",
       "category": "win10",
       "version": "22h2",
@@ -3214,30 +1696,6 @@
         "SHA-1": "45ce75d7cce50927cf88c16951fd821f5c00b192",
         "MD5": "fe4aa12c529607bfe7b6fca399cabceb",
         "文件大小": "6GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-108",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年8月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-08-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_aug_2023_x86_dvd_73ca917c.iso",
-        "SHA-256": "f0d00e3eb1693bf5564ee5e2a2cf8292a8afca772c0e9c3b33c635c2f7710703",
-        "SHA-1": "a905a889e1abceef9a90f3919f23935fa49348cd",
-        "MD5": "35a257ff109f43611c2436d82cf22af1",
-        "文件大小": "4.27GB"
       },
       "links": []
     },
@@ -3267,31 +1725,6 @@
       "links": []
     },
     {
-      "id": "win10-110",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-07-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_july_2023_x86_dvd_f64b568a.iso",
-        "SHA-256": "3829a6cd096075fbf05134087a62744fbf006b5467de4700f7b62b6f415b8d4a",
-        "SHA-1": "058c424cb0b81826ca1fa6438c30a9d697a45a44",
-        "MD5": "09ae02616bc215ee3d0a4aac67e7bcb8",
-        "文件大小": "4.12GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-111",
       "category": "win10",
       "version": "22h2",
@@ -3312,30 +1745,6 @@
         "SHA-1": "218d98f11b060468d8ab51f7ba7cc6e30e4d16c1",
         "MD5": "dbc2af412fe3bd61583d8cdc5cce730f",
         "文件大小": "5.63GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-112",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年7月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-07-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_july_2023_x86_dvd_b152e92d.iso",
-        "SHA-256": "6a3c456db011b03048a6b143a08c8d7fcf08c3b533453496fd4ee9114f09c238",
-        "SHA-1": "5f539a455f431e59db3372fe15c5d4504ba16b79",
-        "MD5": "82e11b68b6c8a984ed0bb061e5f1e250",
-        "文件大小": "4.04GB"
       },
       "links": []
     },
@@ -3365,31 +1774,6 @@
       "links": []
     },
     {
-      "id": "win10-114",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-06-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_june_2023_x86_dvd_4ed7dac5.iso",
-        "SHA-256": "9db82af10d1f96594fd991746af89daadede6cb9033f04c2ec6ba26a58cd871b",
-        "SHA-1": "dd7870b2d8cdbb7eff7153c22a7a91bfb6d9d0c3",
-        "MD5": "0a0cb4df8c47ae880beffdbe80c0554d",
-        "文件大小": "4.08GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-115",
       "category": "win10",
       "version": "22h2",
@@ -3410,30 +1794,6 @@
         "SHA-1": "2832e11f8d31c7678f4ab9cea9777f6d6769b595",
         "MD5": "9efb23dc3f85c1e0e9a13fe6fa6709f7",
         "文件大小": "5.58GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-116",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年6月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-06-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_june_2023_x86_dvd_f5a95158.iso",
-        "SHA-256": "d4c33c932cdf51a1573b69f86fa323d30294a8106089e7dd683f8387c7d00261",
-        "SHA-1": "facc50e619a8d6f6f1dbf6580f5267628dd7f2f3",
-        "MD5": "7d2afe4c9ed010cd0afd47a2c968354c",
-        "文件大小": "4GB"
       },
       "links": []
     },
@@ -3463,31 +1823,6 @@
       "links": []
     },
     {
-      "id": "win10-118",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-05-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_may_2023_x86_dvd_7032bb97.iso",
-        "SHA-256": "c828accb08886622f5e1a127bb83070bae0e9235ef0e31573abc6a8a5cb55286",
-        "SHA-1": "ae28fc185a522e0af05f2e936ca6ef12f58bf235",
-        "MD5": "7b3e7deadde4b4d0df38d4d45f94c4d5",
-        "文件大小": "4.06GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-119",
       "category": "win10",
       "version": "22h2",
@@ -3508,30 +1843,6 @@
         "SHA-1": "1113dc03b42a5d15d762f45800b549e55c9d0209",
         "MD5": "21f0d3a8d9c1a7d2ae87f97af410951e",
         "文件大小": "5.57GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-120",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年5月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-05-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_may_2023_x86_dvd_16ea4420.iso",
-        "SHA-256": "e2d9791d67087e0f6bb36fb8c3716ee70a0f29aa038d3e6c1933f31782d0cadb",
-        "SHA-1": "c36fe85daceb6d698f0950a294b5e3c8d16d6cb2",
-        "MD5": "ce75a3798868a3731194ec62c2f91df3",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
@@ -3561,31 +1872,6 @@
       "links": []
     },
     {
-      "id": "win10-122",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-04-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_april_2023_x86_dvd_1a87f83c.iso",
-        "SHA-256": "d71da19f9026f5c7a7bb23ff86777768363337938304084375af2839ea9b9fde",
-        "SHA-1": "40b7bf8e7ae5ce5a3dee607c2441cdc340581ba8",
-        "MD5": "71f5ce83c66161b70fa9f44086055acb",
-        "文件大小": "4.06GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-123",
       "category": "win10",
       "version": "22h2",
@@ -3606,30 +1892,6 @@
         "SHA-1": "13a629716f66a673229000e137841a2f2ba951ac",
         "MD5": "c6c06a6e2a8ba3330dc51978b1568cd2",
         "文件大小": "5.56GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-124",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年4月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-04-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_april_2023_x86_dvd_df696df8.iso",
-        "SHA-256": "1ea5638dad55500708d66c30407b3fcec23cdb7474f3a9455ea8757ac08401c3",
-        "SHA-1": "709c9620b2cd90fbf41aac55242011348058dc6f",
-        "MD5": "da2da03ff0e6fc89ec3abb3866bd21ab",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
@@ -3659,31 +1921,6 @@
       "links": []
     },
     {
-      "id": "win10-126",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-03-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_march_2023_x86_dvd_c422144f.iso",
-        "SHA-256": "c98ce748f8d19ded7d442a942a3a155f912e4d7e0540864e32727a389a047eb9",
-        "SHA-1": "0a0a7c39310761903eeb22643b25c6b50ed73af7",
-        "MD5": "7cdc6dfd56fcda27b77880380b37702a",
-        "文件大小": "4.06GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-127",
       "category": "win10",
       "version": "22h2",
@@ -3704,30 +1941,6 @@
         "SHA-1": "fac121aed76edc418841c8d48ec930e377dd05df",
         "MD5": "4a4afa4730c15f7011556de788808d43",
         "文件大小": "5.56GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-128",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年3月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-03-21",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_march_2023_x86_dvd_ba64dabc.iso",
-        "SHA-256": "86e2c1b27b52310f4a68adaada1f4d0ec609820d81f64b26134eaa276a9eaea5",
-        "SHA-1": "ee97f2b98f34073b23f9301ad3bc907c7b7f15b5",
-        "MD5": "fb051d0a3cc748b16f9467ebb5b9d8cc",
-        "文件大小": "3.99GB"
       },
       "links": []
     },
@@ -3757,31 +1970,6 @@
       "links": []
     },
     {
-      "id": "win10-130",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2023年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-02-21",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_feb_2023_x86_dvd_9704d724.iso",
-        "SHA-256": "6aadc49a2c8a88db65b02604f080880a452d99c4bb338f41ecc4b0183fe0c9e7",
-        "SHA-1": "5f2c5a35ceb22f865ddffa2d4866b30de1e13543",
-        "MD5": "5d5fc472726a4a61d68bcee5dd2232ed",
-        "文件大小": "4.06GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-131",
       "category": "win10",
       "version": "22h2",
@@ -3802,30 +1990,6 @@
         "SHA-1": "5a073b8e6e748103c7dfee30c91447f5c1f2f1a6",
         "MD5": "7bee0ddd6cc8baa99e3c2857e4ddf0b2",
         "文件大小": "5.56GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-132",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2023年2月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2023-02-21",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_feb_2023_x86_dvd_77b49aa1.iso",
-        "SHA-256": "7c007bb18538f403bb3973c1aed7a620c06a4d02110eb476a09cd84849908d43",
-        "SHA-1": "eab9dc5d032eefd3cb457a60027f774ac70bdba9",
-        "MD5": "99dc503cf5dc0bebcb89d6a6b4574310",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
@@ -3855,31 +2019,6 @@
       "links": []
     },
     {
-      "id": "win10-134",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2022年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-12-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_dec_2022_x86_dvd_a2a2e5f4.iso",
-        "SHA-256": "7430168025378eb40d7ca7d457aead343ec6725a5bfde38e4133a5bf2d065cd2",
-        "SHA-1": "f95a1c9fec95d30bb66c997b9337f5006f8df272",
-        "MD5": "705ca83890fe005735139318fe727c4d",
-        "文件大小": "4.06GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-135",
       "category": "win10",
       "version": "22h2",
@@ -3900,30 +2039,6 @@
         "SHA-1": "c7c877210ac645c29574e1f110b0277932380a14",
         "MD5": "df57824e84bb5375c9fc3af4cad58926",
         "文件大小": "5.55GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-136",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2022年12月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-12-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_dec_2022_x86_dvd_eb6f468e.iso",
-        "SHA-256": "92df1a9ebf0887e3fdec6184ab0e6a482904c1c6b99322251d761ba301a5ac5d",
-        "SHA-1": "383f067846a152fa86eefaf958c276839296e090",
-        "MD5": "79ef5ae6949085d3ef69c4dfaecc6455",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
@@ -3953,31 +2068,6 @@
       "links": []
     },
     {
-      "id": "win10-138",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2（2022年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-11-15",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_updated_nov_2022_x86_dvd_9ad8d683.iso",
-        "SHA-256": "da19697eb420afe5f6d68c88d20c8e5d8f6f4c261652e7711a942be52961486e",
-        "SHA-1": "21739aaef73b086895d4c7ff7a5931d7216333e4",
-        "MD5": "e5fd8e5d0b98f8b58be104f9df5d7039",
-        "文件大小": "4.05GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-139",
       "category": "win10",
       "version": "22h2",
@@ -3998,30 +2088,6 @@
         "SHA-1": "44c14e4d6e9c64bcdaa41a5e05c9499b799b9ec6",
         "MD5": "fe71ad88e2408708147b2b429f29f3d9",
         "文件大小": "5.54GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-140",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2（2022年11月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-11-15",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_updated_nov_2022_x86_dvd_99dd6db6.iso",
-        "SHA-256": "432e09fbc7ea8e81c58947e48d6b94c35b1951c23df8d0fd02d48f7f4c6a11cf",
-        "SHA-1": "e153f1c955aecd0aa3a3ca9f55ccfd5ba545272f",
-        "MD5": "c122db92b4ab55bb0eebe0973faf1191",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
@@ -4051,31 +2117,6 @@
       "links": []
     },
     {
-      "id": "win10-142",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 消费者版本 22H2 x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-10-18",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_22h2_x86_dvd_fa2c4567.iso",
-        "SHA-256": "972ca12ed12cfb701a3d1d4e44bbc010f5d87ae0993d9ce7d5f6f66ba049324e",
-        "SHA-1": "f70bbc2a3d31470ac5b96f336c18d2beb09be8cf",
-        "MD5": "ace6e28341fadb90a0b2e8d6583706eb",
-        "文件大小": "4.05GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-143",
       "category": "win10",
       "version": "22h2",
@@ -4096,30 +2137,6 @@
         "SHA-1": "6293daf8877f359db95de820a50822574c294a95",
         "MD5": "643e1b3bcb56e9321341ae3d093a749f",
         "文件大小": "5.54GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-144",
-      "category": "win10",
-      "version": "22h2",
-      "title": "Windows 10 商业版 22H2 x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-10-18",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_22h2_x86_dvd_d08b6e72.iso",
-        "SHA-256": "1762cbcbace39bf63733723b55af86cd68b4cb771e90a8504a1867e000a38dd0",
-        "SHA-1": "84c02c1e6440e33493a4ff0511795470d13ba9f2",
-        "MD5": "d27d65d45f4a3cf302c8379ec9543e14",
-        "文件大小": "3.97GB"
       },
       "links": []
     },
@@ -5000,49 +3017,6 @@
       "links": []
     },
     {
-      "id": "win11-027",
-      "category": "win11",
-      "version": "25h2",
-      "title": "Windows 11 消费者版本 25H2（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_25h2_updated_june_2026_arm64_dvd_2045a41c.iso",
-        "SHA-256": "615eb1fe40dcb024171bba4c13462d140dcec58137f672e63d07a92f5e622ad7",
-        "SHA-1": "c9a080be1ec0efd767d34c6b4e47886c74c6ab70",
-        "MD5": "8e2595527fa71f7fade947770b93c583",
-        "文件大小": "7.95GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-028",
-      "category": "win11",
-      "version": "25h2",
-      "title": "Windows 11 商业版 25H2（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_25h2_updated_june_2026_arm64_dvd_669c2513.iso",
-        "SHA-256": "66dfa11545ec8242cbbf30cd02223ec6391ef60e092ac07a82423c4f6c3287b8",
-        "SHA-1": "9249711a590369c2777bdc536a8748e8b6c871b0",
-        "MD5": "0d2e55e626be70e0604ac58133c4c9d0",
-        "文件大小": "7.87GB"
-      },
-      "links": []
-    },
-    {
       "id": "win11-029",
       "category": "win11",
       "version": "24h2",
@@ -5071,49 +3045,6 @@
           "password": ""
         }
       ]
-    },
-    {
-      "id": "win11-030",
-      "category": "win11",
-      "version": "24h2",
-      "title": "Windows 11 消费者版本 24H2（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_consumer_editions_version_24h2_updated_june_2026_arm64_dvd_66533f53.iso",
-        "SHA-256": "a0cda2313a3b4c5db8a03352b54c4cacda6aed36bf89e7495258d47386fef5ed",
-        "SHA-1": "e64140dc95c3fce8ebf9f78f0fa5c390e5505742",
-        "MD5": "134c43ae0dc5b97545e3fef2cc5870ec",
-        "文件大小": "7.92GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win11-031",
-      "category": "win11",
-      "version": "24h2",
-      "title": "Windows 11 商业版 24H2（2026年6月更新）ARM64",
-      "arch": "ARM64",
-      "lang": "中文简体",
-      "date": "2026-06-16",
-      "editions": [
-        "专业版",
-        "企业版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_business_editions_version_24h2_updated_june_2026_arm64_dvd_00daf0e0.iso",
-        "SHA-256": "b0221ecb7639dea47dd1da3bc09a3eb2bcaf9431d32f2b770370b13e941e0cae",
-        "SHA-1": "cc05e53ea8eaa69102f4a78faacb620e7993f2bc",
-        "MD5": "2de5f6b8695962b07301e5f4335ff836",
-        "文件大小": "7.84GB"
-      },
-      "links": []
     },
     {
       "id": "win11-032",
@@ -5188,31 +3119,6 @@
       "links": []
     },
     {
-      "id": "win10-146",
-      "category": "win10",
-      "version": "21h2",
-      "title": "Windows 10 消费者版本 21H2（2022年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-09-20",
-      "editions": [
-        "专业版",
-        "家庭版",
-        "家庭单语言版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_consumer_editions_version_21h2_updated_sep_2022_x86_dvd_8c72014b.iso",
-        "SHA-256": "c541bf396b8a31d2f5dc5f6a3ca4eb8657bfb2a5f2345f779a76e6f2dc5fc92a",
-        "SHA-1": "2fa90596207a110253a0e92d54b54efd0baac4cf",
-        "MD5": "2a4365661510c2d00d4c58f830eea63b",
-        "文件大小": "4.05GB"
-      },
-      "links": []
-    },
-    {
       "id": "win10-147",
       "category": "win10",
       "version": "21h2",
@@ -5233,30 +3139,6 @@
         "SHA-1": "389e461bf0669d6a2d49c82bf8f2faaf6c571ef1",
         "MD5": "c61251778b94bae9d365484fb774ae04",
         "文件大小": "5.54GB"
-      },
-      "links": []
-    },
-    {
-      "id": "win10-148",
-      "category": "win10",
-      "version": "21h2",
-      "title": "Windows 10 商业版 21H2（2022年9月更新）x86",
-      "arch": "32位",
-      "lang": "中文简体",
-      "date": "2022-09-20",
-      "editions": [
-        "专业版",
-        "企业版",
-        "教育版",
-        "专业教育版",
-        "专业工作站版"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_10_business_editions_version_21h2_updated_sep_2022_x86_dvd_4e336364.iso",
-        "SHA-256": "405cbee76d41e30bef40667ba885ececa6623b452277b3d7baa341aab1560e06",
-        "SHA-1": "2d67becb6a7b3fc1f07e37aa5f3d58369160452e",
-        "MD5": "a63ed9fe0f0d52cde0269722bfe6b85e",
-        "文件大小": "3.98GB"
       },
       "links": []
     },
