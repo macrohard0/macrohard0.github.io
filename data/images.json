@@ -2515,7 +2515,18 @@
         "MD5": "4da7fac071b542393823017bee1372b4",
         "文件大小": "3.19GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/81a93d1f1fdb",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOwXBzsajDsd8l-Icq5I79RiA1?pwd=wafh#",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win7-004",
