@@ -4867,7 +4867,13 @@
         "MD5": "7be37258a6f90bc2bdf13e9023b5e72b",
         "文件大小": "8.14GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/33108fd2b48c",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win11-023",
@@ -5058,7 +5064,13 @@
         "MD5": "cc5a91d85c2493a6485a6c9aa2d31d09",
         "文件大小": "8.06GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/9b796f5102ed",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win11-030",
