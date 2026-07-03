@@ -2844,7 +2844,13 @@
         "MD5": "cd8feb50ef15da292a75247d65602c64",
         "文件大小": "583.45MB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/bddc62b861b7",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "office-001",
@@ -3407,7 +3413,13 @@
         "MD5": "73a87b237bedc039e184182a830b1b32",
         "文件大小": "4.17GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/aa4fe0a4c54d",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "office-009",
