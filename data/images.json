@@ -1304,7 +1304,13 @@
         "MD5": "d167da933f686f17bc872f09bc30ac02",
         "文件大小": "5.66GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/7b61ab4d3b6e",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win11-026",
@@ -1471,7 +1477,13 @@
         "MD5": "c61251778b94bae9d365484fb774ae04",
         "文件大小": "5.54GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/7ab827c40a94",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "office-004",
@@ -1712,6 +1724,30 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/b94d02f05e5e",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-mr8xd5kl",
+      "category": "win10",
+      "version": "21h2",
+      "title": "Windows 10 企业版 LTSC 2021",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_10_enterprise_ltsc_2021_x64_dvd_033b7312.iso",
+        "SHA-256": "c117c5ddbc51f315c739f9321d4907fa50090ba7b48e7e9a2d173d49ef2f73a3",
+        "SHA-1": "c19d7dafbafeb26c36e31d97c465e87c7a6e8a4c",
+        "MD5": "2579b3865c0591ead3a2b45af3cabeee",
+        "文件大小": "4.7GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/8598a798df58",
           "password": ""
         }
       ]
