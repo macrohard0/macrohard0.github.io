@@ -6,12 +6,16 @@
 用法：
     python build.py
 
-产物（均写到仓库根目录，GitHub Pages 直接托管）：
+产物 —— 同一份内容生成两套，各自独立、互不引用：
+    仓库根目录            SITES 里 out_dir='' 那套，供 macrohard0.github.io（GitHub Pages）托管
+    nextwindows/ 子目录    SITES 里 out_dir='nextwindows' 那套，供新域名 nextwindows.org 独立部署
+每套各自包含：
     index.html                首页
     <cat>.html                分类页（= 该分类最新版本，如 win11.html = 26H1）
     <cat>/<ver>.html          各历史版本页（如 win11/25h2.html）
-    sitemap.xml               站点地图
-    robots.txt                （补上 Sitemap 行）
+    sitemap.xml               站点地图（域名对应各自的 base_url）
+    robots.txt                （Sitemap 行指向各自域名）
+    assets/                   css/js 静态资源的独立拷贝
 
 设计要点：
     - 内容在服务端就渲染进 HTML（利于收录），导航用真实 <a> 链接
@@ -23,7 +27,13 @@ import json, os, html, shutil, datetime
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, 'data', 'images.json')
-BASE_URL = 'https://macrohard0.github.io'   # 用于 canonical / sitemap 的绝对域名
+
+# 每一项生成一整套独立站点：out_dir 相对仓库根目录（''=根目录本身）
+# hm 是各自站点在百度统计后台登记的站点 ID（不同域名要分开统计，不能共用）
+SITES = [
+    {'base_url': 'https://macrohard0.github.io', 'out_dir': '', 'hm': '54f24ee5c82c27e994fb615aa3173346'},
+    {'base_url': 'https://nextwindows.org', 'out_dir': 'nextwindows', 'hm': 'f054e0121b69929417e9535aef70567c'},
+]
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
@@ -41,9 +51,6 @@ def pan(t):
     return PAN.get(t, PAN['other'])
 
 PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
-
-# 百度统计（沿用你在 index.html 里加的那段）
-BAIDU_HM = '54f24ee5c82c27e994fb615aa3173346'
 
 
 def e(s):
@@ -203,20 +210,20 @@ def make_desc(cat_name, ver_name, images):
         cat_name, ver_name, (ed + '，') if ed else '')
 
 
-def write(path, content):
-    full = os.path.join(ROOT, path)
-    os.makedirs(os.path.dirname(full), exist_ok=True)
+def write(out_root, path, content):
+    full = os.path.join(out_root, path)
+    os.makedirs(os.path.dirname(full) or out_root, exist_ok=True)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
         f.write(content)
 
 
-# ---------------------------------------------------------------- 主流程
-def main():
-    data = json.load(open(DATA, encoding='utf-8'))
+# ---------------------------------------------------------------- 单套站点
+def build_site(base_url, out_dir, hm, data):
+    out_root = os.path.join(ROOT, out_dir) if out_dir else ROOT
     site = data.get('site', {})
     cats = data.get('categories', [])
     images = data.get('images', [])
-    brand = e(site.get('brand', 'MacroHard'))
+    brand = e(site.get('brand', 'NextWindows'))
     subtitle = e(site.get('subtitle', ''))
     notice = site.get('notice', '')
     footer = site.get('footer', '')
@@ -237,13 +244,13 @@ def main():
         return ('<div class="notice">%s</div>' % e(notice)) if notice else ''
 
     def page(path, title, desc, keywords, active_cat, crumb, body, prefix):
-        canonical = BASE_URL + '/' + path
+        canonical = base_url + '/' + path
         html_out = PAGE.format(
             title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical),
-            prefix=prefix, hm=BAIDU_HM, brand=brand,
+            prefix=prefix, hm=hm, brand=brand,
             nav=render_nav(cats, active_cat, prefix), subtitle=subtitle,
             crumb=crumb, body=body)
-        write(path, html_out)
+        write(out_root, path, html_out)
         urls.append(path)
 
     def sort_imgs(imgs):
@@ -259,7 +266,7 @@ def main():
         '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">最新镜像</h2>' +
         cards_block(latest) + foot_block()
     )
-    page('index.html', e(site.get('title', 'MacroHard 系统下载')),
+    page('index.html', e(site.get('title', 'NextWindows 系统下载')),
          subtitle + ' ' + notice, base_kw, '__home__',
          '最新镜像 <small>%s</small>' % subtitle, home_body, '')
 
@@ -309,18 +316,29 @@ def main():
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
-        loc = BASE_URL + '/' + ('' if u == 'index.html' else u)
+        loc = base_url + '/' + ('' if u == 'index.html' else u)
         pr = '1.0' if u == 'index.html' else '0.8'
         sm.append('  <url><loc>%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' % (e(loc), today, pr))
     sm.append('</urlset>')
-    write('sitemap.xml', '\n'.join(sm) + '\n')
+    write(out_root, 'sitemap.xml', '\n'.join(sm) + '\n')
 
     # ---------- robots.txt ----------
-    write('robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n' % BASE_URL)
+    write(out_root, 'robots.txt', 'User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n' % base_url)
 
-    print('已生成 %d 个页面：' % len(urls))
+    # ---------- assets（css/js）独立拷贝 ----------
+    if out_root != ROOT:
+        shutil.copytree(os.path.join(ROOT, 'assets'), os.path.join(out_root, 'assets'), dirs_exist_ok=True)
+
+    print('[%s] 已生成 %d 个页面：' % (base_url, len(urls)))
     for u in urls:
         print('  ', u)
+
+
+# ---------------------------------------------------------------- 主流程
+def main():
+    data = json.load(open(DATA, encoding='utf-8'))
+    for s in SITES:
+        build_site(s['base_url'], s['out_dir'], s['hm'], data)
 
 
 if __name__ == '__main__':
