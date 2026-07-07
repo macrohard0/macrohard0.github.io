@@ -96,6 +96,18 @@
         {
           "id": "2019",
           "name": "2019"
+        },
+        {
+          "id": "2016",
+          "name": "2016"
+        },
+        {
+          "id": "2013",
+          "name": "2013"
+        },
+        {
+          "id": "2010",
+          "name": "2010"
         }
       ]
     }
@@ -1748,6 +1760,54 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/8598a798df58",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "office-mra41k1l",
+      "category": "office",
+      "version": "2016",
+      "title": "Microsoft Office 2016 专业增强版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "ProPlusRetail.img",
+        "SHA-256": "5d3b49650932f437bfb8367a525057e1d8ff021e4d49134b165283e528a6397d",
+        "SHA-1": "ccd08351769f7dcfab322e373bf1e26f940dd10f",
+        "MD5": "a02a860fd88fa642ef7eabbebe3cf579",
+        "文件大小": "4.27GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/c5092f6e3077",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "office-mra44dkq",
+      "category": "office",
+      "version": "2016",
+      "title": "Microsoft Office 2016 家庭和学生版（零售版）",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "HomeStudentRetail.img",
+        "SHA-256": "7c127947d679f0a430b469436abdceedcb7f12bcb5b1dcffe3ef72ac1b45de60",
+        "SHA-1": "88c1df23e920af3ae4824e69c55e8ac091854c80",
+        "MD5": "9361dcb7272e9a3d9575f92f79ad8e38",
+        "文件大小": "4.27GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/89b8dcb25d66",
           "password": ""
         }
       ]
