@@ -1811,6 +1811,54 @@
           "password": ""
         }
       ]
+    },
+    {
+      "id": "office-mra47a2q",
+      "category": "office",
+      "version": "2013",
+      "title": "Microsoft Office 2013 专业增强版 sp1",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "cn_office_professional_plus_2013_with_sp1_x64_dvd_3921920.iso",
+        "SHA-256": "c5802a340bbfaffcd6bab2f7df24343f36f623ab95be711ce32c70c539ba81d2",
+        "SHA-1": "5bc5ae6b03876e634fa6396749c59164c7767f9f",
+        "MD5": "8c55312aa5c8aef5b9a660d8a8feaf09",
+        "文件大小": "934.85 MB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/f29b954d365e",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "office-mra48vtc",
+      "category": "office",
+      "version": "2010",
+      "title": "Microsoft Office 2010 专业增强版 sp1",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "SW_DVD5_Office_Professional_Plus_2010w_SP1_64Bit_ChnSimp_CORE_MLF_X17-76742.iso",
+        "SHA-256": "8c7d6662e7ec4cd05f5d7dceb187bf2f21e3a493db6f8c011197895ab2043c40",
+        "SHA-1": "9d97b220739161cff3147e169b702a056a6c7f51",
+        "MD5": "cd10758727f2f2527a5226a49a10b5ae",
+        "文件大小": "1.5GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/5885ef498fad",
+          "password": ""
+        }
+      ]
     }
   ]
 }
