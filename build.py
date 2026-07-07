@@ -115,7 +115,7 @@ def render_links(links):
 def render_card(im):
     return (
         '<div class="box">'
-        '<div class="name"><h1>%s</h1><span class="toggle">[ 展开/收起 ]</span></div>'
+        '<div class="name"><h3>%s</h3><span class="toggle">[ 展开/收起 ]</span></div>'
         '<div class="tag">%s</div>'
         '<div class="detail">%s<div class="download">%s</div></div>'
         '</div>' % (e(im.get('title', '')), render_tags(im), render_params(im), render_links(im.get('links', [])))
@@ -183,7 +183,7 @@ PAGE = """<!DOCTYPE html>
       <header class="header">
         <div style="display:flex;align-items:center;gap:10px;">
           <div class="menu-btn" id="menu-btn"><span></span><span></span><span></span></div>
-          <div class="crumb">{crumb}</div>
+          <h1 class="crumb">{crumb}</h1>
         </div>
         <div class="tools"><span class="muted-tip">提供网盘链接 · 原版镜像</span></div>
       </header>

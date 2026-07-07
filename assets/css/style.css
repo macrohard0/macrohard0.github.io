@@ -91,7 +91,7 @@ a { color: inherit; text-decoration: none; }
   top: 0;
   z-index: 20;
 }
-.header .crumb { font-size: 15px; font-weight: 600; }
+.header .crumb { font-size: 15px; font-weight: 600; margin: 0; }
 .header .crumb small { color: var(--text-soft); font-weight: 400; margin-left: 8px; }
 .header .tools { display: flex; gap: 18px; align-items: center; }
 .header .tools a { color: var(--text-soft); font-size: 13.5px; }
@@ -148,7 +148,7 @@ a { color: inherit; text-decoration: none; }
   justify-content: space-between;
   padding: 16px 20px 12px;
 }
-.box .name h1 { font-size: 16px; font-weight: 700; margin: 0; color: #1b2430; }
+.box .name h3 { font-size: 16px; font-weight: 700; margin: 0; color: #1b2430; }
 .box .name .toggle { color: var(--primary); font-size: 13px; cursor: pointer; user-select: none; white-space: nowrap; }
 .box .tag { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 20px 14px; }
 .box .tag span {
