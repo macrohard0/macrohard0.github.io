@@ -1922,7 +1922,14 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Home",
+        "Home Single Language",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
         "SHA-256": "169fa9e5fe3a61ce56180337712ebf145440ad85aae0b92276ea3420bf352e55",
@@ -1940,7 +1947,13 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Enterprise",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
         "SHA-256": "2eefb4e513ad9b275d18bd81c7c7bcbc6d87effe3a040dfd1353557008e99779",
@@ -1958,7 +1971,14 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Home",
+        "Home Single Language",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_25h2_updated_june_2026_x64_dvd_2045a41c.iso",
         "SHA-256": "d42e4d7a1b73cf6d067d7fc5fb870f35da94db8bf8330a3ccb9ea4f6b4593f99",
@@ -1976,7 +1996,13 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Enterprise",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_25h2_updated_june_2026_x64_dvd_e7cb77c9.iso",
         "SHA-256": "5f420ce1934a997aabe931e6f487198eb08c897d68fc2a72313c6a0993e33b96",
@@ -1994,7 +2020,14 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Home",
+        "Home Single Language",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_24h2_updated_june_2026_x64_dvd_66533f53.iso",
         "SHA-256": "299037d68a797afe9527e2c6be10806ddb0b57d409f4b84bb518cf3d67e2716c",
@@ -2012,7 +2045,13 @@
       "arch": "x64",
       "lang": "English",
       "date": "2026-06-16",
-      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Enterprise",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_24h2_updated_june_2026_x64_dvd_874abeb5.iso",
         "SHA-256": "4f8230fd8e2ed5bb1f92bdc0ad510cc87e93a329d0b10c1a705d88e069d7b814",
@@ -2030,7 +2069,14 @@
       "arch": "x64",
       "lang": "English",
       "date": "2025-10-21",
-      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Home",
+        "Home Single Language",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_23h2_updated_oct_2025_x64_dvd_8deeaabd.iso",
         "SHA-256": "fcad49ad73b5da098a355831d82bdd3ef5da42913e0e4b7e557057dc5031f475",
@@ -2048,7 +2094,13 @@
       "arch": "x64",
       "lang": "English",
       "date": "2025-10-21",
-      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Enterprise",
+        "Education",
+        "Pro Education",
+        "Pro for Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_23h2_updated_oct_2025_x64_dvd_c9a85ebe.iso",
         "SHA-256": "b0b640c6ab179b2498168eebd569339222bf28efdf23ebe5c597e9380b57dc8c",
@@ -2066,7 +2118,19 @@
       "arch": "x64",
       "lang": "English",
       "date": "2025-10-21",
-      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Home",
+        "Home",
+        "Single",
+        "Language",
+        "Education",
+        "Pro",
+        "Education",
+        "Pro",
+        "for",
+        "Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_10_consumer_editions_version_22h2_updated_oct_2025_x64_dvd_38efd00d.iso",
         "SHA-256": "600cdace2acf41e7f2f3cf68957fde58dbe23077ddffa7dce408f14d4915d14c",
@@ -2074,7 +2138,13 @@
         "MD5": "70f9765bc1570e52c1cfdaea9edf3e44",
         "文件大小": "6.69GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://terabox.com/s/1EgBGuApa7RwUHYQ920eLLQ",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win10-002",
@@ -2084,7 +2154,16 @@
       "arch": "x64",
       "lang": "English",
       "date": "2025-10-21",
-      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "editions": [
+        "Pro",
+        "Enterprise",
+        "Education",
+        "Pro",
+        "Education",
+        "Pro",
+        "for",
+        "Workstations"
+      ],
       "params": {
         "文件名": "en-us_windows_10_business_editions_version_22h2_updated_oct_2025_x64_dvd_d2eef4b0.iso",
         "SHA-256": "2c23bc8b95a9314f15ebff881dcbea49651f52a96a0327d7aaf523aa66043765",
@@ -2092,7 +2171,13 @@
         "MD5": "69eb03bff72f17cc648d1885bbaee7b1",
         "文件大小": "6.51GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://terabox.com/s/1DMCGyTZ-CaxzhqGXSg9ttA",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win81-001",
@@ -2102,7 +2187,9 @@
       "arch": "x64",
       "lang": "English",
       "date": "2014-12-15",
-      "editions": ["Pro"],
+      "editions": [
+        "Pro"
+      ],
       "params": {
         "文件名": "en_windows_8.1_with_update_x64_dvd_6051480.iso",
         "SHA-256": "d8333cf427eb3318ff6ab755eb1dd9d433f0e2ae43745312c1cd23e83ca1ce51",
@@ -2120,7 +2207,9 @@
       "arch": "x64",
       "lang": "English",
       "date": "2014-12-15",
-      "editions": ["Pro"],
+      "editions": [
+        "Pro"
+      ],
       "params": {
         "文件名": "en_windows_8.1_pro_vl_with_update_x64_dvd_6050880.iso",
         "SHA-256": "67314f5a7f54e67f8f990c3918a57ff5fe29c4ca9d19c43aed8f4f2e261d7c39",
@@ -2138,7 +2227,9 @@
       "arch": "x64",
       "lang": "English",
       "date": "2014-12-15",
-      "editions": ["Enterprise"],
+      "editions": [
+        "Enterprise"
+      ],
       "params": {
         "文件名": "en_windows_8.1_enterprise_with_update_x64_dvd_6054382.iso",
         "SHA-256": "c3c604c03677504e8905090a8ce5bb1dde76b6fd58e10f32e3a25bef21b2abe1",
@@ -2156,7 +2247,9 @@
       "arch": "x64",
       "lang": "English",
       "date": "2011-05-12",
-      "editions": ["Pro"],
+      "editions": [
+        "Pro"
+      ],
       "params": {
         "文件名": "en_windows_7_professional_with_sp1_vl_build_x64_dvd_u_677791.iso",
         "SHA-256": "ca475cfd190f28c40984af5e608c83b2a1bd0aef691f9820d68a684aa01bdd2b",
@@ -2164,7 +2257,13 @@
         "MD5": "3c394e66c208cfd641b976de10fe90b5",
         "文件大小": "2.96GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1ES56nNS-uvSO6GerI7oJug",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win7-002",
@@ -2174,7 +2273,9 @@
       "arch": "x64",
       "lang": "English",
       "date": "2011-05-12",
-      "editions": ["Enterprise"],
+      "editions": [
+        "Enterprise"
+      ],
       "params": {
         "文件名": "en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
         "SHA-256": "ee69f3e9b86ff973f632db8e01700c5724ef78420b175d25bae6ead90f6805a7",
@@ -2182,7 +2283,13 @@
         "MD5": "6467c3875955df4514395f0afcaaa62a",
         "文件大小": "2.96GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/10CaVqn4DVvrgcqRRO1gEOw",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win7-003",
@@ -2192,7 +2299,10 @@
       "arch": "x64",
       "lang": "English",
       "date": "2011-05-12",
-      "editions": ["Home Premium"],
+      "editions": [
+        "Home",
+        "Premium"
+      ],
       "params": {
         "文件名": "en_windows_7_home_premium_with_sp1_x64_dvd_u_676549.iso",
         "SHA-256": "c10a9da74a34e3ab57446cddd7a0f825d526da78d9796d442db5022c33e3cb7f",
