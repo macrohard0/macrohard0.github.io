@@ -31,8 +31,20 @@ DATA = os.path.join(ROOT, 'data', 'images.json')
 # 每一项生成一整套独立站点：out_dir 相对仓库根目录（''=根目录本身）
 # hm 是各自站点在百度统计后台登记的站点 ID（不同域名要分开统计，不能共用）
 SITES = [
-    {'base_url': 'https://macrohard0.github.io', 'out_dir': '', 'hm': '54f24ee5c82c27e994fb615aa3173346'},
-    {'base_url': 'https://nextwindows.org', 'out_dir': 'nextwindows', 'hm': 'f054e0121b69929417e9535aef70567c'},
+    {
+        'base_url': 'https://macrohard0.github.io',
+        'out_dir': '',
+        'hm': '54f24ee5c82c27e994fb615aa3173346',
+        'brand': 'MacroHard',
+        'title': 'MacroHard 系统下载',
+    },
+    {
+        'base_url': 'https://nextwindows.org',
+        'out_dir': 'nextwindows',
+        'hm': 'f054e0121b69929417e9535aef70567c',
+        'brand': 'NextWindows',
+        'title': 'NextWindows 系统下载',
+    },
 ]
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
@@ -218,12 +230,14 @@ def write(out_root, path, content):
 
 
 # ---------------------------------------------------------------- 单套站点
-def build_site(base_url, out_dir, hm, data):
+def build_site(base_url, out_dir, hm, data, site_overrides=None):
     out_root = os.path.join(ROOT, out_dir) if out_dir else ROOT
+    site_overrides = site_overrides or {}
     site = data.get('site', {})
     cats = data.get('categories', [])
     images = data.get('images', [])
-    brand = e(site.get('brand', 'NextWindows'))
+    brand = e(site_overrides.get('brand', site.get('brand', 'NextWindows')))
+    home_title = site_overrides.get('title', site.get('title', 'NextWindows 系统下载'))
     subtitle = e(site.get('subtitle', ''))
     notice = site.get('notice', '')
     footer = site.get('footer', '')
@@ -266,7 +280,7 @@ def build_site(base_url, out_dir, hm, data):
         '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">最新镜像</h2>' +
         cards_block(latest) + foot_block()
     )
-    page('index.html', e(site.get('title', 'NextWindows 系统下载')),
+    page('index.html', e(home_title),
          subtitle + ' ' + notice, base_kw, '__home__',
          '最新镜像 <small>%s</small>' % subtitle, home_body, '')
 
@@ -338,7 +352,13 @@ def build_site(base_url, out_dir, hm, data):
 def main():
     data = json.load(open(DATA, encoding='utf-8'))
     for s in SITES:
-        build_site(s['base_url'], s['out_dir'], s['hm'], data)
+        build_site(
+            s['base_url'],
+            s['out_dir'],
+            s['hm'],
+            data,
+            {'brand': s.get('brand'), 'title': s.get('title')},
+        )
 
 
 if __name__ == '__main__':
