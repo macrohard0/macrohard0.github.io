@@ -51,7 +51,10 @@
     .catblock > h3 { font-size:14px; margin:0 0 8px; padding-bottom:6px; border-bottom:2px solid var(--primary);
                      display:inline-block; }
     .imgrow { display:flex; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--line);
-              border-radius:8px; margin-bottom:8px; background:#fff; }
+              border-radius:8px; margin-bottom:8px; background:#fff; cursor:grab; }
+    .imgrow.dragging { opacity:.4; }
+    .imgrow.drag-over { border-color:var(--primary); }
+    .imgrow .drag-handle { color:#b8bfcc; font-size:15px; line-height:1; user-select:none; flex:none; }
     .imgrow .ti { flex:1; min-width:0; }
     .imgrow .ti b { font-size:13.5px; font-weight:600; }
     .imgrow .ti .meta { font-size:12px; color:var(--soft); margin-top:2px; }
@@ -302,11 +305,16 @@
       var cname=cat?cat.name:(cid||'未分类');
       var lang=(cat&&cat.lang)||'zh-cn';
       var langTag = lang==='zh-cn' ? '' : ' <span class="muted">['+esc(langLabel(lang))+']</span>';
-      html+='<div class="catblock"><h3>'+esc(cname)+langTag+' · '+groups[cid].length+'</h3>';
-      groups[cid].slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'');}).forEach(function(im){
+      html+='<div class="catblock" data-cat="'+esc(cid)+'"><h3>'+esc(cname)+langTag+' · '+groups[cid].length+
+        ' <span class="muted" style="font-weight:normal;">（可拖动调整顺序）</span></h3>';
+      // 注意：这里按 images 数组的原始顺序展示（不再按日期重排），因为这个顺序就是拖拽调整、
+      // 也是 build.py 生成分类/版本页时使用的顺序
+      groups[cid].forEach(function(im){
         var links=(im.links||[]).map(function(lk){ var t=window.panType(lk.type);
           return '<span class="pill" style="background:'+t.color+'">'+esc(t.name)+'</span>'; }).join('');
-        html+='<div class="imgrow"><div class="ti"><b>'+esc(im.title||'(未命名)')+'</b>'+
+        html+='<div class="imgrow" draggable="true" data-id="'+esc(im.id)+'">'+
+          '<span class="drag-handle" title="拖动调整顺序">⠿</span>'+
+          '<div class="ti"><b>'+esc(im.title||'(未命名)')+'</b>'+
           '<div class="meta">'+esc(im.arch||'')+(im.version?' · '+esc(im.version):'')+
           (im.date?' · '+esc(im.date):'')+' &nbsp; '+links+'</div></div>'+
           '<button class="btn ghost sm" data-edit="'+esc(im.id)+'">编辑</button>'+
@@ -320,6 +328,56 @@
       b.onclick=function(){ openEdit(b.getAttribute('data-edit')); }; });
     Array.prototype.forEach.call(host.querySelectorAll('[data-del]'),function(b){
       b.onclick=function(){ delImage(b.getAttribute('data-del')); }; });
+    Array.prototype.forEach.call(host.querySelectorAll('.imgrow'),function(row){
+      bindDrag(row);
+    });
+  }
+
+  /* ---------- 拖拽调整同分类下的镜像顺序 ---------- */
+  var dragRow = null, dragCat = null;
+
+  function bindDrag(row){
+    row.addEventListener('dragstart', function(e){
+      dragRow = row; dragCat = row.closest('.catblock').getAttribute('data-cat');
+      row.classList.add('dragging');
+      e.dataTransfer.effectAllowed = 'move';
+      try{ e.dataTransfer.setData('text/plain', row.getAttribute('data-id')); }catch(err){}
+    });
+    row.addEventListener('dragend', function(){
+      row.classList.remove('dragging');
+      Array.prototype.forEach.call(document.querySelectorAll('.imgrow.drag-over'),function(r){ r.classList.remove('drag-over'); });
+      if(dragRow){ commitCategoryOrder(dragCat); }
+      dragRow = null; dragCat = null;
+    });
+    row.addEventListener('dragover', function(e){
+      var cat = row.closest('.catblock').getAttribute('data-cat');
+      if(!dragRow || dragRow===row || cat!==dragCat) return;
+      e.preventDefault();
+      e.dataTransfer.dropEffect = 'move';
+      var rect = row.getBoundingClientRect();
+      var before = (e.clientY - rect.top) < rect.height/2;
+      row.parentNode.insertBefore(dragRow, before ? row : row.nextSibling);
+    });
+  }
+
+  // 把某个分类当前的 DOM 顺序写回 state.data.images（其它分类的镜像位置不受影响）
+  function commitCategoryOrder(cid){
+    var host = document.querySelector('.catblock[data-cat="'+cid.replace(/"/g,'\\"')+'"]');
+    if(!host) return;
+    var orderedIds = Array.prototype.map.call(host.querySelectorAll('.imgrow[data-id]'), function(r){
+      return r.getAttribute('data-id'); });
+    var byId = {};
+    state.data.images.forEach(function(im){ if(im.category===cid) byId[im.id]=im; });
+    var newImages = [], inserted = false;
+    state.data.images.forEach(function(im){
+      if(im.category !== cid){ newImages.push(im); return; }
+      if(!inserted){
+        orderedIds.forEach(function(id){ if(byId[id]) newImages.push(byId[id]); });
+        inserted = true;
+      }
+    });
+    state.data.images = newImages;
+    markDirty(true);
   }
 
   function delImage(id){
@@ -562,8 +620,10 @@
     $('file-import').onchange=function(){ if(this.files[0]) importJson(this.files[0]); this.value=''; };
     Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(b){
       b.onclick=function(){ closeModal(b.getAttribute('data-close')); }; });
+    // 编辑镜像弹窗里可能填了一堆信息，点击弹窗外的遮罩不应该直接关掉（避免误触丢失未保存的内容）
     Array.prototype.forEach.call(document.querySelectorAll('.modal-mask'),function(m){
-      m.onclick=function(e){ if(e.target===m) closeModal(m.id); }; });
+      var clickOutsideCloses = (m.id !== 'modal-edit');
+      m.onclick=function(e){ if(e.target===m && clickOutsideCloses) closeModal(m.id); }; });
     window.addEventListener('beforeunload',function(e){ if(state.dirty){ e.preventDefault(); e.returnValue=''; } });
   }
   bind();

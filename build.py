@@ -397,8 +397,10 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
             if vers:
                 latest_ver = vers[0]
                 # 分类落地页 = 最新版本 + 无版本/未知版本的兜底镜像
-                land_imgs = sort_imgs([im for im in imgs if im.get('version') == latest_ver['id']
-                                       or im.get('version', '') == '' or im.get('version') not in defined])
+                # 注意：这里不按日期重新排序，保留 images.json 里的原始顺序——
+                # 管理后台的拖拽调整顺序就是靠这个顺序生效的
+                land_imgs = [im for im in imgs if im.get('version') == latest_ver['id']
+                             or im.get('version', '') == '' or im.get('version') not in defined]
                 crumb = '%s <small>%s</small>' % (e(cname), e(latest_ver['name']))
                 cat_path = p('%s.html' % cid)
                 body = notice_block() + render_submenu(c, latest_ver['id'], section_prefix_for(cat_path)) + cards_block(land_imgs) + foot_block()
@@ -410,7 +412,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
 
                 # 其余版本页
                 for v in vers[1:]:
-                    v_imgs = sort_imgs([im for im in imgs if im.get('version') == v['id']])
+                    v_imgs = [im for im in imgs if im.get('version') == v['id']]
                     crumb = '%s <small>%s</small>' % (e(cname), e(v['name']))
                     ver_path = p('%s/%s.html' % (cid, v['id']))
                     body = notice_block() + render_submenu(c, v['id'], section_prefix_for(ver_path)) + cards_block(v_imgs) + foot_block()
@@ -420,7 +422,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
                          cid, crumb, body)
             else:
-                all_imgs = sort_imgs(imgs)
+                all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
                 body = notice_block() + cards_block(all_imgs) + foot_block()
                 page(p('%s.html' % cid),
