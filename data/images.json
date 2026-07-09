@@ -110,6 +110,75 @@
           "name": "2010"
         }
       ]
+    },
+    {
+      "id": "windows11",
+      "name": "Windows 11",
+      "lang": "en-us",
+      "versions": [
+        {
+          "id": "26h1",
+          "name": "26H1"
+        },
+        {
+          "id": "25h2",
+          "name": "25H2"
+        },
+        {
+          "id": "24h2",
+          "name": "24H2"
+        },
+        {
+          "id": "23h2",
+          "name": "23H2"
+        }
+      ]
+    },
+    {
+      "id": "windows10",
+      "name": "Windows 10",
+      "lang": "en-us",
+      "versions": [
+        {
+          "id": "22h2",
+          "name": "22H2"
+        }
+      ]
+    },
+    {
+      "id": "windows81",
+      "name": "Windows 8.1",
+      "lang": "en-us",
+      "versions": []
+    },
+    {
+      "id": "windows8",
+      "name": "Windows 8",
+      "lang": "en-us",
+      "versions": []
+    },
+    {
+      "id": "windows7",
+      "name": "Windows 7",
+      "lang": "en-us",
+      "versions": [
+        {
+          "id": "sp1",
+          "name": "Service Pack 1"
+        }
+      ]
+    },
+    {
+      "id": "vista",
+      "name": "Windows Vista",
+      "lang": "en-us",
+      "versions": []
+    },
+    {
+      "id": "xp",
+      "name": "Windows XP",
+      "lang": "en-us",
+      "versions": []
     }
   ],
   "images": [
@@ -1844,6 +1913,294 @@
           "password": ""
         }
       ]
+    },
+    {
+      "id": "en-win11-001",
+      "category": "windows11",
+      "version": "26h1",
+      "title": "Windows 11 Consumer Editions 26H1 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_consumer_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
+        "SHA-256": "169fa9e5fe3a61ce56180337712ebf145440ad85aae0b92276ea3420bf352e55",
+        "SHA-1": "f4500cb72db6ed36e0002ab2028d538f147415a3",
+        "MD5": "21326206eaf07019456009e50c4e7a27",
+        "文件大小": "7.63GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-002",
+      "category": "windows11",
+      "version": "26h1",
+      "title": "Windows 11 Business Editions 26H1 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_business_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
+        "SHA-256": "2eefb4e513ad9b275d18bd81c7c7bcbc6d87effe3a040dfd1353557008e99779",
+        "SHA-1": "95ab65017022529797ba588d3231c3a5f7f8ec1e",
+        "MD5": "9d1ceb2567d547bffa0d2ed00a84040e",
+        "文件大小": "7.52GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-003",
+      "category": "windows11",
+      "version": "25h2",
+      "title": "Windows 11 Consumer Editions 25H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_consumer_editions_version_25h2_updated_june_2026_x64_dvd_2045a41c.iso",
+        "SHA-256": "d42e4d7a1b73cf6d067d7fc5fb870f35da94db8bf8330a3ccb9ea4f6b4593f99",
+        "SHA-1": "06162ffcd0a915136911312eedf0e7bc78240d70",
+        "MD5": "632ff7b03e22be36e26e59b970157b0a",
+        "文件大小": "8.09GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-004",
+      "category": "windows11",
+      "version": "25h2",
+      "title": "Windows 11 Business Editions 25H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_business_editions_version_25h2_updated_june_2026_x64_dvd_e7cb77c9.iso",
+        "SHA-256": "5f420ce1934a997aabe931e6f487198eb08c897d68fc2a72313c6a0993e33b96",
+        "SHA-1": "ef853f205992acbf680dc41ca68920e3029a5ad2",
+        "MD5": "3dba3a6f6aeea5c1a6fc2f43bc620e3e",
+        "文件大小": "8.01GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-005",
+      "category": "windows11",
+      "version": "24h2",
+      "title": "Windows 11 Consumer Editions 24H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_consumer_editions_version_24h2_updated_june_2026_x64_dvd_66533f53.iso",
+        "SHA-256": "299037d68a797afe9527e2c6be10806ddb0b57d409f4b84bb518cf3d67e2716c",
+        "SHA-1": "fe9e01fde8f638dc8dd8e82c62316a28e6702791",
+        "MD5": "a1834ba105234b00d7c4a938b5b172f2",
+        "文件大小": "8.05GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-006",
+      "category": "windows11",
+      "version": "24h2",
+      "title": "Windows 11 Business Editions 24H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2026-06-16",
+      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_business_editions_version_24h2_updated_june_2026_x64_dvd_874abeb5.iso",
+        "SHA-256": "4f8230fd8e2ed5bb1f92bdc0ad510cc87e93a329d0b10c1a705d88e069d7b814",
+        "SHA-1": "7e8c3b0d08616012fdc04b3e13188e04eb1ddf37",
+        "MD5": "488b854a3209b37e44cd56816f1ee99c",
+        "文件大小": "7.95GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-007",
+      "category": "windows11",
+      "version": "23h2",
+      "title": "Windows 11 Consumer Editions 23H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2025-10-21",
+      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_consumer_editions_version_23h2_updated_oct_2025_x64_dvd_8deeaabd.iso",
+        "SHA-256": "fcad49ad73b5da098a355831d82bdd3ef5da42913e0e4b7e557057dc5031f475",
+        "SHA-1": "d4a9666d4b9aafcb0907996f8837223a678b0234",
+        "MD5": "bb2fb1f4077f0075d4360c64250604dc",
+        "文件大小": "6.99GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win11-008",
+      "category": "windows11",
+      "version": "23h2",
+      "title": "Windows 11 Business Editions 23H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2025-10-21",
+      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_11_business_editions_version_23h2_updated_oct_2025_x64_dvd_c9a85ebe.iso",
+        "SHA-256": "b0b640c6ab179b2498168eebd569339222bf28efdf23ebe5c597e9380b57dc8c",
+        "SHA-1": "cee73f82a558dceba3979e0515e24f2ffd3cdc58",
+        "MD5": "885957c8001f8dd4a31602e42ee778cf",
+        "文件大小": "6.88GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win10-001",
+      "category": "windows10",
+      "version": "22h2",
+      "title": "Windows 10 Consumer Editions 22H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2025-10-21",
+      "editions": ["Pro", "Home", "Home Single Language", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_10_consumer_editions_version_22h2_updated_oct_2025_x64_dvd_38efd00d.iso",
+        "SHA-256": "600cdace2acf41e7f2f3cf68957fde58dbe23077ddffa7dce408f14d4915d14c",
+        "SHA-1": "2bf7ec5e18aa146d8f6066335dcb7798aa1a4371",
+        "MD5": "70f9765bc1570e52c1cfdaea9edf3e44",
+        "文件大小": "6.69GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win10-002",
+      "category": "windows10",
+      "version": "22h2",
+      "title": "Windows 10 Business Editions 22H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2025-10-21",
+      "editions": ["Pro", "Enterprise", "Education", "Pro Education", "Pro for Workstations"],
+      "params": {
+        "文件名": "en-us_windows_10_business_editions_version_22h2_updated_oct_2025_x64_dvd_d2eef4b0.iso",
+        "SHA-256": "2c23bc8b95a9314f15ebff881dcbea49651f52a96a0327d7aaf523aa66043765",
+        "SHA-1": "c35c2a08844f2ac63c440367953094406fe05f7d",
+        "MD5": "69eb03bff72f17cc648d1885bbaee7b1",
+        "文件大小": "6.51GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win81-001",
+      "category": "windows81",
+      "version": "",
+      "title": "Windows 8.1 Multi-Edition with Update x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2014-12-15",
+      "editions": ["Pro"],
+      "params": {
+        "文件名": "en_windows_8.1_with_update_x64_dvd_6051480.iso",
+        "SHA-256": "d8333cf427eb3318ff6ab755eb1dd9d433f0e2ae43745312c1cd23e83ca1ce51",
+        "SHA-1": "a8b5df0b0816280ae18017bc4b119c77b6c6eb79",
+        "MD5": "e0d4594e56c0545d379340e0db9519a5",
+        "文件大小": "4.02GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win81-002",
+      "category": "windows81",
+      "version": "",
+      "title": "Windows 8.1 Pro VL with Update x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2014-12-15",
+      "editions": ["Pro"],
+      "params": {
+        "文件名": "en_windows_8.1_pro_vl_with_update_x64_dvd_6050880.iso",
+        "SHA-256": "67314f5a7f54e67f8f990c3918a57ff5fe29c4ca9d19c43aed8f4f2e261d7c39",
+        "SHA-1": "962a1d890987b5877469433928b8c8b8a3e945cd",
+        "MD5": "2b57629165900f93e73305ddf27124d4",
+        "文件大小": "3.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win81-003",
+      "category": "windows81",
+      "version": "",
+      "title": "Windows 8.1 Enterprise with Update x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2014-12-15",
+      "editions": ["Enterprise"],
+      "params": {
+        "文件名": "en_windows_8.1_enterprise_with_update_x64_dvd_6054382.iso",
+        "SHA-256": "c3c604c03677504e8905090a8ce5bb1dde76b6fd58e10f32e3a25bef21b2abe1",
+        "SHA-1": "b7dd748446d89b9449a160cdc24bd282989bbd96",
+        "MD5": "115d7c4203417e52c09d16b50043b10d",
+        "文件大小": "3.86GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win7-001",
+      "category": "windows7",
+      "version": "sp1",
+      "title": "Windows 7 Professional SP1 VL x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2011-05-12",
+      "editions": ["Pro"],
+      "params": {
+        "文件名": "en_windows_7_professional_with_sp1_vl_build_x64_dvd_u_677791.iso",
+        "SHA-256": "ca475cfd190f28c40984af5e608c83b2a1bd0aef691f9820d68a684aa01bdd2b",
+        "SHA-1": "708e0338d4e2f094dfeb860347c84a6ed9e91d0c",
+        "MD5": "3c394e66c208cfd641b976de10fe90b5",
+        "文件大小": "2.96GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win7-002",
+      "category": "windows7",
+      "version": "sp1",
+      "title": "Windows 7 Enterprise SP1 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2011-05-12",
+      "editions": ["Enterprise"],
+      "params": {
+        "文件名": "en_windows_7_enterprise_with_sp1_x64_dvd_u_677651.iso",
+        "SHA-256": "ee69f3e9b86ff973f632db8e01700c5724ef78420b175d25bae6ead90f6805a7",
+        "SHA-1": "a491f985dccfb5863f31b728dddbedb2ff4df8d1",
+        "MD5": "6467c3875955df4514395f0afcaaa62a",
+        "文件大小": "2.96GB"
+      },
+      "links": []
+    },
+    {
+      "id": "en-win7-003",
+      "category": "windows7",
+      "version": "sp1",
+      "title": "Windows 7 Home Premium SP1 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2011-05-12",
+      "editions": ["Home Premium"],
+      "params": {
+        "文件名": "en_windows_7_home_premium_with_sp1_x64_dvd_u_676549.iso",
+        "SHA-256": "c10a9da74a34e3ab57446cddd7a0f825d526da78d9796d442db5022c33e3cb7f",
+        "SHA-1": "6c9058389c1e2e5122b7c933275f963edf1c07b9",
+        "MD5": "da319b5826162829c436306bebea7f0f",
+        "文件大小": "3.09GB"
+      },
+      "links": []
     }
   ]
 }

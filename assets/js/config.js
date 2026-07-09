@@ -19,6 +19,8 @@ window.PAN_TYPES = {
   weiyun: { name: '腾讯微云',   color: '#00C250', needPassword: false, hint: 'https://share.weiyun.com/...' },
   yidong: { name: '移动云盘',   color: '#3A8FFF', needPassword: false, hint: 'https://caiyun.139.com/...' },
   pan123: { name: '123云盘',    color: '#2A66FF', needPassword: false, hint: 'https://www.123pan.com/s/...' },
+  // 非中文（英文子站等）镜像目前只支持 TeraBox，见 data/config.json 的 panProviders
+  terabox: { name: 'TeraBox',   color: '#0F6FFF', needPassword: false, hint: 'https://1024terabox.com/s/...' },
   other:  { name: '其他网盘',   color: '#7A7F8C', needPassword: true,  hint: 'https://...' }
 };
 
@@ -28,7 +30,21 @@ window.panType = function (key) {
 };
 
 // 默认网盘排序（前台展示与管理工具下拉的顺序）
-window.PAN_ORDER = ['quark', 'baidu', 'aliyun', 'tianyi', 'xunlei', 'weiyun', 'yidong', 'pan123', 'other'];
+window.PAN_ORDER = ['quark', 'baidu', 'aliyun', 'tianyi', 'xunlei', 'weiyun', 'yidong', 'pan123', 'terabox', 'other'];
 
 // 参数表的标准字段（顺序即展示顺序）。管理工具按此渲染输入框。
 window.PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小'];
+
+/*
+ * 分类（categories）的 lang 字段 —— 决定该分类归属哪个语言子站，build.py 据此分流生成
+ * /、/en-us/ 等目录。管理工具的「管理分类」用它来选择语言；未设置 = zh-cn（默认/根目录）。
+ * 要新增语言子站：先在 data/config.json 的 languages 里加一条，再在这里加对应的显示名
+ * 和网盘白名单（若有限制），两边保持一致。
+ */
+window.LANG_LABELS = { 'zh-cn': '中文（默认 /）', 'en-us': 'English (/en-us/)' };
+window.LANG_ORDER = ['zh-cn', 'en-us'];
+
+// 各语言子站允许使用的网盘 provider 白名单；未列出的语言 = 不限制。
+// 与 data/config.json 的 languages[].panProviders 保持一致——那边才是 build.py 真正读取的配置，
+// 这里只是给管理工具做录入时的提示，两边改的时候别忘了同步。
+window.LANG_PAN_LIMIT = { 'en-us': ['terabox'] };

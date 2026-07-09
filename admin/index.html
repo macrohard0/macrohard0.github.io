@@ -153,6 +153,7 @@
       <div class="muted">🔗 网盘下载链接</div>
       <button class="btn ghost sm" id="btn-addlink">+ 添加网盘</button>
     </div>
+    <div class="muted" id="link-lang-hint" style="margin-bottom:8px;"></div>
     <div id="link-list"></div>
     <div class="modal-foot">
       <button class="btn danger" id="btn-del-edit" style="visibility:hidden;">删除此镜像</button>
@@ -299,7 +300,9 @@
     catIds.forEach(function(cid){
       var cat=d.categories.filter(function(c){return c.id===cid;})[0];
       var cname=cat?cat.name:(cid||'未分类');
-      html+='<div class="catblock"><h3>'+esc(cname)+' · '+groups[cid].length+'</h3>';
+      var lang=(cat&&cat.lang)||'zh-cn';
+      var langTag = lang==='zh-cn' ? '' : ' <span class="muted">['+esc(langLabel(lang))+']</span>';
+      html+='<div class="catblock"><h3>'+esc(cname)+langTag+' · '+groups[cid].length+'</h3>';
       groups[cid].slice().sort(function(a,b){return (b.date||'').localeCompare(a.date||'');}).forEach(function(im){
         var links=(im.links||[]).map(function(lk){ var t=window.panType(lk.type);
           return '<span class="pill" style="background:'+t.color+'">'+esc(t.name)+'</span>'; }).join('');
@@ -331,9 +334,28 @@
   function openModal(id){ $(id).classList.add('show'); }
   function closeModal(id){ $(id).classList.remove('show'); }
 
+  // 分类的语言标签／网盘白名单——与 assets/js/config.js 的 LANG_LABELS / LANG_PAN_LIMIT 联动
+  function catLang(catId){
+    var cat=(state.data.categories||[]).filter(function(c){return c.id===catId;})[0];
+    return (cat && cat.lang) || 'zh-cn';
+  }
+  function langLabel(lang){ return (window.LANG_LABELS||{})[lang] || lang; }
+  function allowedPanTypes(catId){
+    var limit=(window.LANG_PAN_LIMIT||{})[catLang(catId)];
+    return (limit && limit.length) ? limit : null; // null = 不限制
+  }
+  function panHint(catId){
+    var lang=catLang(catId), allowed=allowedPanTypes(catId);
+    if(!allowed) return '当前分类语言：'+langLabel(lang)+'，网盘类型不限。';
+    var names=allowed.map(function(k){ return window.panType(k).name; }).join('、');
+    return '⚠ 当前分类语言：'+langLabel(lang)+'，页面生成时只会展示：'+names+'，其余类型的链接不会显示在网站上。';
+  }
+
   function fillCatSelect(sel, current){
     sel.innerHTML = state.data.categories.map(function(c){
-      return '<option value="'+esc(c.id)+'"'+(c.id===current?' selected':'')+'>'+esc(c.name)+'</option>';
+      var lang=c.lang||'zh-cn';
+      var suffix = lang==='zh-cn' ? '' : '　['+esc(langLabel(lang))+']';
+      return '<option value="'+esc(c.id)+'"'+(c.id===current?' selected':'')+'>'+esc(c.name)+suffix+'</option>';
     }).join('');
   }
   function fillVerSelect(catId, current){
@@ -354,10 +376,11 @@
     }).join('');
   }
 
-  function linkRow(lk){
-    lk=lk||{type:'quark',url:'',password:''};
+  function linkRow(lk, allowed){
+    lk=lk||{type:(allowed&&allowed[0])||'quark',url:'',password:''};
     var opts=(window.PAN_ORDER||Object.keys(window.PAN_TYPES)).map(function(k){
-      return '<option value="'+k+'"'+(k===lk.type?' selected':'')+'>'+esc(window.PAN_TYPES[k].name)+'</option>'; }).join('');
+      var label=esc(window.PAN_TYPES[k].name) + (allowed && allowed.indexOf(k)===-1 ? '（该语言站不展示）' : '');
+      return '<option value="'+k+'"'+(k===lk.type?' selected':'')+'>'+label+'</option>'; }).join('');
     var div=document.createElement('div');
     div.className='link-item';
     div.innerHTML='<select class="lk-type">'+opts+'</select>'+
@@ -372,6 +395,21 @@
     return div;
   }
 
+  // 分类切换时，刷新网盘提示语与已添加链接行里的“该语言站不展示”标注
+  function refreshLinkHint(catId){
+    $('link-lang-hint').textContent = panHint(catId);
+    var allowed = allowedPanTypes(catId);
+    Array.prototype.forEach.call($('link-list').querySelectorAll('.link-item'), function(row){
+      var sel = row.querySelector('.lk-type');
+      var cur = sel.value;
+      Array.prototype.forEach.call(sel.options, function(opt){
+        var base = window.panType(opt.value).name;
+        opt.textContent = base + (allowed && allowed.indexOf(opt.value)===-1 ? '（该语言站不展示）' : '');
+      });
+      sel.value = cur;
+    });
+  }
+
   function openEdit(id){
     var im = id ? state.data.images.filter(function(x){return x.id===id;})[0] : null;
     var isNew = !im;
@@ -382,14 +420,16 @@
     $('e-title').value = im.title||'';
     fillCatSelect($('e-cat'), im.category);
     fillVerSelect(im.category, im.version);
-    $('e-cat').onchange=function(){ fillVerSelect(this.value, ''); };
+    $('e-cat').onchange=function(){ fillVerSelect(this.value, ''); refreshLinkHint(this.value); };
     $('e-arch').value = im.arch||'';
     $('e-lang').value = im.lang||'';
     $('e-date').value = im.date||'';
     $('e-editions').value = (im.editions||[]).join(',');
     renderParamFields(im.params);
+    var allowed = allowedPanTypes(im.category);
     var ll=$('link-list'); ll.innerHTML='';
-    (im.links&&im.links.length?im.links:[{type:'quark',url:'',password:''}]).forEach(function(lk){ ll.appendChild(linkRow(lk)); });
+    (im.links&&im.links.length?im.links:[{type:(allowed&&allowed[0])||'quark',url:'',password:''}]).forEach(function(lk){ ll.appendChild(linkRow(lk, allowed)); });
+    $('link-lang-hint').textContent = panHint(im.category);
     $('btn-del-edit').style.visibility = isNew ? 'hidden':'visible';
     $('btn-del-edit').onclick = function(){ closeModal('modal-edit'); delImage(im.id); };
     openModal('modal-edit');
@@ -446,12 +486,16 @@
           '<input type="text" data-c="'+ci+'" data-vk="name" data-v="'+vi+'" value="'+esc(v.name)+'" placeholder="显示名 如 26H1">'+
           '<button class="btn danger sm" data-delver="'+ci+'_'+vi+'">删</button></div>';
       }).join('');
+      var langOpts=(window.LANG_ORDER||['zh-cn']).map(function(l){
+        return '<option value="'+l+'"'+((c.lang||'zh-cn')===l?' selected':'')+'>'+esc(langLabel(l))+'</option>'; }).join('');
       return '<div class="card" style="margin-bottom:10px;padding:14px 16px;">'+
-        '<div class="grid2">'+
+        '<div class="grid3">'+
         '<label class="fld"><span>分类 id（英文，勿与镜像引用冲突）</span>'+
           '<input type="text" data-c="'+ci+'" data-ck="id" value="'+esc(c.id)+'" placeholder="win11"></label>'+
         '<label class="fld"><span>分类名称</span>'+
           '<input type="text" data-c="'+ci+'" data-ck="name" value="'+esc(c.name)+'" placeholder="Windows 11"></label>'+
+        '<label class="fld"><span>所属语言子站</span>'+
+          '<select data-c="'+ci+'" data-ck="lang">'+langOpts+'</select></label>'+
         '</div>'+
         '<div class="muted" style="margin:4px 0 6px;">版本子菜单：</div>'+vers+
         '<div class="row" style="margin-top:6px;">'+
@@ -460,9 +504,10 @@
         '</div></div>';
     }).join('') || '<div class="muted">还没有分类。</div>';
 
-    // 绑定输入同步
+    // 绑定输入同步（select 用 change，input/textarea 用 input，两个都绑上更保险）
     Array.prototype.forEach.call(host.querySelectorAll('[data-ck]'),function(inp){
-      inp.oninput=function(){ state.editCats[+inp.getAttribute('data-c')][inp.getAttribute('data-ck')]=inp.value; }; });
+      var sync=function(){ state.editCats[+inp.getAttribute('data-c')][inp.getAttribute('data-ck')]=inp.value; };
+      inp.oninput=sync; inp.onchange=sync; });
     Array.prototype.forEach.call(host.querySelectorAll('[data-vk]'),function(inp){
       inp.oninput=function(){ var c=+inp.getAttribute('data-c'),v=+inp.getAttribute('data-v');
         state.editCats[c].versions[v][inp.getAttribute('data-vk')]=inp.value; }; });
@@ -508,9 +553,9 @@
     $('btn-commit').onclick=ghCommit;
     $('btn-add').onclick=function(){ if(!state.data){ state.data=normalize({}); } openEdit(null); };
     $('btn-cats').onclick=function(){ if(!state.data){ state.data=normalize({}); } openCats(); };
-    $('btn-addlink').onclick=function(){ $('link-list').appendChild(linkRow()); };
+    $('btn-addlink').onclick=function(){ $('link-list').appendChild(linkRow(null, allowedPanTypes($('e-cat').value))); };
     $('btn-save-edit').onclick=saveEdit;
-    $('btn-addcat').onclick=function(){ state.editCats.push({id:'',name:'',versions:[]}); renderCatEditor(); };
+    $('btn-addcat').onclick=function(){ state.editCats.push({id:'',name:'',lang:'zh-cn',versions:[]}); renderCatEditor(); };
     $('btn-save-cats').onclick=saveCats;
     $('btn-export').onclick=exportJson;
     $('btn-import').onclick=function(){ $('file-import').click(); };

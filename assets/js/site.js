@@ -18,9 +18,14 @@
     toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, 1600);
   }
 
+  // 页面 <html lang="..."> 由 build.py 按语言子站生成，据此选择提示文案
+  function isZh() {
+    return (document.documentElement.lang || '').toLowerCase().indexOf('zh') === 0;
+  }
+
   function copyText(text) {
     if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(text).then(function () { toast('已复制'); }, fallback);
+      navigator.clipboard.writeText(text).then(function () { toast(isZh() ? '已复制' : 'Copied'); }, fallback);
     } else { fallback(); }
     function fallback() {
       var ta = document.createElement('textarea');
@@ -29,7 +34,8 @@
       ta.style.opacity = '0';
       document.body.appendChild(ta);
       ta.select();
-      try { document.execCommand('copy'); toast('已复制'); } catch (e) { toast('复制失败，请手动复制'); }
+      try { document.execCommand('copy'); toast(isZh() ? '已复制' : 'Copied'); }
+      catch (e) { toast(isZh() ? '复制失败，请手动复制' : 'Copy failed, please copy manually'); }
       document.body.removeChild(ta);
     }
   }
