@@ -297,8 +297,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
     site_base = data.get('site', {})
     all_cats = data.get('categories', [])
     all_images = data.get('images', [])
-    brand_plain = site_overrides.get('brand') or site_base.get('brand', 'NextWindows')
-    brand = e(brand_plain)
+    default_brand_plain = site_overrides.get('brand') or site_base.get('brand', 'NextWindows')
 
     urls = []  # for sitemap（相对 out_root 的路径，含各语言子目录前缀）
     home_paths = set()  # 各语言首页的 path（'index.html' / 'en-us/index.html' ...），sitemap 特殊处理
@@ -312,6 +311,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         # 该语言子目录相对 out_root 的层级深度（把「资源前缀」换算成「同语言子站内前缀」要用）
         lang_depth = (lang_dir.count('/') + 1) if lang_dir else 0
         pan_allowed = set(lang_conf['panProviders']) if lang_conf.get('panProviders') else None
+        brand_plain = lang_conf.get('brand') or default_brand_plain
+        brand = e(brand_plain)
 
         lang_site_over = lang_conf.get('site') or {}
         site = dict(site_base)
