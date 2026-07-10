@@ -142,6 +142,10 @@
         {
           "id": "22h2",
           "name": "22H2"
+        },
+        {
+          "id": "21h2",
+          "name": "21H2"
         }
       ]
     },
@@ -2197,7 +2201,13 @@
         "MD5": "e0d4594e56c0545d379340e0db9519a5",
         "文件大小": "4.02GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1TtytoUV-yughKiRe652kqg",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win81-002",
@@ -2314,6 +2324,33 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/10CaVqn4DVvrgcqRRO1gEOw",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-mreagvpo",
+      "category": "windows10",
+      "version": "",
+      "title": "Windows 10 Enterprise LTSC 2021 x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "",
+      "editions": [
+        "Enterprise",
+        "LTSC"
+      ],
+      "params": {
+        "文件名": "en-us_windows_10_enterprise_ltsc_2021_x64_dvd_d289cf96.iso",
+        "SHA-256": "c90a6df8997bf49e56b9673982f3e80745058723a707aef8f22998ae6479597d",
+        "SHA-1": "2fb2897373c4f71b06f4490943b3d564b0f0fd6d",
+        "MD5": "b5a7be560dbd73619945129e52be1b5f",
+        "文件大小": "4.563 GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/19eN3zJtNg7SJabV9N_dh6g",
           "password": ""
         }
       ]
