@@ -40,6 +40,14 @@
     }
   }
 
+  function closeLangSwitch() {
+    var ls = document.getElementById('lang-switch');
+    if (!ls || !ls.classList.contains('open')) return;
+    ls.classList.remove('open');
+    var btn = document.getElementById('lang-switch-btn');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+  }
+
   document.addEventListener('click', function (ev) {
     var t = ev.target;
     if (t.matches('[data-copy]')) { copyText(t.getAttribute('data-copy')); return; }
@@ -51,5 +59,14 @@
     }
     if (t.closest('#menu-btn')) { document.body.classList.toggle('nav-open'); return; }
     if (t.id === 'mask') { document.body.classList.remove('nav-open'); return; }
+    if (t.closest('#lang-switch-btn')) {
+      var ls = document.getElementById('lang-switch');
+      if (ls) {
+        var open = ls.classList.toggle('open');
+        t.closest('#lang-switch-btn').setAttribute('aria-expanded', open ? 'true' : 'false');
+      }
+      return;
+    }
+    if (!t.closest('#lang-switch')) { closeLangSwitch(); }
   });
 })();

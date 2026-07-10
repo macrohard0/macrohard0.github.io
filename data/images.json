@@ -115,6 +115,7 @@
       "id": "windows11",
       "name": "Windows 11",
       "lang": "en-us",
+      "group": "win11",
       "versions": [
         {
           "id": "26h1",
@@ -138,6 +139,7 @@
       "id": "windows10",
       "name": "Windows 10",
       "lang": "en-us",
+      "group": "win10",
       "versions": [
         {
           "id": "22h2",
@@ -153,18 +155,21 @@
       "id": "windows81",
       "name": "Windows 8.1",
       "lang": "en-us",
+      "group": "win81",
       "versions": []
     },
     {
       "id": "windows8",
       "name": "Windows 8",
       "lang": "en-us",
+      "group": "win8",
       "versions": []
     },
     {
       "id": "windows7",
       "name": "Windows 7",
       "lang": "en-us",
+      "group": "win7",
       "versions": [
         {
           "id": "sp1",
@@ -176,12 +181,14 @@
       "id": "vista",
       "name": "Windows Vista",
       "lang": "en-us",
+      "group": "vista",
       "versions": []
     },
     {
       "id": "xp",
       "name": "Windows XP",
       "lang": "en-us",
+      "group": "winxp",
       "versions": []
     }
   ],
@@ -2351,6 +2358,217 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/19eN3zJtNg7SJabV9N_dh6g",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-winxp-001",
+      "category": "xp",
+      "version": "",
+      "title": "Windows XP Professional with Service Pack 3 VL x86",
+      "arch": "x86",
+      "lang": "English",
+      "date": "2008-05-01",
+      "editions": [
+        "Professional"
+      ],
+      "params": {
+        "文件名": "en_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-73974.iso",
+        "替代文件名": "SW_CD_Windows_XP_Professional_32BIT_English_ISO_MLF_X15-05160.ISO",
+        "SHA-256": "fd8c8d42c1581e8767217fe800bfc0d5649c0ad20d754c927d6c763e446d1927",
+        "SHA-1": "66ac289ae27724c5ae17139227cbe78c01eefe40",
+        "MD5": "5bf476e2fc445b8d06b3c2a6091fe3aa",
+        "文件大小": "589.137MB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1UMLUkoDrBBOPDZ9T6bcCVg",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-winxp-002",
+      "category": "xp",
+      "version": "",
+      "title": "Windows XP Professional with Service Pack 3 x86",
+      "arch": "x86",
+      "lang": "English",
+      "date": "2008-05-01",
+      "editions": [
+        "Professional"
+      ],
+      "params": {
+        "文件名": "en_windows_xp_professional_with_service_pack_3_x86_cd_x14-80428.iso",
+        "SHA-256": "62b6c91563bad6cd12a352aa018627c314cfc5162d8e9f8af0756a642e602a46",
+        "SHA-1": "1c735b38931bf57fb14ebd9a9ba253ceb443d459",
+        "MD5": "f424a52153e6e5ed4c0d44235cf545d5",
+        "文件大小": "589.139MB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1BWWFsMmevNt9yvaJ32C2DQ",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-vista-001",
+      "category": "vista",
+      "version": "",
+      "title": "Windows Vista with Service Pack 2 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2009-05-26",
+      "editions": [],
+      "params": {
+        "文件名": "en_windows_vista_sp2_x64_dvd_342267.iso",
+        "SHA-256": "edf9f947c5791469fd7d2d40a5dcce663efa754f91847aa1d28ed7f585675b78",
+        "SHA-1": "aaee3c04533899f9f8c4ae0c4250ef5fafbe29a3",
+        "MD5": "a1c024d7abaf34bac3368e88efbc2574",
+        "文件大小": "3.596GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1NXFXpBo18ut6ASPdADuSPw",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-vista-002",
+      "category": "vista",
+      "version": "",
+      "title": "Windows Vista Business with Service Pack 2 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2009-05-26",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "en_windows_vista_business_sp2_x64_dvd_342327.iso",
+        "替代文件名": "SW_DVD5_Windows_Vista_Business_64BIT_English_Full_Int_SP2_MLF_X15-40034.ISO",
+        "SHA-256": "8d4e4cb85e4f4ea2dff7e7f6782ceb89c886727d14b2198aadb313327b8b8429",
+        "SHA-1": "a5b061685ef2bf1d72d6b15710266c3196321702",
+        "MD5": "faa6ed8df5b556f8eed0e07ef2c4e951",
+        "文件大小": "2.985GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1ZEni1vAlkhe3xr1vVZB_lw",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-vista-003",
+      "category": "vista",
+      "version": "",
+      "title": "Windows Vista Enterprise with Service Pack 2 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2009-05-26",
+      "editions": [
+        "Enterprise"
+      ],
+      "params": {
+        "文件名": "en_windows_vista_enterprise_sp2_x64_dvd_342332.iso",
+        "替代文件名": "SW_DVD5_SA_Win_Vista_Enterprise_64BIT_English_Full_Int_SP2_MLF_X15-40404.ISO",
+        "SHA-256": "0a0cd511b3eac95c6f081419c9c65b12317b9d6a8d9707f89d646c910e788016",
+        "SHA-1": "b1a450abbe43d7843ca502964c1e8e3cc7dcbfc5",
+        "MD5": "b7a3a65b6c45543e0b37c004997a7e25",
+        "文件大小": "2.986GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1m02atDjSzY_wTUiIPMlYRA",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-win8-001",
+      "category": "windows8",
+      "version": "",
+      "title": "Windows 8 Multi-Edition x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2012-08-15",
+      "editions": [
+        "Pro"
+      ],
+      "params": {
+        "文件名": "en_windows_8_x64_dvd_915440.iso",
+        "SHA-256": "f475d6dfd7f234f6bccee4a0e5feee3ad9b166edfa53190564b31ac00aaeafa9",
+        "SHA-1": "1ce53ad5f60419cf04a715cf3233f247e48beec4",
+        "MD5": "0e8f2199fae18fe510c23426e68f675a",
+        "文件大小": "3.336GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1WdbOlAC8Y2XcBSNCjqGegg",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-win8-002",
+      "category": "windows8",
+      "version": "",
+      "title": "Windows 8 Pro VL x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2012-08-15",
+      "editions": [
+        "Pro"
+      ],
+      "params": {
+        "文件名": "en_windows_8_pro_vl_x64_dvd_917699.iso",
+        "替代文件名": "SW_DVD5_Win_Pro_8_64BIT_English_MLF_X18-16134.ISO",
+        "SHA-256": "eb77c21151553aedc2ce8364f6644925fe39acbc5dc8407301dcdccfea80d1c8",
+        "SHA-1": "6ddedebe40ab59cb11823f62f475c43c4053fe60",
+        "MD5": "4e31c6f0a7862f8ce8931342ad984a12",
+        "文件大小": "3.249GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1h4Ruglh0XU8Sx66w1CQNmA",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "en-win8-003",
+      "category": "windows8",
+      "version": "",
+      "title": "Windows 8 Enterprise x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2012-08-15",
+      "editions": [
+        "Enterprise"
+      ],
+      "params": {
+        "文件名": "en_windows_8_enterprise_x64_dvd_917522.iso",
+        "替代文件名": "SW_DVD5_SA_Win_Ent_8_64BIT_English_Full_MLF_X18-16254.ISO",
+        "SHA-256": "3ada8dad68d432143890b3e7e9e3ca84669cd805d566290226744a2a8fe161bd",
+        "SHA-1": "4eadfe83e736621234c63e8465986f0af6aa3c82",
+        "MD5": "27aa354b8088527ffcd32007b51b25bf",
+        "文件大小": "3.251GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/187MUaCMKjnK--MoVgCcY2A",
           "password": ""
         }
       ]

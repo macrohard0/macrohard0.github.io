@@ -78,6 +78,12 @@ PAN = {
 def pan(t):
     return PAN.get(t, PAN['other'])
 
+# 语言切换控件里各语言的显示名（新增语言时在这里加一项即可）
+LANG_NAMES = {
+    'zh-cn': '简体中文',
+    'en-us': 'English',
+}
+
 PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
 # 参数表字段的展示名按语言翻译；im['params'] 的 key 本身（中文）不变，admin 工具也不用改
 PARAM_LABELS = {
@@ -93,7 +99,7 @@ STRINGS = {
         copy_link='复制链接', open_link='打开', extract_code='提取码', copy='复制',
         no_link='暂未提供下载链接，即将更新',
         no_image_title='暂无镜像', no_image_sub='该版本还没有发布镜像',
-        os_categories='系统分类', latest_images='最新镜像', header_tip='提供网盘链接 · 原版镜像',
+        os_categories='系统分类', latest_images='最新镜像',
         base_kw='Windows镜像,系统下载,网盘下载,MSDN,原版镜像,ISO下载',
         home_title_tmpl='%s 系统下载',
         title_ver_tmpl='%s %s 原版镜像下载 - %s系统下载',
@@ -106,7 +112,7 @@ STRINGS = {
         copy_link='Copy Link', open_link='Open', extract_code='Password', copy='Copy',
         no_link='No download link yet, check back soon',
         no_image_title='No images yet', no_image_sub='No images have been published for this version yet',
-        os_categories='OS Categories', latest_images='Latest Images', header_tip='Cloud drive links · Original images',
+        os_categories='OS Categories', latest_images='Latest Images',
         base_kw='Windows ISO,Windows download,original image,MSDN,ISO download,cloud drive',
         home_title_tmpl='%s ISO Downloads',
         title_ver_tmpl='%s %s Original ISO Download - %s',
@@ -120,6 +126,12 @@ def strings(lang):
 
 def e(s):
     return html.escape('' if s is None else str(s), quote=True)
+
+
+def cat_group(c):
+    """同一系统在不同语言站点间的对应关系（如 zh 的 winxp 对应 en-us 的 xp）；
+    不写 group 时默认用分类自己的 id（多数分类的 zh id 本身就是 group key）。"""
+    return c.get('group') or c['id']
 
 
 # ---------------------------------------------------------------- 片段渲染
@@ -202,6 +214,28 @@ def render_nav(cats, active_cat, prefix, t):
     return out
 
 
+def render_lang_switch(lang_links):
+    """右上角语言切换下拉；只有一种语言时不渲染（避免空壳控件）。"""
+    if len(lang_links) <= 1:
+        return ''
+    current = next((l for l in lang_links if l['current']), lang_links[0])
+    items = ''.join(
+        '<a href="%s" class="lang-switch-item%s" role="option" lang="%s">%s</a>' % (
+            e(l['href']), ' active' if l['current'] else '', e(l['code']), e(l['name']))
+        for l in lang_links
+    )
+    return (
+        '<div class="lang-switch" id="lang-switch">'
+        '<button type="button" class="lang-switch-btn" id="lang-switch-btn" aria-haspopup="listbox" aria-expanded="false">'
+        '<span class="lang-switch-globe" aria-hidden="true">\U0001F310</span>'
+        '<span class="lang-switch-current">%s</span>'
+        '<span class="lang-switch-caret" aria-hidden="true">▾</span>'
+        '</button>'
+        '<div class="lang-switch-menu" id="lang-switch-menu" role="listbox">%s</div>'
+        '</div>' % (e(current['name']), items)
+    )
+
+
 def render_submenu(cat, active_ver, prefix):
     vers = cat.get('versions', [])
     if not vers:
@@ -229,7 +263,7 @@ PAGE = """<!DOCTYPE html>
   <meta name="keywords" content="{keywords}">
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{canonical}">
-  <link rel="stylesheet" href="{prefix}assets/css/style.css">
+{hreflang}  <link rel="stylesheet" href="{prefix}assets/css/style.css">
   <script>
     var _hmt = _hmt || [];
     (function () {{
@@ -254,7 +288,7 @@ PAGE = """<!DOCTYPE html>
           <div class="menu-btn" id="menu-btn"><span></span><span></span><span></span></div>
           <h1 class="crumb">{crumb}</h1>
         </div>
-        <div class="tools"><span class="muted-tip">{header_tip}</span></div>
+        <div class="tools">{lang_switch}</div>
       </header>
       <main class="container">
 {body}
@@ -303,6 +337,35 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
     home_paths = set()  # 各语言首页的 path（'index.html' / 'en-us/index.html' ...），sitemap 特殊处理
 
     languages = config.get('languages') or [{'code': DEFAULT_LANG, 'dir': ''}]
+
+    # 跨语言同类目映射：group -> {lang_code: category}，供语言切换控件 / hreflang 用
+    groups = {}
+    for c in all_cats:
+        groups.setdefault(cat_group(c), {})[c.get('lang') or DEFAULT_LANG] = c
+
+    def resolve_lang_path(group, version_id, lang_conf2):
+        """给定当前页面所属的 (group, version_id)，算出它在另一语言站点里对应页面的 path。
+        对方没有该分类，或没有该版本时，退回该语言的分类页/首页，而不是报错或留空链接。"""
+        code2 = lang_conf2.get('code', DEFAULT_LANG)
+        dir2 = (lang_conf2.get('dir') or '').strip('/')
+
+        def p2(name):
+            return (dir2 + '/' + name) if dir2 else name
+
+        if group is None:
+            return p2('index.html')
+        cat2 = groups.get(group, {}).get(code2)
+        if not cat2:
+            return p2('index.html')
+        cid2 = cat2['id']
+        vers2 = cat2.get('versions', [])
+        if not vers2 or version_id is None:
+            return p2('%s.html' % cid2)
+        ids2 = {v['id'] for v in vers2}
+        if version_id not in ids2 or version_id == vers2[0]['id']:
+            return p2('%s.html' % cid2)
+        return p2('%s/%s.html' % (cid2, version_id))
+
     for lang_conf in languages:
         code = lang_conf.get('code', DEFAULT_LANG)
         t = strings(code)
@@ -354,16 +417,35 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         def notice_block():
             return ('<div class="notice">%s</div>' % e(notice)) if notice else ''
 
-        def page(path, title, desc, keywords, active_cat, crumb, body):
+        def page(path, title, desc, keywords, active_cat, crumb, body, group=None, version_id=None):
             asset_prefix = asset_prefix_for(path)
             home_prefix = section_prefix_for(path)
             canonical = base_url + '/' + path
+
+            # 语言切换下拉 + <link rel="alternate" hreflang> —— 只有一种语言时都是空
+            lang_links = []
+            hreflang = ''
+            if len(languages) > 1:
+                for lc in languages:
+                    code2 = lc.get('code', DEFAULT_LANG)
+                    target_path = resolve_lang_path(group, version_id, lc)
+                    lang_links.append({
+                        'code': code2,
+                        'name': LANG_NAMES.get(code2, code2),
+                        'href': asset_prefix + target_path,
+                        'current': code2 == code,
+                    })
+                    hreflang += '  <link rel="alternate" hreflang="%s" href="%s">\n' % (e(code2), e(base_url + '/' + target_path))
+                default_conf = next((lc for lc in languages if lc.get('code', DEFAULT_LANG) == DEFAULT_LANG), languages[0])
+                default_path = resolve_lang_path(group, version_id, default_conf)
+                hreflang += '  <link rel="alternate" hreflang="x-default" href="%s">\n' % e(base_url + '/' + default_path)
+
             html_out = PAGE.format(
                 html_lang=t['html_lang'],
-                title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical),
+                title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical), hreflang=hreflang,
                 prefix=asset_prefix, home_prefix=home_prefix, hm=hm, brand=brand,
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
-                header_tip=e(t['header_tip']),
+                lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body)
             write(out_root, path, html_out)
             urls.append(path)
@@ -409,7 +491,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                      t['title_ver_tmpl'] % (cname, latest_ver['name'], brand),
                      make_desc(cname, latest_ver['name'], land_imgs, t),
                      '%s,%s %s,%s' % (cname, cname, latest_ver['name'], base_kw),
-                     cid, crumb, body)
+                     cid, crumb, body, group=cat_group(c), version_id=None)
 
                 # 其余版本页
                 for v in vers[1:]:
@@ -421,7 +503,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
                          make_desc(cname, v['name'], v_imgs, t),
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
-                         cid, crumb, body)
+                         cid, crumb, body, group=cat_group(c), version_id=v['id'])
             else:
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
@@ -430,7 +512,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t),
                      '%s,%s' % (cname, base_kw),
-                     cid, crumb, body)
+                     cid, crumb, body, group=cat_group(c), version_id=None)
 
     # ---------- sitemap.xml ----------
     today = datetime.date.today().isoformat()
