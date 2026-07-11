@@ -113,6 +113,7 @@
     },
     {
       "id": "windows11",
+      "slug": "win11",
       "name": "Windows 11",
       "lang": "en-us",
       "group": "win11",
@@ -137,6 +138,7 @@
     },
     {
       "id": "windows10",
+      "slug": "win10",
       "name": "Windows 10",
       "lang": "en-us",
       "group": "win10",
@@ -153,6 +155,7 @@
     },
     {
       "id": "windows81",
+      "slug": "win81",
       "name": "Windows 8.1",
       "lang": "en-us",
       "group": "win81",
@@ -160,6 +163,7 @@
     },
     {
       "id": "windows8",
+      "slug": "win8",
       "name": "Windows 8",
       "lang": "en-us",
       "group": "win8",
@@ -167,6 +171,7 @@
     },
     {
       "id": "windows7",
+      "slug": "win7",
       "name": "Windows 7",
       "lang": "en-us",
       "group": "win7",
@@ -186,6 +191,7 @@
     },
     {
       "id": "xp",
+      "slug": "winxp",
       "name": "Windows XP",
       "lang": "en-us",
       "group": "winxp",

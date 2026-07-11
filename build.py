@@ -134,6 +134,13 @@ def cat_group(c):
     return c.get('group') or c['id']
 
 
+def cat_slug(c):
+    """分类页文件名/URL 用的短名；不写 slug 时退回 id。
+    id 仍是镜像匹配（category 字段）用的内部 key，不同语言站点的 id 必须互不相同，
+    避免 by_cat 按字符串匹配时把两个语言的镜像混到一起；slug 只管文件名，可以和 zh 站点保持一致（如 win11）。"""
+    return c.get('slug') or c['id']
+
+
 # ---------------------------------------------------------------- 片段渲染
 def render_tags(im):
     out = '<span class="bit">%s</span>' % e(im.get('arch', ''))
@@ -209,7 +216,7 @@ def render_nav(cats, active_cat, prefix, t):
         'active' if active_cat == '__home__' else '', prefix, e(t['home']))
     for c in cats:
         out += '<li class="%s"><a href="%s%s.html"><i class="ic"></i>%s</a></li>' % (
-            'active' if c['id'] == active_cat else '', prefix, e(c['id']), e(c['name']))
+            'active' if c['id'] == active_cat else '', prefix, e(cat_slug(c)), e(c['name']))
     out += '</ul>'
     return out
 
@@ -241,13 +248,14 @@ def render_submenu(cat, active_ver, prefix):
     if not vers:
         return ''
     latest = vers[0]['id']
+    cslug = cat_slug(cat)
     out = '<div class="submenu">'
     for v in vers:
         # 最新版本指向 <cat>.html，其余指向 <cat>/<ver>.html
         if v['id'] == latest:
-            href = '%s%s.html' % (prefix, cat['id'])
+            href = '%s%s.html' % (prefix, cslug)
         else:
-            href = '%s%s/%s.html' % (prefix, cat['id'], v['id'])
+            href = '%s%s/%s.html' % (prefix, cslug, v['id'])
         out += '<a href="%s" class="%s">%s</a>' % (href, 'active' if v['id'] == active_ver else '', e(v['name']))
     out += '</div>'
     return out
@@ -357,7 +365,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         cat2 = groups.get(group, {}).get(code2)
         if not cat2:
             return p2('index.html')
-        cid2 = cat2['id']
+        cid2 = cat_slug(cat2)
         vers2 = cat2.get('versions', [])
         if not vers2 or version_id is None:
             return p2('%s.html' % cid2)
@@ -456,7 +464,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         # ---------- 首页 ----------
         latest = sort_imgs(images)[:15]
         cat_links = '<div class="submenu">' + ''.join(
-            '<a href="%s.html">%s</a>' % (e(c['id']), e(c['name'])) for c in cats) + '</div>'
+            '<a href="%s.html">%s</a>' % (e(cat_slug(c)), e(c['name'])) for c in cats) + '</div>'
         home_body = (
             notice_block() +
             '<h2 style="font-size:15px;margin:4px 0 12px;color:#374151;">%s</h2>' % e(t['os_categories']) + cat_links +
@@ -472,6 +480,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         # ---------- 分类页 & 版本页 ----------
         for c in cats:
             cid = c['id']
+            cslug = cat_slug(c)
             cname = c['name']
             vers = c.get('versions', [])
             imgs = by_cat.get(cid, [])
@@ -485,7 +494,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 land_imgs = [im for im in imgs if im.get('version') == latest_ver['id']
                              or im.get('version', '') == '' or im.get('version') not in defined]
                 crumb = '%s <small>%s</small>' % (e(cname), e(latest_ver['name']))
-                cat_path = p('%s.html' % cid)
+                cat_path = p('%s.html' % cslug)
                 body = notice_block() + render_submenu(c, latest_ver['id'], section_prefix_for(cat_path)) + cards_block(land_imgs) + foot_block()
                 page(cat_path,
                      t['title_ver_tmpl'] % (cname, latest_ver['name'], brand),
@@ -497,7 +506,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 for v in vers[1:]:
                     v_imgs = [im for im in imgs if im.get('version') == v['id']]
                     crumb = '%s <small>%s</small>' % (e(cname), e(v['name']))
-                    ver_path = p('%s/%s.html' % (cid, v['id']))
+                    ver_path = p('%s/%s.html' % (cslug, v['id']))
                     body = notice_block() + render_submenu(c, v['id'], section_prefix_for(ver_path)) + cards_block(v_imgs) + foot_block()
                     page(ver_path,
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
@@ -508,7 +517,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
                 body = notice_block() + cards_block(all_imgs) + foot_block()
-                page(p('%s.html' % cid),
+                page(p('%s.html' % cslug),
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t),
                      '%s,%s' % (cname, base_kw),
