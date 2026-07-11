@@ -1936,10 +1936,15 @@
       "editions": [
         "Pro",
         "Home",
-        "Home Single Language",
+        "Home",
+        "Single",
+        "Language",
         "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Pro",
+        "Education",
+        "Pro",
+        "for",
+        "Workstations"
       ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
@@ -1948,7 +1953,13 @@
         "MD5": "21326206eaf07019456009e50c4e7a27",
         "文件大小": "7.63GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1XYBMWqeut8s2Nb85_G99lg",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win11-002",
@@ -1962,8 +1973,11 @@
         "Pro",
         "Enterprise",
         "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Pro",
+        "Education",
+        "Pro",
+        "for",
+        "Workstations"
       ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
@@ -1972,7 +1986,13 @@
         "MD5": "9d1ceb2567d547bffa0d2ed00a84040e",
         "文件大小": "7.52GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/16iP8p8gkSu55vjx-QLdd9w",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win11-003",
