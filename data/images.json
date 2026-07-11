@@ -346,6 +346,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/4801ed36ace5",
           "password": ""
+        },
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1xPLkAO-qWRdBcMeMGILstg",
+          "password": ""
         }
       ]
     },
@@ -374,7 +379,13 @@
       "links": [
         {
           "type": "quark",
-          "url": "https://pan.quark.cn/s/86939a9e0d36"
+          "url": "https://pan.quark.cn/s/86939a9e0d36",
+          "password": ""
+        },
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1ybc8smeSR06NwbQjaZadBA",
+          "password": ""
         }
       ]
     },
