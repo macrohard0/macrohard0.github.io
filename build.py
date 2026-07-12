@@ -271,7 +271,7 @@ PAGE = """<!DOCTYPE html>
   <meta name="keywords" content="{keywords}">
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{canonical}">
-{hreflang}  <link rel="stylesheet" href="{prefix}assets/css/style.css">
+{hreflang}{jsonld}  <link rel="stylesheet" href="{prefix}assets/css/style.css">
   <script>
     var _hmt = _hmt || [];
     (function () {{
@@ -310,6 +310,37 @@ PAGE = """<!DOCTYPE html>
 """
 
 
+def max_date(imgs):
+    """页面里出现的镜像的最新 date，用作 sitemap 的 lastmod；没有日期信息时返回 None（由调用方兜底）。"""
+    dates = [im.get('date') for im in imgs if im.get('date')]
+    return max(dates) if dates else None
+
+
+def render_jsonld(t, brand_plain, base_url, home_path, crumbs=None):
+    """WebSite（每页都有）+ BreadcrumbList（非首页，反映 Home > 分类 > 版本 的层级）结构化数据。"""
+    objs = [{
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        'name': brand_plain,
+        'url': base_url + '/' + home_path,
+        'inLanguage': t['html_lang'],
+    }]
+    if crumbs:
+        items = [{'@type': 'ListItem', 'position': 1, 'name': t['home'], 'item': base_url + '/' + home_path}]
+        for i, (name, path) in enumerate(crumbs, start=2):
+            item = {'@type': 'ListItem', 'position': i, 'name': name}
+            if path:
+                item['item'] = base_url + '/' + path
+            items.append(item)
+        objs.append({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            'itemListElement': items,
+        })
+    payload = json.dumps(objs, ensure_ascii=False).replace('</', '<\\/')
+    return '  <script type="application/ld+json">%s</script>\n' % payload
+
+
 def make_desc(cat_name, ver_name, images, t):
     eds = []
     for im in images[:4]:
@@ -340,9 +371,11 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
     all_cats = data.get('categories', [])
     all_images = data.get('images', [])
     default_brand_plain = site_overrides.get('brand') or site_base.get('brand', 'NextWindows')
+    today = datetime.date.today().isoformat()  # 没有镜像日期信息时的兜底 lastmod
 
     urls = []  # for sitemap（相对 out_root 的路径，含各语言子目录前缀）
     home_paths = set()  # 各语言首页的 path（'index.html' / 'en-us/index.html' ...），sitemap 特殊处理
+    lastmods = {}  # path -> 该页面里镜像的最新 date，供 sitemap 用真实的「最后更新时间」而非构建日期
 
     languages = config.get('languages') or [{'code': DEFAULT_LANG, 'dir': ''}]
 
@@ -425,7 +458,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         def notice_block():
             return ('<div class="notice">%s</div>' % e(notice)) if notice else ''
 
-        def page(path, title, desc, keywords, active_cat, crumb, body, group=None, version_id=None):
+        def page(path, title, desc, keywords, active_cat, crumb, body, group=None, version_id=None, lastmod=None, crumbs=None):
             asset_prefix = asset_prefix_for(path)
             home_prefix = section_prefix_for(path)
             canonical = base_url + '/' + path
@@ -448,15 +481,19 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 default_path = resolve_lang_path(group, version_id, default_conf)
                 hreflang += '  <link rel="alternate" hreflang="x-default" href="%s">\n' % e(base_url + '/' + default_path)
 
+            jsonld = render_jsonld(t, brand_plain, base_url, home_path, crumbs)
+
             html_out = PAGE.format(
                 html_lang=t['html_lang'],
                 title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical), hreflang=hreflang,
+                jsonld=jsonld,
                 prefix=asset_prefix, home_prefix=home_prefix, hm=hm, brand=brand,
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
                 lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body)
             write(out_root, path, html_out)
             urls.append(path)
+            lastmods[path] = lastmod or today
 
         def sort_imgs(imgs):
             return sorted(imgs, key=lambda x: x.get('date', ''), reverse=True)
@@ -474,7 +511,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         home_path = p('index.html')
         page(home_path, e(home_title),
              subtitle + ' ' + notice, base_kw, '__home__',
-             '%s <small>%s</small>' % (e(t['latest_images']), subtitle), home_body)
+             '%s <small>%s</small>' % (e(t['latest_images']), subtitle), home_body,
+             lastmod=max_date(latest))
         home_paths.add(home_path)
 
         # ---------- 分类页 & 版本页 ----------
@@ -500,7 +538,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                      t['title_ver_tmpl'] % (cname, latest_ver['name'], brand),
                      make_desc(cname, latest_ver['name'], land_imgs, t),
                      '%s,%s %s,%s' % (cname, cname, latest_ver['name'], base_kw),
-                     cid, crumb, body, group=cat_group(c), version_id=None)
+                     cid, crumb, body, group=cat_group(c), version_id=None,
+                     lastmod=max_date(land_imgs), crumbs=[(cname, cat_path), (latest_ver['name'], None)])
 
                 # 其余版本页
                 for v in vers[1:]:
