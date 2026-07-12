@@ -1883,7 +1883,7 @@
       "id": "win10-mr8xd5kl",
       "category": "win10",
       "version": "21h2",
-      "title": "Windows 10 企业版 LTSC 2021",
+      "title": "Windows 10 企业版 LTSC 2021 x64",
       "arch": "64位",
       "lang": "中文简体",
       "date": "",
@@ -2013,17 +2013,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Home",
-        "Home",
-        "Single",
-        "Language",
-        "Education",
-        "Pro",
-        "Education",
-        "Pro",
-        "for",
-        "Workstations"
+        "Consumer"
       ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
@@ -2049,14 +2039,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Enterprise",
-        "Education",
-        "Pro",
-        "Education",
-        "Pro",
-        "for",
-        "Workstations"
+        "Business"
       ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
@@ -2082,12 +2065,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Home",
-        "Home Single Language",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Consumer"
       ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_25h2_updated_june_2026_x64_dvd_2045a41c.iso",
@@ -2107,11 +2085,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Enterprise",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Business"
       ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_25h2_updated_june_2026_x64_dvd_e7cb77c9.iso",
@@ -2131,12 +2105,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Home",
-        "Home Single Language",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Consumer"
       ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_24h2_updated_june_2026_x64_dvd_66533f53.iso",
@@ -2156,11 +2125,7 @@
       "lang": "English",
       "date": "2026-06-16",
       "editions": [
-        "Pro",
-        "Enterprise",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Business"
       ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_24h2_updated_june_2026_x64_dvd_874abeb5.iso",
@@ -2180,12 +2145,7 @@
       "lang": "English",
       "date": "2025-10-21",
       "editions": [
-        "Pro",
-        "Home",
-        "Home Single Language",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Consumer"
       ],
       "params": {
         "文件名": "en-us_windows_11_consumer_editions_version_23h2_updated_oct_2025_x64_dvd_8deeaabd.iso",
@@ -2205,11 +2165,7 @@
       "lang": "English",
       "date": "2025-10-21",
       "editions": [
-        "Pro",
-        "Enterprise",
-        "Education",
-        "Pro Education",
-        "Pro for Workstations"
+        "Business"
       ],
       "params": {
         "文件名": "en-us_windows_11_business_editions_version_23h2_updated_oct_2025_x64_dvd_c9a85ebe.iso",
@@ -2229,17 +2185,7 @@
       "lang": "English",
       "date": "2025-10-21",
       "editions": [
-        "Pro",
-        "Home",
-        "Home",
-        "Single",
-        "Language",
-        "Education",
-        "Pro",
-        "Education",
-        "Pro",
-        "for",
-        "Workstations"
+        "Consumer"
       ],
       "params": {
         "文件名": "en-us_windows_10_consumer_editions_version_22h2_updated_oct_2025_x64_dvd_38efd00d.iso",
@@ -2265,14 +2211,7 @@
       "lang": "English",
       "date": "2025-10-21",
       "editions": [
-        "Pro",
-        "Enterprise",
-        "Education",
-        "Pro",
-        "Education",
-        "Pro",
-        "for",
-        "Workstations"
+        "Business"
       ],
       "params": {
         "文件名": "en-us_windows_10_business_editions_version_22h2_updated_oct_2025_x64_dvd_d2eef4b0.iso",
@@ -2551,7 +2490,6 @@
       ],
       "params": {
         "文件名": "en_windows_vista_business_sp2_x64_dvd_342327.iso",
-        "替代文件名": "SW_DVD5_Windows_Vista_Business_64BIT_English_Full_Int_SP2_MLF_X15-40034.ISO",
         "SHA-256": "8d4e4cb85e4f4ea2dff7e7f6782ceb89c886727d14b2198aadb313327b8b8429",
         "SHA-1": "a5b061685ef2bf1d72d6b15710266c3196321702",
         "MD5": "faa6ed8df5b556f8eed0e07ef2c4e951",
@@ -2578,7 +2516,6 @@
       ],
       "params": {
         "文件名": "en_windows_vista_enterprise_sp2_x64_dvd_342332.iso",
-        "替代文件名": "SW_DVD5_SA_Win_Vista_Enterprise_64BIT_English_Full_Int_SP2_MLF_X15-40404.ISO",
         "SHA-256": "0a0cd511b3eac95c6f081419c9c65b12317b9d6a8d9707f89d646c910e788016",
         "SHA-1": "b1a450abbe43d7843ca502964c1e8e3cc7dcbfc5",
         "MD5": "b7a3a65b6c45543e0b37c004997a7e25",
@@ -2631,7 +2568,6 @@
       ],
       "params": {
         "文件名": "en_windows_8_pro_vl_x64_dvd_917699.iso",
-        "替代文件名": "SW_DVD5_Win_Pro_8_64BIT_English_MLF_X18-16134.ISO",
         "SHA-256": "eb77c21151553aedc2ce8364f6644925fe39acbc5dc8407301dcdccfea80d1c8",
         "SHA-1": "6ddedebe40ab59cb11823f62f475c43c4053fe60",
         "MD5": "4e31c6f0a7862f8ce8931342ad984a12",
@@ -2658,7 +2594,6 @@
       ],
       "params": {
         "文件名": "en_windows_8_enterprise_x64_dvd_917522.iso",
-        "替代文件名": "SW_DVD5_SA_Win_Ent_8_64BIT_English_Full_MLF_X18-16254.ISO",
         "SHA-256": "3ada8dad68d432143890b3e7e9e3ca84669cd805d566290226744a2a8fe161bd",
         "SHA-1": "4eadfe83e736621234c63e8465986f0af6aa3c82",
         "MD5": "27aa354b8088527ffcd32007b51b25bf",
