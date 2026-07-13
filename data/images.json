@@ -196,6 +196,73 @@
       "lang": "en-us",
       "group": "winxp",
       "versions": []
+    },
+    {
+      "id": "ko-win11",
+      "slug": "win11",
+      "name": "Windows 11",
+      "lang": "ko-kr",
+      "group": "win11",
+      "versions": [
+        {
+          "id": "26h1",
+          "name": "26H1"
+        },
+        {
+          "id": "25h2",
+          "name": "25H2"
+        },
+        {
+          "id": "24h2",
+          "name": "24H2"
+        },
+        {
+          "id": "21h2",
+          "name": "21H2"
+        }
+      ]
+    },
+    {
+      "id": "ko-win10",
+      "slug": "win10",
+      "name": "Windows 10",
+      "lang": "ko-kr",
+      "group": "win10",
+      "versions": [
+        {
+          "id": "22h2",
+          "name": "22H2"
+        }
+      ]
+    },
+    {
+      "id": "ko-win81",
+      "slug": "win81",
+      "name": "Windows 8.1",
+      "lang": "ko-kr",
+      "group": "win81",
+      "versions": []
+    },
+    {
+      "id": "ko-win7",
+      "slug": "win7",
+      "name": "Windows 7",
+      "lang": "ko-kr",
+      "group": "win7",
+      "versions": [
+        {
+          "id": "sp1",
+          "name": "Service Pack 1"
+        }
+      ]
+    },
+    {
+      "id": "ko-vista",
+      "slug": "vista",
+      "name": "Windows Vista",
+      "lang": "ko-kr",
+      "group": "vista",
+      "versions": []
     }
   ],
   "images": [
@@ -2576,6 +2643,421 @@
           "password": ""
         }
       ]
+    },
+    {
+      "id": "ko-win11-001",
+      "category": "ko-win11",
+      "version": "26h1",
+      "title": "Windows 11 Business Editions 26H1 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_business_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
+        "SHA-256": "a37f302a31fc638ceb5a9aec8ef84fd65c66cfe15e657540e5370b3771209959",
+        "SHA-1": "3813c933cc53bc30a94496f8df3e9d12a9bf7506",
+        "MD5": "6a99b4263b2f1a23a0217e2d074125a4",
+        "文件大小": "7.32GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-002",
+      "category": "ko-win11",
+      "version": "26h1",
+      "title": "Windows 11 Consumer Editions 26H1 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_consumer_editions_version_26h1_updated_june_2026_x64_dvd_72dd14a5.iso",
+        "SHA-256": "9574bec711fcf00fbec0e256257dd72f1961861e4f4f886be9d21de39784d214",
+        "SHA-1": "139cd28f3238d7a757e1517004321da3fe9785f0",
+        "MD5": "34f86dec681920d7e5bea14d522a7879",
+        "文件大小": "7.37GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-003",
+      "category": "ko-win11",
+      "version": "25h2",
+      "title": "Windows 11 Business Editions 25H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_business_editions_version_25h2_updated_june_2026_x64_dvd_8718909d.iso",
+        "SHA-256": "694342305117cf109dc76cf24985a274b69fae2e81a08b33082aadf12c4c8f92",
+        "SHA-1": "e5d47c6faaf57e8fa01572e5808529439da4bb6b",
+        "MD5": "0919c8dbc8049b0543c28a8dea851470",
+        "文件大小": "7.77GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-004",
+      "category": "ko-win11",
+      "version": "25h2",
+      "title": "Windows 11 Consumer Editions 25H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_consumer_editions_version_25h2_updated_june_2026_x64_dvd_2045a41c.iso",
+        "SHA-256": "08922e81773121a1f12900489097161747c2caeed73612cf4bd633830b2309f2",
+        "SHA-1": "1d89998467384278e70c15e06c7be63798c172cb",
+        "MD5": "cbdd9d0a8ed458a8f575288d266bb97d",
+        "文件大小": "7.83GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-005",
+      "category": "ko-win11",
+      "version": "24h2",
+      "title": "Windows 11 Business Editions 24H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_business_editions_version_24h2_updated_june_2026_x64_dvd_ca22092c.iso",
+        "SHA-256": "34295e5c48acacd7440984f983d6a50158376b1a2f0734a033d03701150b89d7",
+        "SHA-1": "0b4437d5b2e5967c92b73c2ee883545bfeef8142",
+        "MD5": "f884689dd75b6c2b9caaff221e52cfd6",
+        "文件大小": "7.75GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-006",
+      "category": "ko-win11",
+      "version": "24h2",
+      "title": "Windows 11 Consumer Editions 24H2 (Updated June 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2026-06-16",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_consumer_editions_version_24h2_updated_june_2026_x64_dvd_66533f53.iso",
+        "SHA-256": "1bc78f1eb37c32ea09ea6f75963de532681ea565148b17d74c6864e96f5417e8",
+        "SHA-1": "197eb811c5df1e5e3834aaad4369c2f8137dac14",
+        "MD5": "f634edbbdcec32caac6ace3d9c5479a1",
+        "文件大小": "7.79GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-007",
+      "category": "ko-win11",
+      "version": "21h2",
+      "title": "Windows 11 Business Editions 21H2 (Updated September 2023) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2023-09-01",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_business_editions_version_21h2_updated_sep_2023_x64_dvd_aceddbad.iso",
+        "SHA-256": "f2904cc2aa566e61e70d4342e08952dc7996ab56b9b1a54e744347b6f8e18668",
+        "SHA-1": "cf5a27deb5f8d567fdb346cdba9aa9cf5edbf0cc",
+        "MD5": "7cec78e1880bea458f3cd775a3eac0f3",
+        "文件大小": "5.28GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win11-008",
+      "category": "ko-win11",
+      "version": "21h2",
+      "title": "Windows 11 Consumer Editions 21H2 (Updated September 2023) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2023-09-01",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_consumer_editions_version_21h2_updated_sep_2023_x64_dvd_0f839f31.iso",
+        "SHA-256": "f6f9aa51bbcf4fb9e923c8e102023cbb40c9fbf4f1fe4bf9303c35c01fc8275d",
+        "SHA-1": "e0eafe11d8230dccd972d1e09627a0cf6d8fdc0a",
+        "MD5": "b6344518a16974cf5d9308dfc9ec2b8a",
+        "文件大小": "5.36GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win10-001",
+      "category": "ko-win10",
+      "version": "22h2",
+      "title": "Windows 10 Business Editions 22H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2025-10-21",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_10_business_editions_version_22h2_updated_oct_2025_x64_dvd_5b02eda2.iso",
+        "SHA-256": "1b666ffb5117b2fd6da3ac5eee2bc85c928c41385806c39099e8f1c72798668d",
+        "SHA-1": "b2359eefdcfd2176ffd3986a826786db350c9a01",
+        "MD5": "92e97077204c06dfdf09e8238aa2ae0e",
+        "文件大小": "6.25GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1HpfezuxRtTP0iQMfhOICXg",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win10-002",
+      "category": "ko-win10",
+      "version": "22h2",
+      "title": "Windows 10 Consumer Editions 22H2 (Updated October 2025) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2025-10-21",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_10_consumer_editions_version_22h2_updated_oct_2025_x64_dvd_38efd00d.iso",
+        "SHA-256": "ef0f56f0af038dee750a95b2fe5418d0562362ae8e6ecd238191bfbd10c08a3b",
+        "SHA-1": "4cacd95a42406fa4e07db4bdee7b85b53f6d1276",
+        "MD5": "1572ed5cbd175c5d0afb1e2ab1956b35",
+        "文件大小": "6.40GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1VXjkGDUCAUZS4EbWhAf3ig",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win81-001",
+      "category": "ko-win81",
+      "version": "",
+      "title": "Windows 8.1 Multi-Edition with Update x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2014-12-15",
+      "editions": [
+        "Pro"
+      ],
+      "params": {
+        "文件名": "ko_windows_8.1_with_update_x64_dvd_6051491.iso",
+        "SHA-256": "25a8c359aa9d6e67b70ac836d5193f3ca2af3ae8f377e880370ff5e60df501c5",
+        "SHA-1": "ebdda17a65d8d3f4ab6a18bed2642eac21bda15d",
+        "MD5": "08bc614320cc515a8819286cc68b789e",
+        "文件大小": "4.06GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win81-002",
+      "category": "ko-win81",
+      "version": "",
+      "title": "Windows 8.1 Pro VL with Update x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2014-12-15",
+      "editions": [
+        "Pro"
+      ],
+      "params": {
+        "文件名": "ko_windows_8.1_pro_vl_with_update_x64_dvd_6050891.iso",
+        "SHA-256": "064d234909fe95d09344ad23f587f0404ea0cb507849e1c0f821941558857b15",
+        "SHA-1": "29474f3678ceb5b26dbb2dd6113da21a9f0ebeb3",
+        "MD5": "64ca0562643154746c826597ea72fade",
+        "文件大小": "3.88GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win81-003",
+      "category": "ko-win81",
+      "version": "",
+      "title": "Windows 8.1 Enterprise with Update x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2014-12-15",
+      "editions": [
+        "Enterprise"
+      ],
+      "params": {
+        "文件名": "ko_windows_8.1_enterprise_with_update_x64_dvd_6050509.iso",
+        "SHA-256": "07991c135abd461a8f2fd04f52d10a2166ef20d8caf8d17066c21137c984279a",
+        "SHA-1": "0f2c7a9e3cc21ed5d2b0488fc4b0ba6a4ce7ce28",
+        "MD5": "7d01828c84f908de0fd7ba556e368eb4",
+        "文件大小": "3.88GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-win7-001",
+      "category": "ko-win7",
+      "version": "sp1",
+      "title": "Windows 7 Enterprise SP1 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2011-05-12",
+      "editions": [
+        "Enterprise"
+      ],
+      "params": {
+        "文件名": "ko_windows_7_enterprise_k_with_sp1_x64_dvd_u_677728.iso",
+        "SHA-256": "a320c155c17a96a12818e230777b601f3fc4bf85b6e6120b86fb817daf57a36c",
+        "SHA-1": "fd0b96e2e133e65e3243811fefc1d6bdf74e9c75",
+        "MD5": "2582cb10a56faa9e96fb11479cda89a4",
+        "文件大小": "2.91GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/17S_eObWNZEWs4EkCdV31Yg",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win7-002",
+      "category": "ko-win7",
+      "version": "sp1",
+      "title": "Windows 7 Home Premium SP1 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2011-05-12",
+      "editions": [
+        "Home",
+        "Premium"
+      ],
+      "params": {
+        "文件名": "ko_windows_7_home_premium_k_with_sp1_x64_dvd_u_676808.iso",
+        "SHA-256": "e7612ee427ac1d37812c896d3915c0b37f849bf8f0c7a2e90f651d906ae4e9c1",
+        "SHA-1": "a978dbeb5f4cd1219749213fa1d56e469847587b",
+        "MD5": "7a422bd6768bf1916a06ff449291394b",
+        "文件大小": "3.05GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1gCNctfmgJsGiOpdiptKs1g",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win7-003",
+      "category": "ko-win7",
+      "version": "sp1",
+      "title": "Windows 7 Professional SP1 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2011-05-12",
+      "editions": [
+        "Pro"
+      ],
+      "params": {
+        "文件名": "ko_windows_7_professional_k_with_sp1_x64_dvd_u_677155.iso",
+        "SHA-256": "efc139525cb0d1531cfacf5e090405eedbff2ea02e96b860a8ad77534970c88c",
+        "SHA-1": "575af2a4a6125b6e9f69f80dfd2184d9684d9548",
+        "MD5": "3a28c4865cfc953274f876ee9692c3d7",
+        "文件大小": "3.05GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1K-i1eJVl-xy3ryrexfQqgA",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win7-004",
+      "category": "ko-win7",
+      "version": "sp1",
+      "title": "Windows 7 Ultimate SP1 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2011-05-12",
+      "editions": [
+        "Ultimate"
+      ],
+      "params": {
+        "文件名": "ko_windows_7_ultimate_k_with_sp1_x64_dvd_u_677502.iso",
+        "SHA-256": "28cbdefe8da385d2869f4ea609f2f6c23e9a5fb64fca9bfe92b9e5a5dae59a74",
+        "SHA-1": "deabc2b531ec84fb0c962aca9a89bdac6b141dc0",
+        "MD5": "1e45e6f7e967143a418c2ee5ac297cc3",
+        "文件大小": "3.05GB"
+      },
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1533evKMSVrF0ppokDtMM9Q",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-vista-001",
+      "category": "ko-vista",
+      "version": "",
+      "title": "Windows Vista with Service Pack 2 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2009-05-26",
+      "editions": [],
+      "params": {
+        "文件名": "ko_windows_vista_k_with_sp2_x64_dvd_x15-36350.iso",
+        "SHA-256": "7c947e747215623333a2723e51d8d2cf4250e414a8cb9c1f1e08c57ea5a79014",
+        "SHA-1": "1c07e1b2bfb5c934fe0a4de3f65460717eb9c8d5",
+        "MD5": "7102bf85fc11f9f9abdb5b524dc75ad3",
+        "文件大小": "3.48GB"
+      },
+      "links": []
+    },
+    {
+      "id": "ko-vista-002",
+      "category": "ko-vista",
+      "version": "",
+      "title": "Windows Vista Enterprise with Service Pack 2 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "2009-05-26",
+      "editions": [
+        "Enterprise"
+      ],
+      "params": {
+        "文件名": "ko_windows_vista_enterprise_k_with_sp2_x64_dvd_x15-40433.iso",
+        "SHA-256": "ae2ead2725e57da05b1f58bc364f5c9d2b8cb446703bed1385e6a457fee5e3d2",
+        "SHA-1": "a9c507c34f708a6ecbcf379d3729f1a1c0156ec0",
+        "MD5": "d8769d13a41fed42288eda1826f82f3a",
+        "文件大小": "2.81GB"
+      },
+      "links": []
     }
   ]
 }

@@ -82,6 +82,7 @@ def pan(t):
 LANG_NAMES = {
     'zh-cn': '简体中文',
     'en-us': 'English',
+    'ko-kr': '한국어',
 }
 
 PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
@@ -89,6 +90,7 @@ PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
 PARAM_LABELS = {
     'zh-cn': {'文件名': '文件名', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': '文件大小'},
     'en-us': {'文件名': 'File name', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': 'File size'},
+    'ko-kr': {'文件名': '파일명', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': '파일 크기'},
 }
 
 # 每种语言的界面文案（导航、按钮、提示语、标题/描述模板等）
@@ -118,6 +120,19 @@ STRINGS = {
         title_ver_tmpl='%s %s Original ISO Download - %s',
         title_plain_tmpl='%s Original ISO Download - %s',
         desc_tmpl='Download the original %s %s ISO image via cloud drive (TeraBox), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
+    ),
+    'ko-kr': dict(
+        code='ko-kr', html_lang='ko-KR',
+        home='홈', toggle='[ 펼치기/접기 ]',
+        copy_link='링크 복사', open_link='열기', extract_code='비밀번호', copy='복사',
+        no_link='아직 다운로드 링크가 없습니다. 곧 업데이트됩니다',
+        no_image_title='이미지 없음', no_image_sub='이 버전에는 아직 게시된 이미지가 없습니다',
+        os_categories='OS 분류', latest_images='최신 이미지',
+        base_kw='Windows ISO,윈도우 다운로드,원본 이미지,MSDN,ISO 다운로드,클라우드 드라이브',
+        home_title_tmpl='%s ISO 다운로드',
+        title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
+        title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
+        desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(TeraBox)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
     ),
 }
 def strings(lang):

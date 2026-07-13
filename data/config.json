@@ -1,0 +1,30 @@
+{
+  "languages": [
+    {
+      "code": "zh-cn",
+      "dir": ""
+    },
+    {
+      "code": "en-us",
+      "dir": "en-us",
+      "brand": "NextWindows",
+      "panProviders": ["terabox"],
+      "site": {
+        "subtitle": "Clean Windows Original ISO Images · Cloud Drive Download",
+        "footer": "This site only provides cloud drive share links to original images, for learning purposes only, not for commercial use.",
+        "notice": "All images are original from Microsoft (MSDN/VLSC) and unmodified. Please verify the SHA-256 checksum after downloading."
+      }
+    },
+    {
+      "code": "ko-kr",
+      "dir": "ko-kr",
+      "brand": "NextWindows",
+      "panProviders": ["terabox"],
+      "site": {
+        "subtitle": "순정 Windows 원본 ISO 이미지 · 클라우드 드라이브 다운로드",
+        "footer": "본 사이트는 학습 목적의 원본 이미지 클라우드 드라이브 공유 링크만 제공하며, 상업적 용도로 사용할 수 없습니다.",
+        "notice": "모든 이미지는 마이크로소프트 공식 원본(MSDN/VLSC)이며 수정되지 않았습니다. 다운로드 후 SHA-256 체크섬을 확인해 주세요."
+      }
+    }
+  ]
+}
