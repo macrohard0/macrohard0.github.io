@@ -2040,6 +2040,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/1_JYiEJsBgWqXtWWr8HZU9g",
           "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/1d753c070959",
+          "password": ""
         }
       ]
     },
