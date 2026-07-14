@@ -2662,7 +2662,13 @@
         "MD5": "6a99b4263b2f1a23a0217e2d074125a4",
         "文件大小": "7.32GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1-zLluRfmxGW2r48E90ME_w",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "ko-win11-002",
@@ -2682,7 +2688,13 @@
         "MD5": "34f86dec681920d7e5bea14d522a7879",
         "文件大小": "7.37GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/10tTuHR44TBD4e7uN_CYWRA",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "ko-win11-003",
