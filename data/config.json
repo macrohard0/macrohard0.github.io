@@ -8,7 +8,6 @@
       "code": "en-us",
       "dir": "en-us",
       "brand": "NextWindows",
-      "panProviders": ["terabox"],
       "site": {
         "subtitle": "Clean Windows Original ISO Images · Cloud Drive Download",
         "footer": "This site only provides cloud drive share links to original images, for learning purposes only, not for commercial use.",
@@ -19,7 +18,6 @@
       "code": "ko-kr",
       "dir": "ko-kr",
       "brand": "NextWindows",
-      "panProviders": ["terabox"],
       "site": {
         "subtitle": "순정 Windows 원본 ISO 이미지 · 클라우드 드라이브 다운로드",
         "footer": "본 사이트는 학습 목적의 원본 이미지 클라우드 드라이브 공유 링크만 제공하며, 상업적 용도로 사용할 수 없습니다.",

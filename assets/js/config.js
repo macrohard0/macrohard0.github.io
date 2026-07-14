@@ -19,7 +19,6 @@ window.PAN_TYPES = {
   weiyun: { name: '腾讯微云',   color: '#00C250', needPassword: false, hint: 'https://share.weiyun.com/...' },
   yidong: { name: '移动云盘',   color: '#3A8FFF', needPassword: false, hint: 'https://caiyun.139.com/...' },
   pan123: { name: '123云盘',    color: '#2A66FF', needPassword: false, hint: 'https://www.123pan.com/s/...' },
-  // 非中文（英文子站等）镜像目前只支持 TeraBox，见 data/config.json 的 panProviders
   terabox: { name: 'TeraBox',   color: '#0F6FFF', needPassword: false, hint: 'https://1024terabox.com/s/...' },
   other:  { name: '其他网盘',   color: '#7A7F8C', needPassword: true,  hint: 'https://...' }
 };
@@ -44,7 +43,7 @@ window.PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小'];
 window.LANG_LABELS = { 'zh-cn': '中文（默认 /）', 'en-us': 'English (/en-us/)' };
 window.LANG_ORDER = ['zh-cn', 'en-us'];
 
-// 各语言子站允许使用的网盘 provider 白名单；未列出的语言 = 不限制。
+// 各语言子站允许使用的网盘 provider 白名单；未列出的语言 = 不限制（默认所有语言都不限制）。
 // 与 data/config.json 的 languages[].panProviders 保持一致——那边才是 build.py 真正读取的配置，
 // 这里只是给管理工具做录入时的提示，两边改的时候别忘了同步。
-window.LANG_PAN_LIMIT = { 'en-us': ['terabox'] };
+window.LANG_PAN_LIMIT = {};

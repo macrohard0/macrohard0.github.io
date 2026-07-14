@@ -27,8 +27,9 @@
     - 内容在服务端就渲染进 HTML（利于收录），导航用真实 <a> 链接
     - 分类（categories）自带 lang 字段决定归属哪个语言子站；不写 lang 视为默认语言 zh-cn，
       因此已有分类/镜像数据无需改动，后台管理工具 admin/index.html 也无需跟着改
-    - 非默认语言的网盘 provider 白名单在 config.json 的 languages[].panProviders 里配置
-      （目前英文站只放开 terabox），生成时会过滤掉不在白名单内的链接
+    - 非默认语言默认不限制网盘 provider（terabox 之外的网盘也会显示），显示名走 PAN_NAME_INTL
+      的英文译名（如 夸克网盘->Quark、百度->baidu）；如需限制某语言只显示部分 provider，
+      可在 config.json 的 languages[].panProviders 里配置白名单，生成时会过滤掉不在白名单内的链接
     - brand（站点名）与域名绑定、跨语言保持不变；非默认语言的首页标题按模板由 brand 生成，
       subtitle/footer/notice 等文案可在 config.json 对应语言里覆盖
     - 复用现有 assets/css/style.css；复制/展开/移动端菜单交给 assets/js/site.js（渐进增强）
@@ -75,8 +76,25 @@ PAN = {
     'terabox': ('TeraBox',  '#0F6FFF'),
     'other':   ('其他网盘', '#7A7F8C'),
 }
-def pan(t):
-    return PAN.get(t, PAN['other'])
+# 非中文语言（en-us/ko-kr 等）展示用的英文网盘名；这些网盘本身没有官方外文名，
+# 统一走英文/罗马化名称即可，不需要按语言再细分。未列出的 provider 回退用 PAN 里的中文名。
+PAN_NAME_INTL = {
+    'quark':   'Quark',
+    'baidu':   'baidu',
+    'aliyun':  'Aliyun',
+    'tianyi':  'Tianyi',
+    'xunlei':  'Xunlei',
+    'weiyun':  'WeiYun',
+    'yidong':  'Yidong Cloud',
+    'pan123':  '123Pan',
+    'terabox': 'TeraBox',
+    'other':   'Other',
+}
+def pan(ptype, lang=DEFAULT_LANG):
+    name, color = PAN.get(ptype, PAN['other'])
+    if lang != DEFAULT_LANG:
+        name = PAN_NAME_INTL.get(ptype, name)
+    return name, color
 
 # 语言切换控件里各语言的显示名（新增语言时在这里加一项即可）
 LANG_NAMES = {
@@ -119,7 +137,7 @@ STRINGS = {
         home_title_tmpl='%s ISO Downloads',
         title_ver_tmpl='%s %s Original ISO Download - %s',
         title_plain_tmpl='%s Original ISO Download - %s',
-        desc_tmpl='Download the original %s %s ISO image via cloud drive (TeraBox), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
+        desc_tmpl='Download the original %s %s ISO image via cloud drive (Quark/baidu/TeraBox, etc.), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
     ),
     'ko-kr': dict(
         code='ko-kr', html_lang='ko-KR',
@@ -132,7 +150,7 @@ STRINGS = {
         home_title_tmpl='%s ISO 다운로드',
         title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
         title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
-        desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(TeraBox)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
+        desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(Quark/baidu/TeraBox 등)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
     ),
 }
 def strings(lang):
@@ -188,7 +206,7 @@ def render_links(links, t, pan_allowed=None):
         return '<div style="color:#999;font-size:13px;">%s</div>' % e(t['no_link'])
     out = ''
     for lk in links:
-        name, color = pan(lk.get('type'))
+        name, color = pan(lk.get('type'), t['code'])
         url = lk.get('url', '')
         if not url:
             continue
