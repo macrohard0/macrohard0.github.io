@@ -2236,6 +2236,11 @@
           "type": "terabox",
           "url": "https://terabox.com/s/1EgBGuApa7RwUHYQ920eLLQ",
           "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/c20e8296b8d2",
+          "password": ""
         }
       ]
     },
@@ -2261,6 +2266,11 @@
         {
           "type": "terabox",
           "url": "https://terabox.com/s/1DMCGyTZ-CaxzhqGXSg9ttA",
+          "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/e7adbff44c4a",
           "password": ""
         }
       ]
@@ -2380,6 +2390,11 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1ES56nNS-uvSO6GerI7oJug",
+          "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/c155d2fd6100",
           "password": ""
         }
       ]
