@@ -374,19 +374,92 @@ def render_jsonld(t, brand_plain, base_url, home_path, crumbs=None):
     return '  <script type="application/ld+json">%s</script>\n' % payload
 
 
-def make_desc(cat_name, ver_name, images, t):
+def collect_desc_bits(images, t, pan_allowed=None):
     eds = []
+    providers = []
     for im in images[:4]:
         for x in im.get('editions', [])[:3]:
             if x not in eds:
                 eds.append(x)
+        for lk in im.get('links', []):
+            ptype = lk.get('type')
+            if pan_allowed is not None and ptype not in pan_allowed:
+                continue
+            name, _ = pan(ptype, t['code'])
+            if name not in providers:
+                providers.append(name)
+    latest = max_date(images)
     if t['code'] == 'zh-cn':
-        ed = '、'.join(eds[:6])
-        ed_part = (ed + '，') if ed else ''
-    else:
-        ed = ', '.join(eds[:6])
-        ed_part = (ed + ', ') if ed else ''
-    return t['desc_tmpl'] % (cat_name, ver_name, ed_part)
+        return {
+            'editions': '、'.join(eds[:6]),
+            'providers': ' / '.join(providers[:5]),
+            'latest': latest or '',
+            'count': len(images),
+        }
+    return {
+        'editions': ', '.join(eds[:6]),
+        'providers': ', '.join(providers[:5]),
+        'latest': latest or '',
+        'count': len(images),
+    }
+
+
+def make_home_desc(brand_plain, subtitle, notice, cats, images, t):
+    latest = max_date(images) or ''
+    cat_names = [c.get('name', '') for c in cats if c.get('name')]
+    if t['code'] == 'zh-cn':
+        cats_part = '、'.join(cat_names[:8])
+        latest_part = ('，最近更新于%s' % latest) if latest else ''
+        return ('%s专注提供微软官方原版 Windows 与 Office ISO 镜像下载，覆盖%s等系统分类；'
+                '%s。页面提供文件名、SHA-256/SHA-1/MD5 校验信息与常见问题说明，'
+                '帮助你快速找到适合版本并安全校验镜像%s。') % (
+            brand_plain,
+            cats_part or 'Windows 与 Office',
+            subtitle or '支持多种网盘下载',
+            latest_part,
+        )
+    if t['code'] == 'ko-kr':
+        cats_part = ', '.join(cat_names[:8])
+        latest_part = (' 최신 업데이트 %s.' % latest) if latest else '.'
+        return ('%s는 Microsoft 공식 원본 Windows 및 Office ISO 이미지를 정리한 다운로드 허브로, %s 카테고리를 제공합니다. '
+                '%s 파일명과 SHA-256/SHA-1/MD5 체크섬 정보를 함께 제공해 원하는 버전을 빠르게 찾고 안전하게 검증할 수 있습니다%s') % (
+            brand_plain,
+            cats_part or 'Windows and Office',
+            subtitle or '클라우드 드라이브 다운로드를 지원합니다.',
+            latest_part,
+        )
+    cats_part = ', '.join(cat_names[:8])
+    latest_part = (' Latest update: %s.' % latest) if latest else '.'
+    return ('%s is a download hub for official Microsoft Windows and Office ISO images, covering %s. '
+            '%s Each page includes filenames, SHA-256/SHA-1/MD5 checksums, and version details so users can quickly choose the right build and verify file integrity%s') % (
+        brand_plain,
+        cats_part or 'Windows and Office',
+        subtitle or 'Fast cloud drive downloads are available.',
+        latest_part,
+    )
+
+
+def make_desc(cat_name, ver_name, images, t, pan_allowed=None):
+    bits = collect_desc_bits(images, t, pan_allowed)
+    ver = (' ' + ver_name) if ver_name else ''
+    if t['code'] == 'zh-cn':
+        ed_part = ('覆盖%s等版本；' % bits['editions']) if bits['editions'] else ''
+        provider_part = ('当前页面整理了%s等网盘下载方式；' % bits['providers']) if bits['providers'] else '当前页面持续更新常见网盘下载方式；'
+        latest_part = ('最近更新时间为%s；' % bits['latest']) if bits['latest'] else ''
+        return ('提供%s%s微软官方原版 ISO 镜像下载，%s%s%s共收录%s个镜像条目，'
+                '并附带文件名、SHA-256、SHA-1、MD5 与文件大小等校验信息，便于检索、下载和验证原版系统镜像。') % (
+            cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
+    if t['code'] == 'ko-kr':
+        ed_part = ('%s 에디션을 포함하며, ' % bits['editions']) if bits['editions'] else ''
+        provider_part = ('%s 등의 클라우드 드라이브 링크를 정리했고, ' % bits['providers']) if bits['providers'] else '여러 클라우드 드라이브 다운로드 방식을 정리했고, '
+        latest_part = ('최근 업데이트는 %s이며, ' % bits['latest']) if bits['latest'] else ''
+        return ('%s%s Microsoft 공식 원본 ISO 다운로드 페이지입니다. %s%s%s총 %s개의 이미지 항목과 파일명, SHA-256/SHA-1/MD5, 파일 크기 정보를 제공하여 적절한 버전을 찾고 무결성을 검증할 수 있습니다.') % (
+            cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
+    ed_part = ('covering %s editions, ' % bits['editions']) if bits['editions'] else ''
+    provider_part = ('with download options from %s, ' % bits['providers']) if bits['providers'] else 'with multiple cloud drive download options, '
+    latest_part = ('last updated on %s, ' % bits['latest']) if bits['latest'] else ''
+    return ('Download official Microsoft %s%s ISO images on this page, %s%s%sincluding %s image entries with filename, SHA-256, SHA-1, MD5, and file size details for easier selection, download, and integrity verification.') % (
+        cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
 
 
 def write(out_root, path, content):
@@ -543,7 +616,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         )
         home_path = p('index.html')
         page(home_path, e(home_title),
-             subtitle + ' ' + notice, base_kw, '__home__',
+             make_home_desc(brand_plain, site.get('subtitle', ''), notice, cats, images, t), base_kw, '__home__',
              '%s <small>%s</small>' % (e(t['latest_images']), subtitle), home_body,
              lastmod=max_date(latest))
         home_paths.add(home_path)
@@ -569,7 +642,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 body = notice_block() + render_submenu(c, latest_ver['id'], section_prefix_for(cat_path)) + cards_block(land_imgs) + foot_block()
                 page(cat_path,
                      t['title_ver_tmpl'] % (cname, latest_ver['name'], brand),
-                     make_desc(cname, latest_ver['name'], land_imgs, t),
+                     make_desc(cname, latest_ver['name'], land_imgs, t, pan_allowed),
                      '%s,%s %s,%s' % (cname, cname, latest_ver['name'], base_kw),
                      cid, crumb, body, group=cat_group(c), version_id=None,
                      lastmod=max_date(land_imgs), crumbs=[(cname, cat_path), (latest_ver['name'], None)])
@@ -582,7 +655,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                     body = notice_block() + render_submenu(c, v['id'], section_prefix_for(ver_path)) + cards_block(v_imgs) + foot_block()
                     page(ver_path,
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
-                         make_desc(cname, v['name'], v_imgs, t),
+                         make_desc(cname, v['name'], v_imgs, t, pan_allowed),
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
                          cid, crumb, body, group=cat_group(c), version_id=v['id'])
             else:
@@ -591,7 +664,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 body = notice_block() + cards_block(all_imgs) + foot_block()
                 page(p('%s.html' % cslug),
                      t['title_plain_tmpl'] % (cname, brand),
-                     make_desc(cname, '', all_imgs, t),
+                     make_desc(cname, '', all_imgs, t, pan_allowed),
                      '%s,%s' % (cname, base_kw),
                      cid, crumb, body, group=cat_group(c), version_id=None)
 
