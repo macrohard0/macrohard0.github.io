@@ -225,7 +225,7 @@ def render_links(links, t, pan_allowed=None):
             '<div class="dl-item">'
             '<div class="dl-label" style="background:%s">%s</div>'
             '<input class="dl-input" readonly value="%s">'
-            '<button class="dl-copy" data-copy="%s">%s</button>'
+            '<button class="dl-copy dl-copy-url" data-copy="%s">%s</button>'
             '<button class="dl-open" data-open="%s" data-pan="%s">%s</button>'
             '</div>' % (color, e(name), e(url), e(url), e(t['copy_link']), e(url), e(ptype), e(t['open_link']))
         )

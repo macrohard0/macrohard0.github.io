@@ -2,8 +2,10 @@
    静态站点的渐进增强脚本（内容已在 HTML 中，JS 仅增强交互）
    - 复制按钮（data-copy）
    - 打开网盘（data-open）—— 夸克链接改为弹窗二维码，其余网盘正常新开标签页
-   - 参数表展开/收起（.box .toggle）
+     （移动端访客直接跳转，不弹二维码：手机上本来就能装夸克 App 直接打开）
+   - 参数表展开/收起（.box .toggle），移动端默认只展开第一个 box
    - 移动端侧栏汉堡菜单
+   - 移动端隐藏"复制链接"按钮，见 style.css 的 .dl-copy-url 规则
    ============================================================ */
 (function () {
   'use strict';
@@ -22,6 +24,10 @@
   // 页面 <html lang="..."> 由 build.py 按语言子站生成，据此选择提示文案
   function isZh() {
     return (document.documentElement.lang || '').toLowerCase().indexOf('zh') === 0;
+  }
+
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|Windows Phone|Mobile|HarmonyOS/i.test(navigator.userAgent);
   }
 
   function copyText(text) {
@@ -93,12 +99,23 @@
     if (ev.key === 'Escape') closeQrModal();
   });
 
+  // 移动端（窄屏，断点与 style.css 的 @media (max-width: 860px) 一致）
+  // 默认只展开第一个 box，其余折叠，减少一屏内的信息量
+  (function collapseExtraBoxesOnMobile() {
+    if (!window.matchMedia || !window.matchMedia('(max-width: 860px)').matches) return;
+    var boxes = document.querySelectorAll('.box');
+    for (var i = 1; i < boxes.length; i++) {
+      var detail = boxes[i].querySelector('.detail');
+      if (detail) detail.classList.add('collapsed');
+    }
+  })();
+
   document.addEventListener('click', function (ev) {
     var t = ev.target;
     if (t.matches('[data-copy]')) { copyText(t.getAttribute('data-copy')); return; }
     if (t.matches('[data-open]')) {
       var url = t.getAttribute('data-open');
-      if (t.getAttribute('data-pan') === 'quark') { openQrModal(url); }
+      if (t.getAttribute('data-pan') === 'quark' && !isMobile()) { openQrModal(url); }
       else { window.open(url, '_blank', 'noopener'); }
       return;
     }

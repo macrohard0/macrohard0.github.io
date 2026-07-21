@@ -379,4 +379,5 @@ table.param .param-value { word-break: break-all; font-family: "SFMono-Regular",
   }
   .menu-btn span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; }
   .dl-item, .dl-item.pass { flex: 1 1 100%; }
+  .dl-copy-url { display: none; }
 }
