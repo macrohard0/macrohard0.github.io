@@ -297,6 +297,57 @@ table.param .param-value { word-break: break-all; font-family: "SFMono-Regular",
 }
 .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
+/* 夸克网盘二维码弹窗 */
+.qr-mask {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 20, 30, .5);
+  z-index: 90;
+  opacity: 0;
+  transition: opacity .2s;
+}
+.qr-mask.show { display: block; opacity: 1; }
+.qr-modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 26px 22px;
+  width: 300px;
+  max-width: calc(100vw - 40px);
+  text-align: center;
+  z-index: 91;
+}
+.qr-modal.show { display: block; }
+.qr-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--text-soft);
+  cursor: pointer;
+  padding: 6px;
+}
+.qr-close:hover { color: var(--text); }
+.qr-title { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 14px; }
+.qr-img-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.qr-img-wrap svg, .qr-img-wrap img { width: 200px; height: 200px; border: 1px solid var(--line); border-radius: 6px; }
+.qr-hint { font-size: 13px; color: var(--text-soft); line-height: 1.6; margin-bottom: 10px; }
+.qr-url { font-size: 12px; color: var(--text-soft); word-break: break-all; background: var(--bg); border-radius: 6px; padding: 8px 10px; }
+
 /* 加载态 */
 .loading { text-align: center; padding: 100px 20px; color: var(--text-soft); }
 

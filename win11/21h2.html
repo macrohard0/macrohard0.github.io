@@ -27,7 +27,7 @@
   <div class="layout">
     <aside class="side">
       <div class="logo"><a href="../index.html">MacroHard<span class="dot">.</span></a></div>
-      <nav class="nav"><ul><li class=""><a href="../index.html"><i class="ic"></i>首页</a></li><li class="active"><a href="../win11.html"><i class="ic"></i>Windows 11</a></li><li class=""><a href="../win10.html"><i class="ic"></i>Windows 10</a></li><li class=""><a href="../win81.html"><i class="ic"></i>Windows 8.1</a></li><li class=""><a href="../win8.html"><i class="ic"></i>Windows 8</a></li><li class=""><a href="../win7.html"><i class="ic"></i>Windows 7</a></li><li class=""><a href="../winxp.html"><i class="ic"></i>Windows XP</a></li><li class=""><a href="../office.html"><i class="ic"></i>Office</a></li></ul></nav>
+      <nav class="nav"><ul><li class=""><a href="../index.html"><i class="ic"></i>首页</a></li><li class="active"><a href="../win11.html"><i class="ic"></i>Windows 11</a></li><li class=""><a href="../win10.html"><i class="ic"></i>Windows 10</a></li><li class=""><a href="../win81.html"><i class="ic"></i>Windows 8.1</a></li><li class=""><a href="../win8.html"><i class="ic"></i>Windows 8</a></li><li class=""><a href="../win7.html"><i class="ic"></i>Windows 7</a></li><li class=""><a href="../vista.html"><i class="ic"></i>Windows Vista</a></li><li class=""><a href="../winxp.html"><i class="ic"></i>Windows XP</a></li><li class=""><a href="../office.html"><i class="ic"></i>Office</a></li></ul></nav>
       <div class="side-foot">纯净 Windows / Office 原版镜像 · 网盘极速下载</div>
     </aside>
     <div class="mask" id="mask"></div>
@@ -45,6 +45,15 @@
     </div>
   </div>
   <div class="toast" id="toast"></div>
+  <div class="qr-mask" id="qr-mask"></div>
+  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="夸克网盘扫码转存">
+    <button type="button" class="qr-close" id="qr-close" aria-label="关闭">&times;</button>
+    <div class="qr-title">夸克网盘扫码转存</div>
+    <div class="qr-img-wrap" id="qr-img-wrap"></div>
+    <div class="qr-hint">请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。</div>
+    <div class="qr-url" id="qr-url"></div>
+  </div>
+  <script src="../assets/js/qrcode.js"></script>
   <script src="../assets/js/site.js"></script>
 </body>
 </html>

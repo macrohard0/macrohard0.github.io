@@ -125,6 +125,9 @@ STRINGS = {
         title_ver_tmpl='%s %s 原版镜像下载 - %s系统下载',
         title_plain_tmpl='%s 原版镜像下载 - %s系统下载',
         desc_tmpl='提供 %s %s 原版 ISO 镜像的网盘下载（夸克/百度/阿里/天翼等），%s等版本，附文件名与 SHA-256 校验值，微软官方原版未修改。',
+        qr_close='关闭',
+        qr_title='夸克网盘扫码转存',
+        qr_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
     ),
     'en-us': dict(
         code='en-us', html_lang='en-US',
@@ -138,6 +141,9 @@ STRINGS = {
         title_ver_tmpl='%s %s Original ISO Download - %s',
         title_plain_tmpl='%s Original ISO Download - %s',
         desc_tmpl='Download the original %s %s ISO image via cloud drive (Quark/baidu/TeraBox, etc.), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
+        qr_close='Close',
+        qr_title='Scan to save via Quark',
+        qr_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
     ),
     'ko-kr': dict(
         code='ko-kr', html_lang='ko-KR',
@@ -151,6 +157,9 @@ STRINGS = {
         title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
         title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
         desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(Quark/baidu/TeraBox 등)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
+        qr_close='닫기',
+        qr_title='퀄크로 스캔하여 저장',
+        qr_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
     ),
 }
 def strings(lang):
@@ -206,7 +215,8 @@ def render_links(links, t, pan_allowed=None):
         return '<div style="color:#999;font-size:13px;">%s</div>' % e(t['no_link'])
     out = ''
     for lk in links:
-        name, color = pan(lk.get('type'), t['code'])
+        ptype = lk.get('type', '')
+        name, color = pan(ptype, t['code'])
         url = lk.get('url', '')
         if not url:
             continue
@@ -216,8 +226,8 @@ def render_links(links, t, pan_allowed=None):
             '<div class="dl-label" style="background:%s">%s</div>'
             '<input class="dl-input" readonly value="%s">'
             '<button class="dl-copy" data-copy="%s">%s</button>'
-            '<button class="dl-open" data-open="%s">%s</button>'
-            '</div>' % (color, e(name), e(url), e(url), e(t['copy_link']), e(url), e(t['open_link']))
+            '<button class="dl-open" data-open="%s" data-pan="%s">%s</button>'
+            '</div>' % (color, e(name), e(url), e(url), e(t['copy_link']), e(url), e(ptype), e(t['open_link']))
         )
         pass_item = ''
         if pwd:
@@ -337,6 +347,15 @@ PAGE = """<!DOCTYPE html>
     </div>
   </div>
   <div class="toast" id="toast"></div>
+  <div class="qr-mask" id="qr-mask"></div>
+  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{qr_title}">
+    <button type="button" class="qr-close" id="qr-close" aria-label="{qr_close}">&times;</button>
+    <div class="qr-title">{qr_title}</div>
+    <div class="qr-img-wrap" id="qr-img-wrap"></div>
+    <div class="qr-hint">{qr_hint}</div>
+    <div class="qr-url" id="qr-url"></div>
+  </div>
+  <script src="{prefix}assets/js/qrcode.js"></script>
   <script src="{prefix}assets/js/site.js"></script>
 </body>
 </html>
@@ -532,7 +551,13 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
         else:
             home_title = lang_site_over.get('title') or (t['home_title_tmpl'] % brand_plain)
 
-        subtitle = e(site.get('subtitle', ''))
+        subtitle_raw = site.get('subtitle', '')
+        # 首页标题单靠 brand 太短（如「MacroHard 系统下载」只有 14 字），
+        # 拼上 subtitle 补足到搜索引擎推荐的长度，避免 Bing/Google 提示标题过短
+        if subtitle_raw:
+            home_title = '%s - %s' % (home_title, subtitle_raw)
+
+        subtitle = e(subtitle_raw)
         notice = site.get('notice', '')
         footer = site.get('footer', '')
         base_kw = t['base_kw']
@@ -596,7 +621,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                 prefix=asset_prefix, home_prefix=home_prefix, hm=hm, brand=brand,
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
                 lang_switch=render_lang_switch(lang_links),
-                crumb=crumb, body=body)
+                crumb=crumb, body=body,
+                qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']))
             write(out_root, path, html_out)
             urls.append(path)
             lastmods[path] = lastmod or today

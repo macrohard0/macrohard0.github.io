@@ -45,6 +45,15 @@
     </div>
   </div>
   <div class="toast" id="toast"></div>
+  <div class="qr-mask" id="qr-mask"></div>
+  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="퀄크로 스캔하여 저장">
+    <button type="button" class="qr-close" id="qr-close" aria-label="닫기">&times;</button>
+    <div class="qr-title">퀄크로 스캔하여 저장</div>
+    <div class="qr-img-wrap" id="qr-img-wrap"></div>
+    <div class="qr-hint">퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.</div>
+    <div class="qr-url" id="qr-url"></div>
+  </div>
+  <script src="../../assets/js/qrcode.js"></script>
   <script src="../../assets/js/site.js"></script>
 </body>
 </html>

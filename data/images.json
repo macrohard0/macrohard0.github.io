@@ -48,6 +48,10 @@
         {
           "id": "21h2",
           "name": "21H2"
+        },
+        {
+          "id": "1809",
+          "name": "1809"
         }
       ]
     },
@@ -70,6 +74,13 @@
           "name": "Service Pack 1"
         }
       ]
+    },
+    {
+      "id": "winvista",
+      "slug": "vista",
+      "name": "Windows Vista",
+      "group": "vista",
+      "versions": []
     },
     {
       "id": "winxp",
@@ -1415,6 +1426,56 @@
       ]
     },
     {
+      "id": "winvista-001",
+      "category": "winvista",
+      "version": "",
+      "title": "Windows Vista SP2 x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2009-05-26",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_vista_with_sp2_x64_dvd_x15-36322.iso",
+        "SHA-256": "c595e280b1a3a01f95e70f5124b3a314a3376da68be1096a3b740f5ed42d4b6d",
+        "SHA-1": "a1689c254fb3bd67807ee493ee7d4896bca39887",
+        "MD5": "8f597367ffb0fc9bf27f66c41be61353",
+        "文件大小": "3.555 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/17499d245bfd",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "winvista-002",
+      "category": "winvista",
+      "version": "",
+      "title": "Windows Vista 企业版 SP2 x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2009-05-26",
+      "editions": [
+        "企业版"
+      ],
+      "params": {
+        "文件名": "cn_windows_vista_enterprise_with_sp2_x64_dvd_x15-40402.iso",
+        "SHA-256": "ef987887a7bc865c6c1e0cbcd6922e72a65b0cfff9c32fbdec31758726642289",
+        "SHA-1": "46e06e24d549fa42a2392c8553470bf9845c9c06",
+        "MD5": "e42c0f66760082aaaf9848bd33dad988",
+        "文件大小": "2.891 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/6a2a889a4e2e",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "winxp-001",
       "category": "winxp",
       "version": "sp3",
@@ -1917,6 +1978,30 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1SQOJFpBOw0lK_nqf8EPvrw",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-mru0mrbx",
+      "category": "win10",
+      "version": "1809",
+      "title": "Windows 10 企业版 LTSC 2019 x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso",
+        "SHA-256": "aa4ea00581aa84999dbfe0627499b392e10c75912d6e2f1635eb7c4b9139fb5f",
+        "SHA-1": "24b59706d5eded392423936c82ba5a83596b50cc",
+        "MD5": "0d98f58465929ee524ce3aec0832a58b",
+        "文件大小": "4.171 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/f20eb9928ef5",
           "password": ""
         }
       ]
@@ -2447,6 +2532,32 @@
       ]
     },
     {
+      "id": "en-win7-004",
+      "category": "windows7",
+      "version": "sp1",
+      "title": "Windows 7 Ultimate SP1 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "2011-05-12",
+      "editions": [
+        "Ultimate"
+      ],
+      "params": {
+        "文件名": "en_windows_7_ultimate_with_sp1_x64_dvd_u_677332.iso",
+        "SHA-256": "36f4fa2416d0982697ab106e3a72d2e120dbcdb6cc54fd3906d06120d0653808",
+        "SHA-1": "36ae90defbad9d9539e649b193ae573b77a71c83",
+        "MD5": "c9f7ecb768acb82daacf5030e14b271e",
+        "文件大小": "3.093 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/f55742ff2947",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "win10-mreagvpo",
       "category": "windows10",
       "version": "21h2",
@@ -2469,6 +2580,33 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/19eN3zJtNg7SJabV9N_dh6g",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-mru0mraw",
+      "category": "windows10",
+      "version": "21h2",
+      "title": "Windows 10 IoT Enterprise LTSC 2021 x64",
+      "arch": "x64",
+      "lang": "English",
+      "date": "",
+      "editions": [
+        "IoT Enterprise",
+        "LTSC"
+      ],
+      "params": {
+        "文件名": "en-us_windows_10_iot_enterprise_ltsc_2021_x64_dvd_257ad90f.iso",
+        "SHA-256": "a0334f31ea7a3e6932b9ad7206608248f0bd40698bfb8fc65f14fc5e4976c160",
+        "SHA-1": "76c3c10e38307d29fd8b4748522ed144dba35829",
+        "MD5": "2463b19beac328290e6a8adcedb7533a",
+        "文件大小": "4.518 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/2119170ed776",
           "password": ""
         }
       ]

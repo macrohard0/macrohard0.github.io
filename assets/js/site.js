@@ -1,13 +1,14 @@
 /* ============================================================
    静态站点的渐进增强脚本（内容已在 HTML 中，JS 仅增强交互）
    - 复制按钮（data-copy）
-   - 打开网盘（data-open）
+   - 打开网盘（data-open）—— 夸克链接改为弹窗二维码，其余网盘正常新开标签页
    - 参数表展开/收起（.box .toggle）
    - 移动端侧栏汉堡菜单
    ============================================================ */
 (function () {
   'use strict';
   var toastEl, toastTimer;
+  var qrLastFocus;
 
   function toast(msg) {
     if (!toastEl) toastEl = document.getElementById('toast');
@@ -48,10 +49,60 @@
     if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
+  // 夸克网盘链接不支持直接跳转下载，改为弹窗展示二维码，提示用户用夸克 App 扫码转存
+  // 二维码在本地生成（assets/js/qrcode.js），不请求任何第三方接口
+  function openQrModal(url) {
+    var modal = document.getElementById('qr-modal');
+    var mask = document.getElementById('qr-mask');
+    var wrap = document.getElementById('qr-img-wrap');
+    var urlEl = document.getElementById('qr-url');
+    if (!modal || !mask || !wrap || typeof qrcode === 'undefined') {
+      window.open(url, '_blank', 'noopener');
+      return;
+    }
+    try {
+      var qr = qrcode(0, 'M'); // typeNumber=0 -> 自动选择能容纳数据的最小规格
+      qr.addData(url);
+      qr.make();
+      wrap.innerHTML = qr.createSvgTag({ cellSize: 4, margin: 4, scalable: true });
+    } catch (e) {
+      wrap.innerHTML = '';
+      window.open(url, '_blank', 'noopener');
+      return;
+    }
+    if (urlEl) urlEl.textContent = url;
+    qrLastFocus = document.activeElement;
+    mask.classList.add('show');
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    var closeBtn = document.getElementById('qr-close');
+    if (closeBtn) closeBtn.focus();
+  }
+
+  function closeQrModal() {
+    var modal = document.getElementById('qr-modal');
+    var mask = document.getElementById('qr-mask');
+    if (!modal || !mask || !modal.classList.contains('show')) return;
+    mask.classList.remove('show');
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    if (qrLastFocus && qrLastFocus.focus) qrLastFocus.focus();
+  }
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') closeQrModal();
+  });
+
   document.addEventListener('click', function (ev) {
     var t = ev.target;
     if (t.matches('[data-copy]')) { copyText(t.getAttribute('data-copy')); return; }
-    if (t.matches('[data-open]')) { window.open(t.getAttribute('data-open'), '_blank', 'noopener'); return; }
+    if (t.matches('[data-open]')) {
+      var url = t.getAttribute('data-open');
+      if (t.getAttribute('data-pan') === 'quark') { openQrModal(url); }
+      else { window.open(url, '_blank', 'noopener'); }
+      return;
+    }
+    if (t.id === 'qr-close' || t.id === 'qr-mask') { closeQrModal(); return; }
     if (t.matches('.box .toggle')) {
       var box = t.closest('.box');
       if (box) box.querySelector('.detail').classList.toggle('collapsed');
