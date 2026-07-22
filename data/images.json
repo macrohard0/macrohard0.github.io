@@ -2566,6 +2566,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/f55742ff2947",
           "password": ""
+        },
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1itDDNmW4mZDp7aWkWC7pgQ",
+          "password": ""
         }
       ]
     },
