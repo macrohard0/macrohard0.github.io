@@ -310,6 +310,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/1AAk-a8aE7saH9cQT4NvHfQ",
           "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyF-K040GnRlcmBZmw1Wn9QA1?pwd=cjx4",
+          "password": ""
         }
       ]
     },
@@ -344,6 +349,11 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/13YYH5j9mEUUMzPQVx0ivVg",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyF-VGzfYD3iEqD66P-6qt7A1?pwd=gxt7",
           "password": ""
         }
       ]
@@ -2316,6 +2326,50 @@
       ]
     },
     {
+      "id": "windows11-mrxsqfub",
+      "category": "windows11",
+      "version": "24h2",
+      "title": "Windows 11 Enterprise LTSC 2024 x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "2024-10",
+      "editions": [
+        "Enterprise",
+        "LTSC",
+        "24H2"
+      ],
+      "params": {
+        "文件名": "en-us_windows_11_enterprise_ltsc_2024_x64_dvd_965cfb00.iso",
+        "SHA-256": "157d8365a517c40afeb3106fdd74d0836e1025debbc343f2080e1a8687607f51",
+        "SHA-1": "ab341c71d7c83cd5f4dd15e74a6ddda6ea303c46",
+        "MD5": "60c6f86bf378892648cfb5524b9416e2",
+        "文件大小": "4.774 GB"
+      },
+      "links": []
+    },
+    {
+      "id": "windows11-mrxsljdz",
+      "category": "windows11",
+      "version": "24h2",
+      "title": "Windows 11 IoT Enterprise LTSC 2024 x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "2024-10",
+      "editions": [
+        "Enterprise",
+        "LTSC",
+        "IOT"
+      ],
+      "params": {
+        "文件名": "en-us_windows_11_iot_enterprise_ltsc_2024_x64_dvd_f6b14814.iso",
+        "SHA-256": "4f59662a96fc1da48c1b415d6c369d08af55ddd64e8f1c84e0166d9e50405d7a",
+        "SHA-1": "d5dd0a493b6a9c92f7f2a54bb2fb2544587a15fd",
+        "MD5": "66608a96a4f2d73b4a1d054e76e6eae4",
+        "文件大小": "4.791 GB"
+      },
+      "links": []
+    },
+    {
       "id": "en-win10-001",
       "category": "windows10",
       "version": "22h2",
@@ -3327,6 +3381,34 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1PaTcF8jGqjGS5wJO0LSbZQ",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-mrxsdcqe",
+      "category": "win11",
+      "version": "24h2",
+      "title": "Windows 11 企业版本 LTSC 2024",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2024-10",
+      "editions": [
+        "企业版本",
+        "LTSC",
+        "24H2"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_enterprise_ltsc_2024_x64_dvd_cff9cd2d.iso",
+        "SHA-256": "2cb21649590c8cf770cd93556596dff4fd800f24d267a9be9d9ce0ee9e03f5ac",
+        "SHA-1": "ab7cd740e6cd495a69e3a90fcd7fb56ba0c5c62e",
+        "MD5": "1a13ade0178082432f90df951a88842f",
+        "文件大小": "4.924 GB"
+      },
+      "links": [
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyF0XZ7lE5HnsFjFukw_VfHA1?pwd=pxf9",
           "password": ""
         }
       ]
