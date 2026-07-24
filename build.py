@@ -132,6 +132,26 @@ STRINGS = {
         qr_close='关闭',
         qr_title='夸克网盘扫码转存',
         qr_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
+        info_sections=[
+            ('关于本站', [
+                '{brand} 收集并整理微软官方发布的 Windows 与 Office 原版 ISO 镜像，按系统版本、语言、位数分类展示，每个镜像均标注文件名及 SHA-256、SHA-1、MD5 校验值，方便下载后自行核对完整性。',
+                '相比零散的下载帖，我们尽量把同一系统下不同版本、不同渠道（零售版 / 批量授权版）整理清楚，减少选错镜像、装错版本的情况。',
+            ]),
+            ('原版镜像与"优化版"系统的区别', [
+                '网络上常见的系统镜像大致分两类：一类是经第三方修改、预装驱动或软件的"优化版"（也称 Ghost 版），安装速度快，但存在被植入广告、篡改主页甚至后门的风险；另一类是微软官方发布、未经任何修改的原版镜像，安装后需使用有效密钥激活，胜在纯净可控。',
+                '{brand} 只收录后一类——完全未经修改的官方原版镜像。',
+            ]),
+            ('批量授权版与零售版', [
+                '镜像文件名中出现 VOL、VL 字样的一般为批量授权版（Volume License），面向企业和教育机构批量部署；不带这些字样的通常是零售版（Retail），面向个人用户单机安装。获取密钥前请先确认与所下载镜像的版本对应，版本不匹配会导致无法激活。',
+            ]),
+            ('下载后请务必校验', [
+                '下载完成后，建议使用系统自带的 certutil，或第三方校验工具比对文件的 SHA-256 / MD5 值，与页面提供的校验值一致后再安装，避免因网络传输问题导致镜像损坏或被篡改。',
+            ]),
+            ('免责声明', [
+                '{brand} 展示的镜像文件均整理自网络公开渠道，源文件来自微软官方发布且未做二次修改，仅供学习交流与技术研究使用。',
+                '本站不对第三方网盘的可用性、下载速度作出保证；镜像激活及使用过程中出现的任何问题由使用者自行承担，请在遵守微软相关许可协议的前提下使用。',
+            ]),
+        ],
     ),
     'en-us': dict(
         code='en-us', html_lang='en-US',
@@ -148,6 +168,26 @@ STRINGS = {
         qr_close='Close',
         qr_title='Scan to save via Quark',
         qr_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
+        info_sections=[
+            ('About This Site', [
+                '{brand} curates official Microsoft Windows and Office ISO images, organized by version, language, and architecture. Every image is listed with its filename and SHA-256 / SHA-1 / MD5 checksum so you can verify integrity after downloading.',
+                'Rather than scattering links across forum posts, we keep retail and volume-license variants of the same release clearly separated to help you avoid grabbing the wrong build.',
+            ]),
+            ('Official Images vs. "Modified" Builds', [
+                'System images circulating online generally fall into two categories: third-party "optimized" or Ghost builds that install quickly but may bundle adware, alter your homepage, or even hide backdoors; and unmodified images released directly by Microsoft, which require a valid key to activate but stay clean and predictable.',
+                '{brand} only hosts the latter — genuine, untouched Microsoft images.',
+            ]),
+            ('Volume License vs. Retail', [
+                'Filenames containing VOL or VL denote Volume License editions intended for bulk deployment by businesses and schools; builds without those markers are typically Retail editions meant for individual installs. Make sure your key matches the edition you download, or activation will fail.',
+            ]),
+            ('Always Verify After Downloading', [
+                'After downloading, use the built-in certutil or a third-party checksum tool to compare the SHA-256 / MD5 value against the one listed on this site before installing — this catches corruption or tampering introduced during transfer.',
+            ]),
+            ('Disclaimer', [
+                '{brand} organizes images gathered from publicly available sources; the underlying files are unmodified official Microsoft releases, provided here for learning and technical research only.',
+                'We make no guarantees about the availability or speed of third-party cloud drives. Any issues arising from activation or use are the responsibility of the end user, who should comply with the applicable Microsoft license terms.',
+            ]),
+        ],
     ),
     'ko-kr': dict(
         code='ko-kr', html_lang='ko-KR',
@@ -164,6 +204,26 @@ STRINGS = {
         qr_close='닫기',
         qr_title='퀄크로 스캔하여 저장',
         qr_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
+        info_sections=[
+            ('이 사이트 소개', [
+                '{brand}는 마이크로소프트가 공식 배포한 Windows 및 Office 원본 ISO 이미지를 버전, 언어, 아키텍처별로 정리해 제공합니다. 각 이미지에는 파일명과 SHA-256 / SHA-1 / MD5 체크섬을 함께 표기해 다운로드 후 무결성을 직접 확인할 수 있습니다.',
+                '흩어진 게시물과 달리, 동일 버전 내 리테일판과 볼륨 라이선스판을 명확히 구분해 정리하여 잘못된 이미지를 받는 실수를 줄였습니다.',
+            ]),
+            ('정품 이미지와 "최적화" 시스템의 차이', [
+                '인터넷에 떠도는 시스템 이미지는 크게 두 가지로 나뉩니다. 하나는 드라이버나 소프트웨어가 미리 설치된 제3자 "최적화판"(고스트 버전)으로, 설치는 빠르지만 광고 삽입, 홈페이지 변조, 심지어 백도어가 포함될 위험이 있습니다. 다른 하나는 마이크로소프트가 수정 없이 배포한 정품 이미지로, 설치 후 유효한 키로 활성화해야 하지만 순정 상태를 유지할 수 있습니다.',
+                '{brand}는 오직 후자, 즉 전혀 수정되지 않은 정품 이미지만 게시합니다.',
+            ]),
+            ('볼륨 라이선스판과 리테일판', [
+                '파일명에 VOL, VL이 포함되어 있으면 기업/교육기관용 볼륨 라이선스(Volume License)판이며, 표기가 없으면 일반적으로 개인용 리테일(Retail)판입니다. 다운로드한 이미지 버전과 보유한 키가 일치하는지 반드시 확인하세요. 일치하지 않으면 활성화가 실패합니다.',
+            ]),
+            ('다운로드 후에는 반드시 체크섬을 확인하세요', [
+                '다운로드가 끝나면 Windows 기본 제공 certutil이나 서드파티 체크섬 도구로 SHA-256 / MD5 값을 이 페이지에 표기된 값과 비교한 뒤 설치하세요. 전송 중 손상되거나 변조된 파일을 걸러낼 수 있습니다.',
+            ]),
+            ('면책 조항', [
+                '{brand}에 게시된 이미지는 공개적으로 접근 가능한 경로에서 수집해 정리한 것이며, 원본 파일은 마이크로소프트가 배포한 정품 이미지를 수정 없이 그대로 사용합니다. 학습 및 기술 연구 목적으로만 제공됩니다.',
+                '서드파티 클라우드 드라이브의 가용성이나 다운로드 속도는 보장하지 않으며, 활성화 및 사용 과정에서 발생하는 문제는 사용자 본인의 책임입니다. 관련 마이크로소프트 라이선스 약관을 준수하여 사용하시기 바랍니다.',
+            ]),
+        ],
     ),
 }
 def strings(lang):
@@ -290,6 +350,17 @@ def render_lang_switch(lang_links):
     )
 
 
+def render_info_sections(t, brand_plain):
+    """首页正文用的说明文字（关于本站/原版与优化版区别/版本说明/校验建议/免责声明），
+    让首页对搜索引擎和真人来说都有可读的独立内容，而不是一进站就是镜像列表。"""
+    out = ''
+    for title, paras in t.get('info_sections', []):
+        title = title.replace('{brand}', brand_plain)
+        body = ''.join('<p>%s</p>' % e(pp.replace('{brand}', brand_plain)) for pp in paras)
+        out += '<div class="info-block"><h2>%s</h2><div class="info-body">%s</div></div>' % (e(title), body)
+    return out
+
+
 def render_submenu(cat, active_ver, prefix):
     vers = cat.get('versions', [])
     if not vers:
@@ -308,6 +379,20 @@ def render_submenu(cat, active_ver, prefix):
     return out
 
 
+# 百度统计埋点：只在默认语言（zh-cn，主站中文站）注入，避免非中文语言目录多加载一个外部脚本拖慢速度，
+# 百度统计对海外/非中文流量的统计意义也不大
+HM_SCRIPT = """  <script>
+    var _hmt = _hmt || [];
+    (function () {{
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?{hm}";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    }})();
+  </script>
+"""
+
+
 # ---------------------------------------------------------------- 页面模板
 PAGE = """<!DOCTYPE html>
 <html lang="{html_lang}">
@@ -319,16 +404,7 @@ PAGE = """<!DOCTYPE html>
   <meta name="description" content="{desc}">
   <link rel="canonical" href="{canonical}">
 {hreflang}{jsonld}  <link rel="stylesheet" href="{prefix}assets/css/style.css">
-  <script>
-    var _hmt = _hmt || [];
-    (function () {{
-      var hm = document.createElement("script");
-      hm.src = "https://hm.baidu.com/hm.js?{hm}";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    }})();
-  </script>
-</head>
+{hm_script}</head>
 <body>
   <div class="layout">
     <aside class="side">
@@ -486,7 +562,7 @@ def make_desc(cat_name, ver_name, images, t, pan_allowed=None):
 
 
 REDIRECT_PAGE = """<!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{html_lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -496,18 +572,27 @@ REDIRECT_PAGE = """<!DOCTYPE html>
   <script>location.replace({target_js});</script>
 </head>
 <body>
-  <p>{brand} 已迁移至新域名，正在跳转，请稍候… 如果没有自动跳转，请点击 <a href="{target}">{target}</a></p>
+  <p>{msg} <a href="{target}">{target}</a></p>
 </body>
 </html>
 """
 
+# 迁移跳转页的文案按语言给一份，避免所有语言的跳转页都用中文提示
+REDIRECT_STRINGS = {
+    'zh-cn': dict(html_lang='zh-CN', msg='{brand} 已迁移至新域名，正在跳转，请稍候… 如果没有自动跳转，请点击'),
+    'en-us': dict(html_lang='en-US', msg='{brand} has moved to a new domain. Redirecting… If you are not redirected automatically, click'),
+    'ko-kr': dict(html_lang='ko-KR', msg='{brand}가 새 도메인으로 이전되었습니다. 곧 이동합니다… 자동으로 이동하지 않으면 아래 링크를 클릭하세요'),
+}
 
-def render_redirect_page(brand_plain, target):
+
+def render_redirect_page(brand_plain, target, lang_code=DEFAULT_LANG):
+    rs = REDIRECT_STRINGS.get(lang_code, REDIRECT_STRINGS[DEFAULT_LANG])
     return REDIRECT_PAGE.format(
-        title=e('%s 系统下载' % brand_plain),
+        html_lang=rs['html_lang'],
+        title=e(brand_plain),
         target=e(target),
         target_js=json.dumps(target),
-        brand=e(brand_plain),
+        msg=e(rs['msg'].format(brand=brand_plain)),
     )
 
 
@@ -531,6 +616,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
     urls = []  # for sitemap（相对 out_root 的路径，含各语言子目录前缀）
     home_paths = set()  # 各语言首页的 path（'index.html' / 'en-us/index.html' ...），sitemap 特殊处理
     lastmods = {}  # path -> 该页面里镜像的最新 date，供 sitemap 用真实的「最后更新时间」而非构建日期
+    redirect_targets = {}  # code -> (home_path, brand_plain, lang_dir)，供 redirect_home_to 生成各语言跳转页用
 
     languages = config.get('languages') or [{'code': DEFAULT_LANG, 'dir': ''}]
 
@@ -643,12 +729,13 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 hreflang += '  <link rel="alternate" hreflang="x-default" href="%s">\n' % e(base_url + '/' + default_path)
 
             jsonld = render_jsonld(t, brand_plain, base_url, home_path, crumbs)
+            hm_script = HM_SCRIPT.format(hm=hm) if is_default else ''
 
             html_out = PAGE.format(
                 html_lang=t['html_lang'],
                 title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical), hreflang=hreflang,
-                jsonld=jsonld,
-                prefix=asset_prefix, home_prefix=home_prefix, hm=hm, brand=brand,
+                jsonld=jsonld, hm_script=hm_script,
+                prefix=asset_prefix, home_prefix=home_prefix, brand=brand,
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
                 lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body,
@@ -661,21 +748,24 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
             return sorted(imgs, key=lambda x: x.get('date', ''), reverse=True)
 
         # ---------- 首页 ----------
-        latest = sort_imgs(images)[:15]
+        # 首页正文以说明文字为主（关于本站/原版说明/校验建议/免责声明等），只在末尾放分类入口，
+        # 不在开头堆砌镜像卡片——完整的镜像列表交给各分类页承载，首页保留独立、可读的原创内容。
+        latest = sort_imgs(images)[:15]  # 仅用于 lastmod 判断首页的更新时间，不再直接渲染成卡片
         cat_links = '<div class="submenu">' + ''.join(
             '<a href="%s.html">%s</a>' % (e(cat_slug(c)), e(c['name'])) for c in cats) + '</div>'
         home_body = (
             notice_block() +
-            '<h2 style="font-size:15px;margin:4px 0 12px;color:#374151;">%s</h2>' % e(t['os_categories']) + cat_links +
-            '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">%s</h2>' % e(t['latest_images']) +
-            cards_block(latest) + foot_block()
+            render_info_sections(t, brand_plain) +
+            '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">%s</h2>' % e(t['os_categories']) + cat_links +
+            foot_block()
         )
         home_path = p('index.html')
         page(home_path, e(home_title),
              make_home_desc(brand_plain, site.get('subtitle', ''), notice, cats, images, t), base_kw, '__home__',
-             '%s <small>%s</small>' % (e(t['latest_images']), subtitle), home_body,
+             '%s <small>%s</small>' % (brand, subtitle), home_body,
              lastmod=max_date(latest))
         home_paths.add(home_path)
+        redirect_targets[code] = (home_path, brand_plain, lang_dir)
 
         # ---------- 分类页 & 版本页 ----------
         for c in cats:
@@ -724,15 +814,20 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                      '%s,%s' % (cname, base_kw),
                      cid, crumb, body, group=cat_group(c), version_id=None)
 
-    # ---------- 根目录首页跳转（如配置了 redirect_home_to）----------
+    # ---------- 各语言首页跳转（如配置了 redirect_home_to）----------
     # 用于站点整体迁移场景：内容和另一域名完全重复被搜索引擎判定为镜像站时，
-    # 把根目录首页替换成指向新域名的跳转页，撤出重复内容而不影响其余分类/版本页。
+    # 把每个语言的首页（index.html / en-us/index.html / ko-kr/index.html ...）都替换成
+    # 指向新域名对应语言首页的跳转页，撤出重复内容而不影响其余分类/版本页。
     if redirect_home_to:
-        write(out_root, 'index.html', render_redirect_page(default_brand_plain, redirect_home_to))
-        # sitemap 只保留跳转入口本身，其余分类/版本页仍会生成（供直接访问），但不再对搜索引擎宣传
-        urls = ['index.html']
-        home_paths = {'index.html'}
-        lastmods = {'index.html': today}
+        base = redirect_home_to.rstrip('/') + '/'
+        urls, home_paths, lastmods = [], set(), {}
+        for code, (home_path, brand_plain, lang_dir) in redirect_targets.items():
+            target = base + (lang_dir + '/' if lang_dir else '')
+            write(out_root, home_path, render_redirect_page(brand_plain, target, code))
+            # sitemap 只保留跳转入口本身，其余分类/版本页仍会生成（供直接访问），但不再对搜索引擎宣传
+            urls.append(home_path)
+            home_paths.add(home_path)
+            lastmods[home_path] = today
 
     # ---------- sitemap.xml ----------
     today = datetime.date.today().isoformat()

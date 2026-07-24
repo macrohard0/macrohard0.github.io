@@ -164,6 +164,19 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 18px;
 }
 
+/* ---------- 首页说明区块 ---------- */
+.info-block {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px 20px;
+  margin-bottom: 14px;
+}
+.info-block h2 { margin: 0 0 10px; font-size: 15px; color: #1b2430; }
+.info-block .info-body p { margin: 0 0 8px; color: var(--text-soft); font-size: 13.5px; line-height: 1.75; }
+.info-block .info-body p:last-child { margin-bottom: 0; }
+
 /* ---------- 版本子菜单 ---------- */
 .submenu { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
 .submenu a {
