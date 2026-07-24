@@ -2345,7 +2345,23 @@
         "MD5": "60c6f86bf378892648cfb5524b9416e2",
         "文件大小": "4.774 GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/8683fd54044e",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyHEVpbj1CeAyXB6LXyRaK1A1?pwd=de9v",
+          "password": ""
+        },
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/12oqFm4sPpYO1CD8Tt120sw",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "windows11-mrxsljdz",
@@ -2367,7 +2383,23 @@
         "MD5": "66608a96a4f2d73b4a1d054e76e6eae4",
         "文件大小": "4.791 GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/564fb30b22e7",
+          "password": ""
+        },
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyHEj08njNU76hugaCt8UjoA1?pwd=jp88#",
+          "password": ""
+        },
+        {
+          "type": "terabox",
+          "url": "https://1024terabox.com/s/1yQxFb9Fsm_viS-N4szcQ5w",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win10-001",
