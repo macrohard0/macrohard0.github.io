@@ -51,6 +51,10 @@ SITES = [
         'hm': '54f24ee5c82c27e994fb615aa3173346',
         'brand': 'MacroHard',
         'title': 'MacroHard 系统下载',
+        # 与 nextwindows.org 内容完全重复导致被搜索引擎判定为镜像站、两边都不收录，
+        # 因此根目录首页改为跳转到新域名（GitHub Pages 无法做服务端 301，用 meta refresh + canonical
+        # 是 Google 官方认可的静态站点迁移替代方案）；只影响根目录 index.html，其余分类/版本页不受影响。
+        'redirect_home_to': 'https://nextwindows.org/',
     },
     {
         'base_url': 'https://nextwindows.org',
@@ -481,6 +485,32 @@ def make_desc(cat_name, ver_name, images, t, pan_allowed=None):
         cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
 
 
+REDIRECT_PAGE = """<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{title}</title>
+  <link rel="canonical" href="{target}">
+  <meta http-equiv="refresh" content="0; url={target}">
+  <script>location.replace({target_js});</script>
+</head>
+<body>
+  <p>{brand} 已迁移至新域名，正在跳转，请稍候… 如果没有自动跳转，请点击 <a href="{target}">{target}</a></p>
+</body>
+</html>
+"""
+
+
+def render_redirect_page(brand_plain, target):
+    return REDIRECT_PAGE.format(
+        title=e('%s 系统下载' % brand_plain),
+        target=e(target),
+        target_js=json.dumps(target),
+        brand=e(brand_plain),
+    )
+
+
 def write(out_root, path, content):
     full = os.path.join(out_root, path)
     os.makedirs(os.path.dirname(full) or out_root, exist_ok=True)
@@ -489,7 +519,7 @@ def write(out_root, path, content):
 
 
 # ---------------------------------------------------------------- 单套站点
-def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
+def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirect_home_to=None):
     out_root = os.path.join(ROOT, out_dir) if out_dir else ROOT
     site_overrides = site_overrides or {}
     site_base = data.get('site', {})
@@ -694,6 +724,16 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None):
                      '%s,%s' % (cname, base_kw),
                      cid, crumb, body, group=cat_group(c), version_id=None)
 
+    # ---------- 根目录首页跳转（如配置了 redirect_home_to）----------
+    # 用于站点整体迁移场景：内容和另一域名完全重复被搜索引擎判定为镜像站时，
+    # 把根目录首页替换成指向新域名的跳转页，撤出重复内容而不影响其余分类/版本页。
+    if redirect_home_to:
+        write(out_root, 'index.html', render_redirect_page(default_brand_plain, redirect_home_to))
+        # sitemap 只保留跳转入口本身，其余分类/版本页仍会生成（供直接访问），但不再对搜索引擎宣传
+        urls = ['index.html']
+        home_paths = {'index.html'}
+        lastmods = {'index.html': today}
+
     # ---------- sitemap.xml ----------
     today = datetime.date.today().isoformat()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -729,6 +769,7 @@ def main():
         build_site(
             s['base_url'], s['out_dir'], s['hm'], data, config,
             {'brand': s.get('brand'), 'title': s.get('title')},
+            redirect_home_to=s.get('redirect_home_to'),
         )
 
 
