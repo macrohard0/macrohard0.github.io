@@ -3502,6 +3502,11 @@
           "type": "xunlei",
           "url": "https://pan.xunlei.com/s/VOyF0XZ7lE5HnsFjFukw_VfHA1?pwd=pxf9",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1mXhcBEAsY2pJY6Be8nNzOg?pwd=3gi7",
+          "password": ""
         }
       ]
     }
