@@ -278,6 +278,67 @@
   ],
   "images": [
     {
+      "id": "win11-ms1l0wm1",
+      "category": "win11",
+      "version": "26h1",
+      "title": "Windows 11 消费者版本 26H1（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_consumer_editions_version_25h2_updated_july_2026_x64_dvd_ef10fcb2.iso",
+        "SHA-256": "a2bb85f047a846b443faa97482496a16cea3f79e91be72a755dabe480e575490",
+        "SHA-1": "db347f506a5a4154237c80f67fba83bb9ae6f83c",
+        "MD5": "d473b31745027c20ab373d5523861bbc",
+        "文件大小": "8.299 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/09270c468f50",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-ms1kz9g9",
+      "category": "win11",
+      "version": "26h1",
+      "title": "Windows 11 商业版 26H1（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_business_editions_version_25h2_updated_july_2026_x64_dvd_1019274a.iso",
+        "SHA-256": "5e2b4afe853ca7810e9c4d282632c4c7319a624e81e59607ba4c0d4551600b8a",
+        "SHA-1": "ce2673a5e75e23a1a7ca603ae91f31b7e38c3c6b",
+        "MD5": "c65a25b3fd20c5dc181f1a20fc20685d",
+        "文件大小": "8.226 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/ea46b8f64039",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "win11-001",
       "category": "win11",
       "version": "26h1",
@@ -664,6 +725,39 @@
         "文件大小": "5.53GB"
       },
       "links": []
+    },
+    {
+      "id": "win11-mrxsdcqe",
+      "category": "win11",
+      "version": "24h2",
+      "title": "Windows 11 企业版本 LTSC 2024",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2024-10",
+      "editions": [
+        "企业版本",
+        "LTSC",
+        "24H2"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_enterprise_ltsc_2024_x64_dvd_cff9cd2d.iso",
+        "SHA-256": "2cb21649590c8cf770cd93556596dff4fd800f24d267a9be9d9ce0ee9e03f5ac",
+        "SHA-1": "ab7cd740e6cd495a69e3a90fcd7fb56ba0c5c62e",
+        "MD5": "1a13ade0178082432f90df951a88842f",
+        "文件大小": "4.924 GB"
+      },
+      "links": [
+        {
+          "type": "xunlei",
+          "url": "https://pan.xunlei.com/s/VOyF0XZ7lE5HnsFjFukw_VfHA1?pwd=pxf9",
+          "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1mXhcBEAsY2pJY6Be8nNzOg?pwd=3gi7",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "win10-001",
@@ -3478,39 +3572,6 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1PaTcF8jGqjGS5wJO0LSbZQ",
-          "password": ""
-        }
-      ]
-    },
-    {
-      "id": "win11-mrxsdcqe",
-      "category": "win11",
-      "version": "24h2",
-      "title": "Windows 11 企业版本 LTSC 2024",
-      "arch": "64位",
-      "lang": "中文简体",
-      "date": "2024-10",
-      "editions": [
-        "企业版本",
-        "LTSC",
-        "24H2"
-      ],
-      "params": {
-        "文件名": "zh-cn_windows_11_enterprise_ltsc_2024_x64_dvd_cff9cd2d.iso",
-        "SHA-256": "2cb21649590c8cf770cd93556596dff4fd800f24d267a9be9d9ce0ee9e03f5ac",
-        "SHA-1": "ab7cd740e6cd495a69e3a90fcd7fb56ba0c5c62e",
-        "MD5": "1a13ade0178082432f90df951a88842f",
-        "文件大小": "4.924 GB"
-      },
-      "links": [
-        {
-          "type": "xunlei",
-          "url": "https://pan.xunlei.com/s/VOyF0XZ7lE5HnsFjFukw_VfHA1?pwd=pxf9",
-          "password": ""
-        },
-        {
-          "type": "baidu",
-          "url": "https://pan.baidu.com/s/1mXhcBEAsY2pJY6Be8nNzOg?pwd=3gi7",
           "password": ""
         }
       ]
