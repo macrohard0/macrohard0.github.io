@@ -66,6 +66,7 @@ SITES = [
 ]
 
 DEFAULT_LANG = 'zh-cn'
+DISABLED_PAN_TYPES = {'xunlei'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
@@ -99,6 +100,18 @@ def pan(ptype, lang=DEFAULT_LANG):
     if lang != DEFAULT_LANG:
         name = PAN_NAME_INTL.get(ptype, name)
     return name, color
+
+
+def filter_links(links, pan_allowed=None):
+    filtered = []
+    for lk in links or []:
+        ptype = lk.get('type')
+        if ptype in DISABLED_PAN_TYPES:
+            continue
+        if pan_allowed is not None and ptype not in pan_allowed:
+            continue
+        filtered.append(lk)
+    return filtered
 
 # 语言切换控件里各语言的显示名（新增语言时在这里加一项即可）
 LANG_NAMES = {
@@ -277,8 +290,7 @@ def render_params(im, t):
 
 
 def render_links(links, t, pan_allowed=None):
-    if pan_allowed is not None:
-        links = [lk for lk in (links or []) if lk.get('type') in pan_allowed]
+    links = filter_links(links, pan_allowed)
     if not links:
         return '<div style="color:#999;font-size:13px;">%s</div>' % e(t['no_link'])
     out = ''
@@ -484,10 +496,8 @@ def collect_desc_bits(images, t, pan_allowed=None):
         for x in im.get('editions', [])[:3]:
             if x not in eds:
                 eds.append(x)
-        for lk in im.get('links', []):
+        for lk in filter_links(im.get('links', []), pan_allowed):
             ptype = lk.get('type')
-            if pan_allowed is not None and ptype not in pan_allowed:
-                continue
             name, _ = pan(ptype, t['code'])
             if name not in providers:
                 providers.append(name)
@@ -603,8 +613,13 @@ def render_redirect_page(brand_plain, target, lang_code=DEFAULT_LANG):
 def write(out_root, path, content):
     full = os.path.join(out_root, path)
     os.makedirs(os.path.dirname(full) or out_root, exist_ok=True)
+    if os.path.exists(full):
+        with open(full, 'r', encoding='utf-8') as f:
+            if f.read() == content:
+                return False
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
         f.write(content)
+    return True
 
 
 # ---------------------------------------------------------------- 单套站点
@@ -807,7 +822,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
                          make_desc(cname, v['name'], v_imgs, t, pan_allowed),
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
-                         cid, crumb, body, group=cat_group(c), version_id=v['id'])
+                         cid, crumb, body, group=cat_group(c), version_id=v['id'],
+                         lastmod=max_date(v_imgs))
             else:
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
@@ -816,7 +832,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t, pan_allowed),
                      '%s,%s' % (cname, base_kw),
-                     cid, crumb, body, group=cat_group(c), version_id=None)
+                     cid, crumb, body, group=cat_group(c), version_id=None,
+                     lastmod=max_date(all_imgs))
 
     # ---------- 各语言首页跳转（如配置了 redirect_home_to）----------
     # 用于站点整体迁移场景：内容和另一域名完全重复被搜索引擎判定为镜像站时，
@@ -841,7 +858,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         is_home = u in home_paths
         loc = base_url + '/' + (u[:-len('index.html')] if is_home else u)
         pr = '1.0' if is_home else '0.8'
-        sm.append('  <url><loc>%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' % (e(loc), today, pr))
+        sm.append('  <url><loc>%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' % (
+            e(loc), e(lastmods.get(u, today)), pr))
     sm.append('</urlset>')
     write(out_root, 'sitemap.xml', '\n'.join(sm) + '\n')
 
