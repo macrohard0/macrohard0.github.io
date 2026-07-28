@@ -430,6 +430,54 @@
       ]
     },
     {
+      "id": "win11-ms39t1bk",
+      "category": "win11",
+      "version": "25h2",
+      "title": "Windows 11 消费者版本 25H2（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_11_consumer_editions_version_25h2_updated_july_2026_x64_dvd_ef10fcb2.iso",
+        "SHA-256": "a2bb85f047a846b443faa97482496a16cea3f79e91be72a755dabe480e575490",
+        "SHA-1": "db347f506a5a4154237c80f67fba83bb9ae6f83c",
+        "MD5": "d473b31745027c20ab373d5523861bbc",
+        "文件大小": "8.299 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/4070e85ff743",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-ms39v8pa",
+      "category": "win11",
+      "version": "25h2",
+      "title": "Windows 11 商业版 25H2（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_11_business_editions_version_25h2_updated_july_2026_x64_dvd_1019274a.iso",
+        "SHA-256": "5e2b4afe853ca7810e9c4d282632c4c7319a624e81e59607ba4c0d4551600b8a",
+        "SHA-1": "ce2673a5e75e23a1a7ca603ae91f31b7e38c3c6b",
+        "MD5": "c65a25b3fd20c5dc181f1a20fc20685d",
+        "文件大小": "8.226 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/a01a9400997a",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "win11-021",
       "category": "win11",
       "version": "25h2",
@@ -496,6 +544,67 @@
         {
           "type": "xunlei",
           "url": "https://pan.xunlei.com/s/VOwYKhtgsV86P_TtUb01UGGLA1?pwd=5ban#",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-ms4a1uhd",
+      "category": "win11",
+      "version": "24h2",
+      "title": "Windows 11 消费者版本 24H2（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_consumer_editions_version_24h2_updated_july_2026_x64_dvd_2fb162d6.iso",
+        "SHA-256": "7b8b2ef7cc5a87b66904164dff5012ab4777fce58a74988100d50643fa3ecf8b",
+        "SHA-1": "a5689095cf7aec084e74f13977977e54bb93a8c1",
+        "MD5": "3ebb03caa5b80aa0bb4d8c062340173b",
+        "文件大小": "8.267 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/ec0ce26d031a",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-ms4a3m2a",
+      "category": "win11",
+      "version": "24h2",
+      "title": "Windows 11 商业版 24H2（2026年7月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2026-07-22",
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_business_editions_version_24h2_updated_july_2026_x64_dvd_6232038a.iso",
+        "SHA-256": "19a6089f278e70a11d673a13fdbf1bfc96e296f2388f4ebd15352e774ca69379",
+        "SHA-1": "7092c673b4813ae6736a714d51fa4b530d6a3ef4",
+        "MD5": "ba18301a80a1a911d75c88d09c1ee835",
+        "文件大小": "8.184 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/c28f322bf96c",
           "password": ""
         }
       ]
@@ -2381,6 +2490,54 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1GpTSdtTw-Bf-Ep4HPxHxGA",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "windows11-ms3arg29",
+      "category": "windows11",
+      "version": "25h2",
+      "title": "Windows 11 Consumer Editions 25H2 (Updated July 2026) x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "2026-07-22",
+      "editions": [],
+      "params": {
+        "文件名": "en-us_windows_11_consumer_editions_version_25h2_updated_july_2026_x64_dvd_ef10fcb2.iso",
+        "SHA-256": "e24c57d27f3983910e367a3558f1b7165e3d3d61a8cdba44ec6d8f78822b84f3",
+        "SHA-1": "3b62d12c84d5df16dc6287b2fa62ad1a79726ed4",
+        "MD5": "0265790202493755d35645ab2142ee7f",
+        "文件大小": "8.239 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/16b82c602e7b",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "windows11-ms3au1dy",
+      "category": "windows11",
+      "version": "25h2",
+      "title": "Windows 11 Business Editions 25H2 (Updated July 2026) x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "2026-07-22",
+      "editions": [],
+      "params": {
+        "文件名": "en-us_windows_11_business_editions_version_25h2_updated_july_2026_x64_dvd_7af2de2f.iso",
+        "SHA-256": "340003e37027e373915b521de464f9bab579a341d7eeb058d41dab4390fe3716",
+        "SHA-1": "06ee1301a5822c2f2316da2fa26fe160dd8c6555",
+        "MD5": "32131b6ce70419d592cce3fa2f4ee359",
+        "文件大小": "8.126 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/9845dcb25dec",
           "password": ""
         }
       ]
