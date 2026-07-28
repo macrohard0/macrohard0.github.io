@@ -610,16 +610,20 @@ def render_redirect_page(brand_plain, target, lang_code=DEFAULT_LANG):
     )
 
 
+def file_lastmod(full):
+    return datetime.date.fromtimestamp(os.path.getmtime(full)).isoformat()
+
+
 def write(out_root, path, content):
     full = os.path.join(out_root, path)
     os.makedirs(os.path.dirname(full) or out_root, exist_ok=True)
     if os.path.exists(full):
         with open(full, 'r', encoding='utf-8') as f:
             if f.read() == content:
-                return False
+                return False, file_lastmod(full)
     with open(full, 'w', encoding='utf-8', newline='\n') as f:
         f.write(content)
-    return True
+    return True, file_lastmod(full)
 
 
 # ---------------------------------------------------------------- 单套站点
@@ -630,11 +634,9 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
     all_cats = data.get('categories', [])
     all_images = data.get('images', [])
     default_brand_plain = site_overrides.get('brand') or site_base.get('brand', 'NextWindows')
-    today = datetime.date.today().isoformat()  # 没有镜像日期信息时的兜底 lastmod
-
     urls = []  # for sitemap（相对 out_root 的路径，含各语言子目录前缀）
     home_paths = set()  # 各语言首页的 path（'index.html' / 'en-us/index.html' ...），sitemap 特殊处理
-    lastmods = {}  # path -> 该页面里镜像的最新 date，供 sitemap 用真实的「最后更新时间」而非构建日期
+    lastmods = {}  # path -> 输出 HTML 文件的实际最后修改日期，供 sitemap 的 <lastmod> 使用
     redirect_targets = {}  # code -> (home_path, brand_plain, lang_dir)，供 redirect_home_to 生成各语言跳转页用
 
     languages = config.get('languages') or [{'code': DEFAULT_LANG, 'dir': ''}]
@@ -724,7 +726,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         def notice_block():
             return ('<div class="notice">%s</div>' % e(notice)) if notice else ''
 
-        def page(path, title, desc, keywords, active_cat, crumb, body, group=None, version_id=None, lastmod=None, crumbs=None):
+        def page(path, title, desc, keywords, active_cat, crumb, body, group=None, version_id=None, crumbs=None):
             asset_prefix = asset_prefix_for(path)
             home_prefix = section_prefix_for(path)
             canonical = base_url + '/' + path
@@ -759,9 +761,9 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body,
                 qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']))
-            write(out_root, path, html_out)
+            _, page_lastmod = write(out_root, path, html_out)
             urls.append(path)
-            lastmods[path] = lastmod or today
+            lastmods[path] = page_lastmod
 
         def sort_imgs(imgs):
             return sorted(imgs, key=lambda x: x.get('date', ''), reverse=True)
@@ -781,8 +783,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         home_path = p('index.html')
         page(home_path, e(home_title),
              make_home_desc(brand_plain, site.get('subtitle', ''), notice, cats, images, t), base_kw, '__home__',
-             '%s <small>%s</small>' % (brand, subtitle), home_body,
-             lastmod=max_date(latest))
+             '%s <small>%s</small>' % (brand, subtitle), home_body)
         home_paths.add(home_path)
         redirect_targets[code] = (home_path, brand_plain, lang_dir)
 
@@ -810,7 +811,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                      make_desc(cname, latest_ver['name'], land_imgs, t, pan_allowed),
                      '%s,%s %s,%s' % (cname, cname, latest_ver['name'], base_kw),
                      cid, crumb, body, group=cat_group(c), version_id=None,
-                     lastmod=max_date(land_imgs), crumbs=[(cname, cat_path), (latest_ver['name'], None)])
+                     crumbs=[(cname, cat_path), (latest_ver['name'], None)])
 
                 # 其余版本页
                 for v in vers[1:]:
@@ -822,8 +823,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
                          make_desc(cname, v['name'], v_imgs, t, pan_allowed),
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
-                         cid, crumb, body, group=cat_group(c), version_id=v['id'],
-                         lastmod=max_date(v_imgs))
+                         cid, crumb, body, group=cat_group(c), version_id=v['id'])
             else:
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
@@ -832,8 +832,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t, pan_allowed),
                      '%s,%s' % (cname, base_kw),
-                     cid, crumb, body, group=cat_group(c), version_id=None,
-                     lastmod=max_date(all_imgs))
+                     cid, crumb, body, group=cat_group(c), version_id=None)
 
     # ---------- 各语言首页跳转（如配置了 redirect_home_to）----------
     # 用于站点整体迁移场景：内容和另一域名完全重复被搜索引擎判定为镜像站时，
@@ -844,14 +843,13 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         urls, home_paths, lastmods = [], set(), {}
         for code, (home_path, brand_plain, lang_dir) in redirect_targets.items():
             target = base + (lang_dir + '/' if lang_dir else '')
-            write(out_root, home_path, render_redirect_page(brand_plain, target, code))
+            _, page_lastmod = write(out_root, home_path, render_redirect_page(brand_plain, target, code))
             # sitemap 只保留跳转入口本身，其余分类/版本页仍会生成（供直接访问），但不再对搜索引擎宣传
             urls.append(home_path)
             home_paths.add(home_path)
-            lastmods[home_path] = today
+            lastmods[home_path] = page_lastmod
 
     # ---------- sitemap.xml ----------
-    today = datetime.date.today().isoformat()
     sm = ['<?xml version="1.0" encoding="UTF-8"?>',
           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for u in urls:
@@ -859,7 +857,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         loc = base_url + '/' + (u[:-len('index.html')] if is_home else u)
         pr = '1.0' if is_home else '0.8'
         sm.append('  <url><loc>%s</loc><lastmod>%s</lastmod><priority>%s</priority></url>' % (
-            e(loc), e(lastmods.get(u, today)), pr))
+            e(loc), e(lastmods[u]), pr))
     sm.append('</urlset>')
     write(out_root, 'sitemap.xml', '\n'.join(sm) + '\n')
 
