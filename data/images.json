@@ -54,10 +54,6 @@
           "name": "21H2"
         },
         {
-          "id": "1809",
-          "name": "1809"
-        },
-        {
           "id": "ltsc",
           "name": "LTSC"
         }
@@ -152,6 +148,10 @@
         {
           "id": "23h2",
           "name": "23H2"
+        },
+        {
+          "id": "ltsc",
+          "name": "LTSC"
         }
       ]
     },
@@ -167,8 +167,8 @@
           "name": "22H2"
         },
         {
-          "id": "21h2",
-          "name": "21H2"
+          "id": "ltsc",
+          "name": "LTSC"
         }
       ]
     },
@@ -2721,7 +2721,7 @@
     {
       "id": "windows11-mrxsqfub",
       "category": "windows11",
-      "version": "24h2",
+      "version": "ltsc",
       "title": "Windows 11 Enterprise LTSC 2024 x64",
       "arch": "64位",
       "lang": "English",
@@ -2759,7 +2759,7 @@
     {
       "id": "windows11-mrxsljdz",
       "category": "windows11",
-      "version": "24h2",
+      "version": "ltsc",
       "title": "Windows 11 IoT Enterprise LTSC 2024 x64",
       "arch": "64位",
       "lang": "English",
@@ -3056,7 +3056,7 @@
     {
       "id": "win10-mreagvpo",
       "category": "windows10",
-      "version": "21h2",
+      "version": "ltsc",
       "title": "Windows 10 Enterprise LTSC 2021 x64",
       "arch": "64位",
       "lang": "English",
@@ -3083,13 +3083,14 @@
     {
       "id": "win10-mru0mraw",
       "category": "windows10",
-      "version": "21h2",
+      "version": "ltsc",
       "title": "Windows 10 IoT Enterprise LTSC 2021 x64",
       "arch": "x64",
       "lang": "English",
       "date": "",
       "editions": [
-        "IoT Enterprise",
+        "IoT",
+        "Enterprise",
         "LTSC"
       ],
       "params": {
