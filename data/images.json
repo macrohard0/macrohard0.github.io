@@ -54,6 +54,14 @@
           "name": "21H2"
         },
         {
+          "id": "21h1",
+          "name": "21H1"
+        },
+        {
+          "id": "20h2",
+          "name": "20H2"
+        },
+        {
           "id": "ltsc",
           "name": "LTSC"
         }
@@ -2405,7 +2413,7 @@
       "category": "windows11",
       "version": "26h1",
       "title": "Windows 11 Consumer Editions 26H1 (Updated July 2026) x64",
-      "arch": "64位",
+      "arch": "x64",
       "lang": "English",
       "date": "2026-07-22",
       "editions": [
@@ -2429,9 +2437,9 @@
     {
       "id": "windows11-ms1vxpz3",
       "category": "windows11",
-      "version": "",
+      "version": "26h1",
       "title": "Windows 11 Business Editions 26H1 (Updated July 2026) x64",
-      "arch": "64位",
+      "arch": "x64",
       "lang": "English",
       "date": "2026-07-22",
       "editions": [
