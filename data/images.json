@@ -3077,6 +3077,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/19eN3zJtNg7SJabV9N_dh6g",
           "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/6187f26e6151",
+          "password": ""
         }
       ]
     },
