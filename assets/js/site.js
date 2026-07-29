@@ -1,11 +1,10 @@
 /* ============================================================
    静态站点的渐进增强脚本（内容已在 HTML 中，JS 仅增强交互）
    - 复制按钮（data-copy）
-   - 打开网盘（data-open）—— 夸克链接改为弹窗二维码，其余网盘正常新开标签页
-     （移动端访客直接跳转，不弹二维码：手机上本来就能装夸克 App 直接打开）
+   - 打开网盘（data-open）—— 夸克/百度链接改为弹窗二维码，其余网盘正常新开标签页
+     （移动端访客直接跳转，不弹二维码：手机上本来就能直接打开对应网盘 App 或网页）
    - 参数表展开/收起（.box .toggle），移动端默认只展开第一个 box
    - 移动端侧栏汉堡菜单
-   - 移动端隐藏"复制链接"按钮，见 style.css 的 .dl-copy-url 规则
    ============================================================ */
 (function () {
   'use strict';
@@ -55,17 +54,22 @@
     if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
-  // 夸克网盘链接不支持直接跳转下载，改为弹窗展示二维码，提示用户用夸克 App 扫码转存
+  // 桌面端对夸克/百度网盘改为弹窗展示二维码，并根据网盘类型显示对应的 App 提示
   // 二维码在本地生成（assets/js/qrcode.js），不请求任何第三方接口
-  function openQrModal(url) {
+  function openQrModal(url, pan) {
     var modal = document.getElementById('qr-modal');
     var mask = document.getElementById('qr-mask');
     var wrap = document.getElementById('qr-img-wrap');
     var urlEl = document.getElementById('qr-url');
+    var titleEl = document.getElementById('qr-title');
+    var hintEl = document.getElementById('qr-hint');
     if (!modal || !mask || !wrap || typeof qrcode === 'undefined') {
       window.open(url, '_blank', 'noopener');
       return;
     }
+    var panKey = (pan === 'quark' || pan === 'baidu') ? pan : '';
+    var title = modal.getAttribute(panKey ? 'data-qr-' + panKey + '-title' : 'data-qr-title') || '';
+    var hint = modal.getAttribute(panKey ? 'data-qr-' + panKey + '-hint' : 'data-qr-hint') || '';
     try {
       var qr = qrcode(0, 'M'); // typeNumber=0 -> 自动选择能容纳数据的最小规格
       qr.addData(url);
@@ -76,6 +80,9 @@
       window.open(url, '_blank', 'noopener');
       return;
     }
+    if (titleEl) titleEl.textContent = title;
+    if (hintEl) hintEl.textContent = hint;
+    modal.setAttribute('aria-label', title || '');
     if (urlEl) urlEl.textContent = url;
     qrLastFocus = document.activeElement;
     mask.classList.add('show');
@@ -115,7 +122,8 @@
     if (t.matches('[data-copy]')) { copyText(t.getAttribute('data-copy')); return; }
     if (t.matches('[data-open]')) {
       var url = t.getAttribute('data-open');
-      if (t.getAttribute('data-pan') === 'quark' && !isMobile()) { openQrModal(url); }
+      var pan = t.getAttribute('data-pan');
+      if ((pan === 'quark' || pan === 'baidu') && !isMobile()) { openQrModal(url, pan); }
       else { window.open(url, '_blank', 'noopener'); }
       return;
     }
