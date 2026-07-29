@@ -54,6 +54,14 @@
           "name": "21H2"
         },
         {
+          "id": "21h1",
+          "name": "21H1"
+        },
+        {
+          "id": "20h2",
+          "name": "20H2"
+        },
+        {
           "id": "ltsc",
           "name": "LTSC"
         }
@@ -2405,7 +2413,7 @@
       "category": "windows11",
       "version": "26h1",
       "title": "Windows 11 Consumer Editions 26H1 (Updated July 2026) x64",
-      "arch": "64位",
+      "arch": "x64",
       "lang": "English",
       "date": "2026-07-22",
       "editions": [
@@ -2429,9 +2437,9 @@
     {
       "id": "windows11-ms1vxpz3",
       "category": "windows11",
-      "version": "",
+      "version": "26h1",
       "title": "Windows 11 Business Editions 26H1 (Updated July 2026) x64",
-      "arch": "64位",
+      "arch": "x64",
       "lang": "English",
       "date": "2026-07-22",
       "editions": [
@@ -3076,6 +3084,11 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/19eN3zJtNg7SJabV9N_dh6g",
+          "password": ""
+        },
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/6187f26e6151",
           "password": ""
         }
       ]
@@ -3807,6 +3820,102 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1PaTcF8jGqjGS5wJO0LSbZQ",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms5svv2g",
+      "category": "win10",
+      "version": "21h1",
+      "title": "Windows 10 消费者版本 21H1（2021年9月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2021-09-21",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_10_consumer_editions_version_21h1_updated_sep_2021_x64_dvd_991b822f.iso",
+        "SHA-256": "613ec08b7b23361220afc02f5bcf1a2ff21499f56567c7517ef04053394dd26a",
+        "SHA-1": "38497d3f479f6a31775e55256d02d224d2bc9f30",
+        "MD5": "fcc8de9d5abafdee82a437458259e01e",
+        "文件大小": "5.42GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/7e95153420a8",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms5sxt9a",
+      "category": "win10",
+      "version": "21h1",
+      "title": "Windows 10 商业版 21H1（2021年9月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2021-09-21",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_10_business_editions_version_21h1_updated_sep_2021_x64_dvd_023d42d3.iso",
+        "SHA-256": "f9bef0cc4c558785b753eba8efcde3d5256daac124c27636fff7d93020f66ffd",
+        "SHA-1": "3a656f7209547468fbb5b794d78f216c7603e16c",
+        "MD5": "018e34828357518b7f81306a562506c3",
+        "文件大小": "5.32GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/9489407f825c",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms5sz3pp",
+      "category": "win10",
+      "version": "20h2",
+      "title": "Windows 10 消费者版本 20H2（2021年4月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2021-04-20",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_10_consumer_editions_version_20h2_updated_april_2021_x64_dvd_ace7e59c.iso",
+        "SHA-256": "4224bf4282b4979adb5348cfd2755f2165be44b0f5f33392790b732a447e6fbe",
+        "SHA-1": "5b0ac1265a339d1f72db41a21283eb2839642020",
+        "MD5": "0590ad3deb88bd8decf0b65d3276753b",
+        "文件大小": "5.9GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/83c9224ab1b1",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms5t02ue",
+      "category": "win10",
+      "version": "20h2",
+      "title": "Windows 10 商业版 20H2（2021年4月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2021-04-20",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_10_business_editions_version_20h2_updated_april_2021_x64_dvd_0a0fc490.iso",
+        "SHA-256": "bde6b20da09c98d5a168725981163da87290ee241b37543d147d64124a144873",
+        "SHA-1": "df9154c57636c65eb44db5f2d520196feaf55db8",
+        "MD5": "cf01bb049432c485ba71ae7ac485357c",
+        "文件大小": "5.74GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/bbab49a9e0d9",
           "password": ""
         }
       ]
