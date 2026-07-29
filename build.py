@@ -67,6 +67,7 @@ SITES = [
 
 DEFAULT_LANG = 'zh-cn'
 DISABLED_PAN_TYPES = {'xunlei'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
+VPS_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
@@ -133,7 +134,7 @@ STRINGS = {
     'zh-cn': dict(
         code='zh-cn', html_lang='zh-CN',
         home='首页', toggle='[ 展开/收起 ]',
-        copy_link='复制链接', open_link='打开', extract_code='提取码', copy='复制',
+        open_link='打开', extract_code='提取码', copy='复制',
         no_link='暂未提供下载链接，即将更新',
         no_image_title='暂无镜像', no_image_sub='该版本还没有发布镜像',
         os_categories='系统分类', latest_images='最新镜像',
@@ -142,16 +143,26 @@ STRINGS = {
         title_ver_tmpl='%s %s 原版镜像下载 - %s系统下载',
         title_plain_tmpl='%s 原版镜像下载 - %s系统下载',
         desc_tmpl='提供 %s %s 原版 ISO 镜像的网盘下载（夸克/百度等），%s等版本，附文件名与 SHA-256 校验值，微软官方原版未修改。',
+        vps_ad_badge='赞助推荐',
+        vps_ad_title='想搭网站、学 Linux、写个人博客？可以从一台 VPS 开始',
+        vps_ad_desc='无论是部署个人主页、搭建 WordPress 博客，还是练习 Linux 命令、Nginx、Docker 与基础运维，一台稳定的 VPS 都是很实用的入门环境。',
+        vps_ad_points=['网站搭建练手', 'Linux 学习环境', '个人博客部署'],
+        vps_ad_cta='查看搬瓦工 VPS',
+        vps_ad_note='前往 BandwagonHost 官方页面，可按预算和线路选择适合的网站或博客方案。',
         qr_close='关闭',
-        qr_title='夸克网盘扫码转存',
-        qr_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
+        qr_title='扫码打开网盘链接',
+        qr_hint='请使用手机扫描二维码，在对应网盘 App 或浏览器中打开链接；如需下载，请按网盘页面提示继续操作。',
+        qr_quark_title='夸克网盘扫码转存',
+        qr_quark_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
+        qr_baidu_title='百度网盘扫码转存',
+        qr_baidu_hint='请使用百度网盘 App 扫描二维码，先将资源转存到你的网盘后，再用电脑端百度网盘客户端下载。',
         info_sections=[
             ('关于本站', [
                 '{brand} 收集并整理微软官方发布的 Windows 与 Office 原版 ISO 镜像，按系统版本、语言、位数分类展示，每个镜像均标注文件名及 SHA-256、SHA-1、MD5 校验值，方便下载后自行核对完整性。',
                 '相比零散的下载帖，我们尽量把同一系统下不同版本、不同渠道（零售版 / 批量授权版）整理清楚，减少选错镜像、装错版本的情况。',
             ]),
 			('网盘选择', [
-                '如果是海外网络环境，百度网盘、夸克网盘等下载速度可能比较慢，建议优先选择Terabox网盘。',
+                '如果是海外用户，夸克网盘下载速度可能比较慢，建议选择百度网盘或Terabox网盘。',
             ]),
             ('原版镜像与"优化版"系统的区别', [
                 '网络上常见的系统镜像大致分两类：一类是经第三方修改、预装驱动或软件的"优化版"（也称 Ghost 版），安装速度快，但存在被植入广告、篡改主页甚至后门的风险；另一类是微软官方发布、未经任何修改的原版镜像，安装后需使用有效密钥激活，胜在纯净可控。',
@@ -173,7 +184,7 @@ STRINGS = {
     'en-us': dict(
         code='en-us', html_lang='en-US',
         home='Home', toggle='[ Expand/Collapse ]',
-        copy_link='Copy Link', open_link='Open', extract_code='Password', copy='Copy',
+        open_link='Open', extract_code='Password', copy='Copy',
         no_link='No download link yet, check back soon',
         no_image_title='No images yet', no_image_sub='No images have been published for this version yet',
         os_categories='OS Categories', latest_images='Latest Images',
@@ -182,9 +193,19 @@ STRINGS = {
         title_ver_tmpl='%s %s Original ISO Download - %s',
         title_plain_tmpl='%s Original ISO Download - %s',
         desc_tmpl='Download the original %s %s ISO image via cloud drive (Quark/baidu/TeraBox, etc.), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
+        vps_ad_badge='Sponsored',
+        vps_ad_title='Building a website, learning Linux, or running a personal blog? Start with a VPS.',
+        vps_ad_desc='A stable VPS is a practical sandbox for hosting a small site, deploying WordPress, learning Linux commands, and experimenting with Nginx, Docker, and basic server administration.',
+        vps_ad_points=['Website hosting', 'Linux practice', 'Personal blog'],
+        vps_ad_cta='View BandwagonHost Plans',
+        vps_ad_note='Opens the official BandwagonHost page. Pick a plan that matches your website or blog needs.',
         qr_close='Close',
-        qr_title='Scan to save via Quark',
-        qr_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
+        qr_title='Scan to open the cloud drive link',
+        qr_hint='Scan this QR code with your phone and open it in the matching cloud drive app or browser. Follow the provider page for the next download steps.',
+        qr_quark_title='Scan to save via Quark',
+        qr_quark_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
+        qr_baidu_title='Scan to save via Baidu Netdisk',
+        qr_baidu_hint='Scan this QR code with the Baidu Netdisk app, save the file to your cloud drive first, then continue downloading with the Baidu Netdisk desktop client.',
         info_sections=[
             ('About This Site', [
                 '{brand} curates official Microsoft Windows and Office ISO images, organized by version, language, and architecture. Every image is listed with its filename and SHA-256 / SHA-1 / MD5 checksum so you can verify integrity after downloading.',
@@ -209,7 +230,7 @@ STRINGS = {
     'ko-kr': dict(
         code='ko-kr', html_lang='ko-KR',
         home='홈', toggle='[ 펼치기/접기 ]',
-        copy_link='링크 복사', open_link='열기', extract_code='비밀번호', copy='복사',
+        open_link='열기', extract_code='비밀번호', copy='복사',
         no_link='아직 다운로드 링크가 없습니다. 곧 업데이트됩니다',
         no_image_title='이미지 없음', no_image_sub='이 버전에는 아직 게시된 이미지가 없습니다',
         os_categories='OS 분류', latest_images='최신 이미지',
@@ -218,9 +239,19 @@ STRINGS = {
         title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
         title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
         desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(Quark/baidu/TeraBox 등)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
+        vps_ad_badge='스폰서 추천',
+        vps_ad_title='웹사이트 구축, Linux 학습, 개인 블로그 운영을 시작하려면 VPS가 좋은 출발점입니다',
+        vps_ad_desc='안정적인 VPS는 개인 사이트 구축, WordPress 배포, Linux 명령어 학습, 그리고 Nginx, Docker, 기본 서버 운영을 연습하기에 적합한 환경입니다.',
+        vps_ad_points=['웹사이트 구축', 'Linux 학습', '개인 블로그'],
+        vps_ad_cta='BandwagonHost 요금제 보기',
+        vps_ad_note='BandwagonHost 공식 페이지로 이동합니다. 웹사이트나 블로그 용도에 맞는 요금제를 선택하세요.',
         qr_close='닫기',
-        qr_title='퀄크로 스캔하여 저장',
-        qr_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
+        qr_title='QR 코드로 클라우드 링크 열기',
+        qr_hint='휴대폰으로 QR 코드를 스캔한 뒤, 해당 클라우드 드라이브 앱이나 브라우저에서 링크를 여세요. 다운로드는 각 서비스 안내에 따라 진행하세요.',
+        qr_quark_title='퀄크로 스캔하여 저장',
+        qr_quark_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
+        qr_baidu_title='바이두 클라우드로 스캔하여 저장',
+        qr_baidu_hint='바이두 클라우드 앱으로 QR 코드를 스캔해 먼저 내 클라우드에 저장한 뒤, PC용 바이두 클라우드 클라이언트로 이어서 다운로드하세요.',
         info_sections=[
             ('이 사이트 소개', [
                 '{brand}는 마이크로소프트가 공식 배포한 Windows 및 Office 원본 ISO 이미지를 버전, 언어, 아키텍처별로 정리해 제공합니다. 각 이미지에는 파일명과 SHA-256 / SHA-1 / MD5 체크섬을 함께 표기해 다운로드 후 무결성을 직접 확인할 수 있습니다.',
@@ -305,9 +336,8 @@ def render_links(links, t, pan_allowed=None):
             '<div class="dl-item">'
             '<div class="dl-label" style="background:%s">%s</div>'
             '<input class="dl-input" readonly value="%s">'
-            '<button class="dl-copy dl-copy-url" data-copy="%s">%s</button>'
             '<button class="dl-open" data-open="%s" data-pan="%s">%s</button>'
-            '</div>' % (color, e(name), e(url), e(url), e(t['copy_link']), e(url), e(ptype), e(t['open_link']))
+            '</div>' % (color, e(name), e(url), e(url), e(ptype), e(t['open_link']))
         )
         pass_item = ''
         if pwd:
@@ -377,6 +407,36 @@ def render_info_sections(t, brand_plain):
     return out
 
 
+def render_vps_ad(t, compact=False):
+    points = ''.join('<span>%s</span>' % e(pp) for pp in t.get('vps_ad_points', []))
+    cls = 'promo-card promo-card-compact' if compact else 'promo-card'
+    return (
+        '<section class="%s">'
+        '<div class="promo-badge">%s</div>'
+        '<div class="promo-main">'
+        '<div class="promo-copy">'
+        '<h2>%s</h2>'
+        '<p>%s</p>'
+        '<div class="promo-points">%s</div>'
+        '</div>'
+        '<div class="promo-action">'
+        '<a class="promo-btn" href="%s" target="_blank" rel="nofollow sponsored noopener">%s</a>'
+        '<div class="promo-note">%s</div>'
+        '</div>'
+        '</div>'
+        '</section>'
+    ) % (
+        cls,
+        e(t['vps_ad_badge']),
+        e(t['vps_ad_title']),
+        e(t['vps_ad_desc']),
+        points,
+        e(VPS_AFF_URL),
+        e(t['vps_ad_cta']),
+        e(t['vps_ad_note']),
+    )
+
+
 def render_submenu(cat, active_ver, prefix):
     vers = cat.get('versions', [])
     if not vers:
@@ -444,11 +504,14 @@ PAGE = """<!DOCTYPE html>
   </div>
   <div class="toast" id="toast"></div>
   <div class="qr-mask" id="qr-mask"></div>
-  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{qr_title}">
+  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{qr_title}"
+       data-qr-title="{qr_title}" data-qr-hint="{qr_hint}"
+       data-qr-quark-title="{qr_quark_title}" data-qr-quark-hint="{qr_quark_hint}"
+       data-qr-baidu-title="{qr_baidu_title}" data-qr-baidu-hint="{qr_baidu_hint}">
     <button type="button" class="qr-close" id="qr-close" aria-label="{qr_close}">&times;</button>
-    <div class="qr-title">{qr_title}</div>
+    <div class="qr-title" id="qr-title">{qr_title}</div>
     <div class="qr-img-wrap" id="qr-img-wrap"></div>
-    <div class="qr-hint">{qr_hint}</div>
+    <div class="qr-hint" id="qr-hint">{qr_hint}</div>
     <div class="qr-url" id="qr-url"></div>
   </div>
   <script src="{prefix}assets/js/qrcode.js"></script>
@@ -760,7 +823,9 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
                 lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body,
-                qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']))
+                qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']),
+                qr_quark_title=e(t['qr_quark_title']), qr_quark_hint=e(t['qr_quark_hint']),
+                qr_baidu_title=e(t['qr_baidu_title']), qr_baidu_hint=e(t['qr_baidu_hint']))
             _, page_lastmod = write(out_root, path, html_out)
             urls.append(path)
             lastmods[path] = page_lastmod
@@ -777,6 +842,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
         home_body = (
             notice_block() +
             render_info_sections(t, brand_plain) +
+            render_vps_ad(t) +
             '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">%s</h2>' % e(t['os_categories']) + cat_links +
             foot_block()
         )
@@ -805,7 +871,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                              or im.get('version', '') == '' or im.get('version') not in defined]
                 crumb = '%s <small>%s</small>' % (e(cname), e(latest_ver['name']))
                 cat_path = p('%s.html' % cslug)
-                body = notice_block() + render_submenu(c, latest_ver['id'], section_prefix_for(cat_path)) + cards_block(land_imgs) + foot_block()
+                body = notice_block() + render_submenu(c, latest_ver['id'], section_prefix_for(cat_path)) + render_vps_ad(t, compact=True) + cards_block(land_imgs) + foot_block()
                 page(cat_path,
                      t['title_ver_tmpl'] % (cname, latest_ver['name'], brand),
                      make_desc(cname, latest_ver['name'], land_imgs, t, pan_allowed),
@@ -818,7 +884,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                     v_imgs = [im for im in imgs if im.get('version') == v['id']]
                     crumb = '%s <small>%s</small>' % (e(cname), e(v['name']))
                     ver_path = p('%s/%s.html' % (cslug, v['id']))
-                    body = notice_block() + render_submenu(c, v['id'], section_prefix_for(ver_path)) + cards_block(v_imgs) + foot_block()
+                    body = notice_block() + render_submenu(c, v['id'], section_prefix_for(ver_path)) + render_vps_ad(t, compact=True) + cards_block(v_imgs) + foot_block()
                     page(ver_path,
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
                          make_desc(cname, v['name'], v_imgs, t, pan_allowed),
@@ -827,7 +893,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
             else:
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
-                body = notice_block() + cards_block(all_imgs) + foot_block()
+                body = notice_block() + render_vps_ad(t, compact=True) + cards_block(all_imgs) + foot_block()
                 page(p('%s.html' % cslug),
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t, pan_allowed),
