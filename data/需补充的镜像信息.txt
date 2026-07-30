@@ -1,0 +1,78 @@
+File:	en_windows_7_ultimate_with_sp1_x64_dvd_u_677332.iso
+Alternative file names:	Win7_Ult_SP1_English_x64.iso
+7601.17514.101119-1850_x64fre_client-1_en-us_Retail_Ultimate-GSP1RMCULXFRER_EN_DVD.iso
+Family:	Operating Systems
+Version:	Windows 7 with Service Pack 1 (Updated May 2011)
+Language:	English - (EN)
+CRC-32:	992b8fcd
+MD5:	c9f7ecb768acb82daacf5030e14b271e
+SHA-1:	36ae90defbad9d9539e649b193ae573b77a71c83
+SHA-256:	36f4fa2416d0982697ab106e3a72d2e120dbcdb6cc54fd3906d06120d0653808
+SHA-512:	f1db18b1275c7b3d500c6e6afdd607f4a684ae2005737029b0105b6268ff0807ff1b8dd4e87296a12aee60f3516ac9fc5cb5b46285209d4bd9f11e6134980ac3
+SHA3-256:	2e6a7a4abae5b6abe63f471fe440316af4638cf62c9269e02dcc445bcb4a09af
+SHA3-512:	c0b5c20b018bb81aacb39e17f300ae9b1d2c6dd9238dedc952b1fb7a07bf3e59d4e1e1d41a236944fa78459a09755ea704d3a953ca76b196e84da3f711b582ae
+Size:	3.093 GB (3320903680 bytes)
+下载链接： https://pan.quark.cn/s/f55742ff2947
+
+File:	en-us_windows_10_iot_enterprise_ltsc_2021_x64_dvd_257ad90f.iso
+Family:	Operating Systems
+Version:	Windows 10, version 21H2 [19044.1288] (Updated October 2021)
+Language:	English - (EN)
+CRC-32:	188c9d0d
+MD5:	2463b19beac328290e6a8adcedb7533a
+SHA-1:	76c3c10e38307d29fd8b4748522ed144dba35829
+SHA-256:	a0334f31ea7a3e6932b9ad7206608248f0bd40698bfb8fc65f14fc5e4976c160
+SHA-512:	640942d93daf8cd183d06e35d5d753a4b93c952c3196c3e3fa7876295b39d8bfef5df8ef2a3b420b5247905fe396606f94ccf093982ee999e503d09e69850143
+SHA3-256:	33bacaa70b78abcf4969fa0f6219a5cad7dd4d49c9b975ddadc8b15658d17d48
+SHA3-512:	03e3a8e34a79363235aaf91333cb3afa4927feb0b1f1cf212e6cf4a70c54cbe7ab367fafb6143e6057dac00e407c1b661cb0e2511f7eadb4562c49d0ee606a4e
+Size:	4.518 GB (4851668992 bytes)
+下载链接： https://pan.quark.cn/s/2119170ed776
+
+
+File:	cn_windows_vista_with_sp2_x64_dvd_x15-36322.iso
+Family:	Operating Systems
+Version:	Windows Vista with Service Pack 2
+Language:	Chinese - Simplified - (CN)
+CRC-32:	5f7599b3
+MD5:	8f597367ffb0fc9bf27f66c41be61353
+SHA-1:	a1689c254fb3bd67807ee493ee7d4896bca39887
+SHA-256:	c595e280b1a3a01f95e70f5124b3a314a3376da68be1096a3b740f5ed42d4b6d
+SHA-512:	b8ca1ef464013f65d531c8c58e20bf8e0dd89624e9ff0a5515cd04973ad3a826c60f4c2d6266d473d963760adf999534a747905f75425c941463837cd68ca6fc
+SHA3-256:	66df03a437e4230eac1c50fac7677fe1efc6cea9b1eaf90e4136ee864d6f9396
+SHA3-512:	8b97d7c9010fa871827d235e14893d693f803823dac30ca373daa9842827a4d42332331217d59e7784f6776c3b4c46827345f96ec976a2cf5ae279c6b4fea868
+Size:	3.555 GB (3817512960 bytes)
+下载链接：https://pan.quark.cn/s/17499d245bfd
+
+
+File:	cn_windows_vista_enterprise_with_sp2_x64_dvd_x15-40402.iso
+Alternative file names:	SW_DVD5_SA_Win_Vista_Enterprise_64BIT_ChnSimp_Full_Int_SP2_MLF_X15-40402.ISO
+Family:	Operating Systems
+Version:	Windows Vista with Service Pack 2
+Language:	Chinese - Simplified - (CN)
+CRC-32:	ac4b28e4
+MD5:	e42c0f66760082aaaf9848bd33dad988
+SHA-1:	46e06e24d549fa42a2392c8553470bf9845c9c06
+SHA-256:	ef987887a7bc865c6c1e0cbcd6922e72a65b0cfff9c32fbdec31758726642289
+SHA-512:	e5d450ce13faab27b5c673e953bccd9d3084d0196a965776868ddd11ecc0d0e90876c5a2c47140cf326a86464f5be34779a50a5ccd4a162a5d6ebd9c47638588
+SHA3-256:	e98401ae5de2e1eb4315b5253ab8401664b57275df79b389e85114ae4cfee762
+SHA3-512:	3eb01c5caaf34f03764b2a2c878148d7d9bf160b72196cf4b67405a651a47595c76cc5b0d49f3ee37e52bdfeb73eff7c2fb1dd67fd0f81b01d63d33da8f886f6
+Size:	2.891 GB (3104415744 bytes)
+下载链接：https://pan.quark.cn/s/6a2a889a4e2e
+
+
+File:	cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso
+Alternative file names:	SW_DVD5_WIN_ENT_LTSC_2019_64BIT_ChnSimp_-2_MLF_X22-05049.ISO
+Family:	Operating Systems
+Version:	Windows 10, version 1809 [17763.316] (Updated February 2019)
+Language:	Chinese - Simplified - (CN)
+CRC-32:	0c3357e3
+MD5:	0d98f58465929ee524ce3aec0832a58b
+SHA-1:	24b59706d5eded392423936c82ba5a83596b50cc
+SHA-256:	aa4ea00581aa84999dbfe0627499b392e10c75912d6e2f1635eb7c4b9139fb5f
+SHA-512:	fea7a9019a1884d0bbdc274662e1899800cb11abe71b1ad4cdf4b333c785ff65e4a8ca8c62215a1cbfb8ec5b873520349eeb449652d13742c9fc1a1f26be895a
+SHA3-256:	570e9bf52cbd9cd4699f395bfd449af8a8b1a4b6a3520d4a428869a13984b684
+SHA3-512:	7197441eb14689256a2ce38dc8d3d0b491ca399c9fc25153bb21c02eabeea3a4f64b7e38e17db951aed58249d0da0dd8a114123b02566a2afedcc3e05526901f
+Size:	4.171 GB (4478906368 bytes)
+下载链接：https://pan.quark.cn/s/f20eb9928ef5
+
+

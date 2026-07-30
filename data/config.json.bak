@@ -1,0 +1,20 @@
+{
+  "languages": [
+    {
+      "code": "zh-cn",
+      "dir": ""
+    },
+    {
+      "code": "en-us",
+      "dir": "en-us",
+      "panProviders": [
+        "terabox"
+      ],
+      "site": {
+        "subtitle": "Original Windows ISO downloads via fast cloud links",
+        "footer": "This site only provides sharing links to original ISO images for learning and evaluation purposes. Please do not use them for commercial purposes.",
+        "notice": "All images are original Microsoft releases (MSDN/VLSC) without modification. Please verify the SHA-256 checksum after download."
+      }
+    }
+  ]
+}
