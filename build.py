@@ -66,7 +66,7 @@ SITES = [
 ]
 
 DEFAULT_LANG = 'zh-cn'
-DISABLED_PAN_TYPES = {'xunlei'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
+DISABLED_PAN_TYPES = {'xunlei','baidu'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
 QR_MODAL_PAN_TYPES = set()  # 需要改为二维码弹窗的网盘类型；当前为空，baidu/quark 不再弹窗
 BWH_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
 BAIDU_CLOUD_AFF_URL = 'https://cloud.baidu.com/campaign/ambassador-product/index.html?ambassadorId=e76f2decb59145789efcd45b90551cd9#knowledge-bcc'
