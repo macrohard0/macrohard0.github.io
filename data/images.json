@@ -64,6 +64,14 @@
         {
           "id": "ltsc",
           "name": "LTSC"
+        },
+        {
+          "id": "2004",
+          "name": "2004"
+        },
+        {
+          "id": "1909",
+          "name": "1909"
         }
       ]
     },
@@ -3837,7 +3845,14 @@
       "arch": "64位",
       "lang": "中文简体",
       "date": "2021-09-21",
-      "editions": [],
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
       "params": {
         "文件名": "zh-cn_windows_10_consumer_editions_version_21h1_updated_sep_2021_x64_dvd_991b822f.iso",
         "SHA-256": "613ec08b7b23361220afc02f5bcf1a2ff21499f56567c7517ef04053394dd26a",
@@ -3861,7 +3876,13 @@
       "arch": "64位",
       "lang": "中文简体",
       "date": "2021-09-21",
-      "editions": [],
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
       "params": {
         "文件名": "zh-cn_windows_10_business_editions_version_21h1_updated_sep_2021_x64_dvd_023d42d3.iso",
         "SHA-256": "f9bef0cc4c558785b753eba8efcde3d5256daac124c27636fff7d93020f66ffd",
@@ -3885,7 +3906,14 @@
       "arch": "64位",
       "lang": "中文简体",
       "date": "2021-04-20",
-      "editions": [],
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
       "params": {
         "文件名": "cn_windows_10_consumer_editions_version_20h2_updated_april_2021_x64_dvd_ace7e59c.iso",
         "SHA-256": "4224bf4282b4979adb5348cfd2755f2165be44b0f5f33392790b732a447e6fbe",
@@ -3909,7 +3937,13 @@
       "arch": "64位",
       "lang": "中文简体",
       "date": "2021-04-20",
-      "editions": [],
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
       "params": {
         "文件名": "cn_windows_10_business_editions_version_20h2_updated_april_2021_x64_dvd_0a0fc490.iso",
         "SHA-256": "bde6b20da09c98d5a168725981163da87290ee241b37543d147d64124a144873",
@@ -3921,6 +3955,128 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/bbab49a9e0d9",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms7s0m3j",
+      "category": "win10",
+      "version": "2004",
+      "title": "Windows 10 消费者版本 2004（2020年9月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2020-09-15",
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "cn_windows_10_consumer_editions_version_2004_updated_sep_2020_x64_dvd_049d70ee.iso",
+        "SHA-256": "b4306b451599a0b98be02dae5ea54d78cbc0f3ccfd7cee6eb54f7744be3350d8",
+        "SHA-1": "b5121926ef2fbba7f198e30f3d7f293a20a1c144",
+        "MD5": "38dbd445225034d39c8a9da9030b2731",
+        "文件大小": "5.05GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/cc15d8c5e85a",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-ms7s1nta",
+      "category": "win10",
+      "version": "2004",
+      "title": "Windows 10 商业版 2004（2020年9月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2020-09-15",
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "cn_windows_10_business_editions_version_2004_updated_sep_2020_x64_dvd_7134ba4b.iso",
+        "SHA-256": "e9872c5a571624e9fbb6b660b415fd214dd67364ae2a584adbc4c1d037e565f7",
+        "SHA-1": "bf0874ffe0fae1c557e65f49b83b5e83be7dbf24",
+        "MD5": "99d7c88aed369cfe8ba11f7b041bc044",
+        "文件大小": "4.95GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/0c1144cc318a",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms7s2til",
+      "category": "win10",
+      "version": "1909",
+      "title": "Windows 10 消费者版本 1909（2020年4月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2020-04-21",
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "cn_windows_10_consumer_editions_version_1909_updated_april_2020_x64_dvd_d4f1cee8.iso",
+        "SHA-256": "3ba759cb91a1d7f363b8c81618954968824bb7f53776930816109f36620d17c9",
+        "SHA-1": "6cef4fccd7556d8f9bb112f636c3ecdbd2f5278c",
+        "MD5": "c587e23c5cfebf553b01d2ed78950223",
+        "文件大小": "5.16GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/c7ed7fbccd1d",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-ms7s4j7v",
+      "category": "win10",
+      "version": "1909",
+      "title": "Windows 10 商业版 1909（2020年4月更新）x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2020-04-21",
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "cn_windows_10_business_editions_version_1909_updated_april_2020_x64_dvd_5d3fcf2e.iso",
+        "SHA-256": "85b544be019d9335d137f58b3442bb1150ecc2520c2c168717765a0b9d734394",
+        "SHA-1": "7e62ba8bc2dcdfb970f5b77965f0d08d6228da1a",
+        "MD5": "0b4b736177739f3da75f0a3e53f24d08",
+        "文件大小": "5.05GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/a27dbe383d5a",
           "password": ""
         }
       ]
