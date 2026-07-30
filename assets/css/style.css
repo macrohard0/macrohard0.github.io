@@ -388,6 +388,9 @@ table.param .param-value { word-break: break-all; font-family: "SFMono-Regular",
   border: none;
   background: #e8ebf0;
   color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
   padding: 0 14px;
   font-size: 13px;
   cursor: pointer;

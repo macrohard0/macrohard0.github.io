@@ -67,7 +67,9 @@ SITES = [
 
 DEFAULT_LANG = 'zh-cn'
 DISABLED_PAN_TYPES = {'xunlei'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
-VPS_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
+QR_MODAL_PAN_TYPES = set()  # 需要改为二维码弹窗的网盘类型；当前为空，baidu/quark 不再弹窗
+BWH_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
+BAIDU_CLOUD_AFF_URL = 'https://cloud.baidu.com/campaign/ambassador-product/index.html?ambassadorId=e76f2decb59145789efcd45b90551cd9#knowledge-bcc'
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
@@ -143,12 +145,13 @@ STRINGS = {
         title_ver_tmpl='%s %s 原版镜像下载 - %s系统下载',
         title_plain_tmpl='%s 原版镜像下载 - %s系统下载',
         desc_tmpl='提供 %s %s 原版 ISO 镜像的网盘下载（夸克/百度等），%s等版本，附文件名与 SHA-256 校验值，微软官方原版未修改。',
-        vps_ad_badge='赞助推荐',
-        vps_ad_title='想搭网站、学 Linux、写个人博客？可以从一台 VPS 开始',
-        vps_ad_desc='无论是部署个人主页、搭建 WordPress 博客，还是练习 Linux 命令、Nginx、Docker 与基础运维，一台稳定的 VPS 都是很实用的入门环境。',
+        vps_ad_badge='广告位',
+        vps_ad_title='百度智能云特惠：2核2G 云服务器仅 59元/年',
+        vps_ad_desc='新手建站、个人博客、WordPress、小型项目和 Linux 学习都适用，入门成本更低，拿来练手或正式上线都很划算。',
         vps_ad_points=['网站搭建练手', 'Linux 学习环境', '个人博客部署'],
-        vps_ad_cta='查看搬瓦工 VPS',
-        vps_ad_note='前往 BandwagonHost 官方页面，可按预算和线路选择适合的网站或博客方案。',
+        vps_ad_url=BAIDU_CLOUD_AFF_URL,
+        vps_ad_cta='百度智能云',
+        vps_ad_note='前往百度智能云活动页',
         qr_close='关闭',
         qr_title='扫码打开网盘链接',
         qr_hint='请使用手机扫描二维码，在对应网盘 App 或浏览器中打开链接；如需下载，请按网盘页面提示继续操作。',
@@ -193,12 +196,13 @@ STRINGS = {
         title_ver_tmpl='%s %s Original ISO Download - %s',
         title_plain_tmpl='%s Original ISO Download - %s',
         desc_tmpl='Download the original %s %s ISO image via cloud drive (Quark/baidu/TeraBox, etc.), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
-        vps_ad_badge='Sponsored',
-        vps_ad_title='Building a website, learning Linux, or running a personal blog? Start with a VPS.',
-        vps_ad_desc='A stable VPS is a practical sandbox for hosting a small site, deploying WordPress, learning Linux commands, and experimenting with Nginx, Docker, and basic server administration.',
+        vps_ad_badge='Ad',
+        vps_ad_title='BandwagonHost VPS',
+        vps_ad_desc='Good for websites, blogs, and Linux practice.',
         vps_ad_points=['Website hosting', 'Linux practice', 'Personal blog'],
-        vps_ad_cta='View BandwagonHost Plans',
-        vps_ad_note='Opens the official BandwagonHost page. Pick a plan that matches your website or blog needs.',
+        vps_ad_url=BWH_AFF_URL,
+        vps_ad_cta='BandwagonHost',
+        vps_ad_note='Official BandwagonHost page.',
         qr_close='Close',
         qr_title='Scan to open the cloud drive link',
         qr_hint='Scan this QR code with your phone and open it in the matching cloud drive app or browser. Follow the provider page for the next download steps.',
@@ -239,12 +243,13 @@ STRINGS = {
         title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
         title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
         desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(Quark/baidu/TeraBox 등)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
-        vps_ad_badge='스폰서 추천',
-        vps_ad_title='웹사이트 구축, Linux 학습, 개인 블로그 운영을 시작하려면 VPS가 좋은 출발점입니다',
-        vps_ad_desc='안정적인 VPS는 개인 사이트 구축, WordPress 배포, Linux 명령어 학습, 그리고 Nginx, Docker, 기본 서버 운영을 연습하기에 적합한 환경입니다.',
+        vps_ad_badge='광고',
+        vps_ad_title='BandwagonHost VPS',
+        vps_ad_desc='웹사이트, 블로그, Linux 학습에 적합합니다.',
         vps_ad_points=['웹사이트 구축', 'Linux 학습', '개인 블로그'],
-        vps_ad_cta='BandwagonHost 요금제 보기',
-        vps_ad_note='BandwagonHost 공식 페이지로 이동합니다. 웹사이트나 블로그 용도에 맞는 요금제를 선택하세요.',
+        vps_ad_url=BWH_AFF_URL,
+        vps_ad_cta='BandwagonHost',
+        vps_ad_note='BandwagonHost 공식 페이지',
         qr_close='닫기',
         qr_title='QR 코드로 클라우드 링크 열기',
         qr_hint='휴대폰으로 QR 코드를 스캔한 뒤, 해당 클라우드 드라이브 앱이나 브라우저에서 링크를 여세요. 다운로드는 각 서비스 안내에 따라 진행하세요.',
@@ -431,9 +436,30 @@ def render_vps_ad(t, compact=False):
         e(t['vps_ad_title']),
         e(t['vps_ad_desc']),
         points,
-        e(VPS_AFF_URL),
+        e(t['vps_ad_url']),
         e(t['vps_ad_cta']),
         e(t['vps_ad_note']),
+    )
+
+
+def render_qr_modal(t):
+    if not QR_MODAL_PAN_TYPES:
+        return '', ''
+    return (
+        (
+            '<div class="qr-mask" id="qr-mask"></div>'
+            '<div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{qr_title}"'
+            ' data-qr-title="{qr_title}" data-qr-hint="{qr_hint}"'
+            ' data-qr-quark-title="{qr_quark_title}" data-qr-quark-hint="{qr_quark_hint}"'
+            ' data-qr-baidu-title="{qr_baidu_title}" data-qr-baidu-hint="{qr_baidu_hint}">'
+            '<button type="button" class="qr-close" id="qr-close" aria-label="{qr_close}">&times;</button>'
+            '<div class="qr-title" id="qr-title">{qr_title}</div>'
+            '<div class="qr-img-wrap" id="qr-img-wrap"></div>'
+            '<div class="qr-hint" id="qr-hint">{qr_hint}</div>'
+            '<div class="qr-url" id="qr-url"></div>'
+            '</div>'
+        ),
+        '  <script src="{prefix}assets/js/qrcode.js"></script>\n',
     )
 
 
@@ -481,7 +507,7 @@ PAGE = """<!DOCTYPE html>
   <link rel="canonical" href="{canonical}">
 {hreflang}{jsonld}  <link rel="stylesheet" href="{prefix}assets/css/style.css">
 {hm_script}</head>
-<body>
+<body data-qr-pan-types="{qr_pan_types}">
   <div class="layout">
     <aside class="side">
       <div class="logo"><a href="{home_prefix}index.html">{brand}<span class="dot">.</span></a></div>
@@ -503,19 +529,7 @@ PAGE = """<!DOCTYPE html>
     </div>
   </div>
   <div class="toast" id="toast"></div>
-  <div class="qr-mask" id="qr-mask"></div>
-  <div class="qr-modal" id="qr-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-label="{qr_title}"
-       data-qr-title="{qr_title}" data-qr-hint="{qr_hint}"
-       data-qr-quark-title="{qr_quark_title}" data-qr-quark-hint="{qr_quark_hint}"
-       data-qr-baidu-title="{qr_baidu_title}" data-qr-baidu-hint="{qr_baidu_hint}">
-    <button type="button" class="qr-close" id="qr-close" aria-label="{qr_close}">&times;</button>
-    <div class="qr-title" id="qr-title">{qr_title}</div>
-    <div class="qr-img-wrap" id="qr-img-wrap"></div>
-    <div class="qr-hint" id="qr-hint">{qr_hint}</div>
-    <div class="qr-url" id="qr-url"></div>
-  </div>
-  <script src="{prefix}assets/js/qrcode.js"></script>
-  <script src="{prefix}assets/js/site.js"></script>
+{qr_markup}{qrcode_script}  <script src="{prefix}assets/js/site.js"></script>
 </body>
 </html>
 """
@@ -793,6 +807,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
             asset_prefix = asset_prefix_for(path)
             home_prefix = section_prefix_for(path)
             canonical = base_url + '/' + path
+            qr_markup_tmpl, qrcode_script_tmpl = render_qr_modal(t)
 
             # 语言切换下拉 + <link rel="alternate" hreflang> —— 只有一种语言时都是空
             lang_links = []
@@ -820,9 +835,16 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 title=e(title), keywords=e(keywords), desc=e(desc), canonical=e(canonical), hreflang=hreflang,
                 jsonld=jsonld, hm_script=hm_script,
                 prefix=asset_prefix, home_prefix=home_prefix, brand=brand,
+                qr_pan_types=e(','.join(sorted(QR_MODAL_PAN_TYPES))),
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
                 lang_switch=render_lang_switch(lang_links),
                 crumb=crumb, body=body,
+                qr_markup=qr_markup_tmpl.format(
+                    qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']),
+                    qr_quark_title=e(t['qr_quark_title']), qr_quark_hint=e(t['qr_quark_hint']),
+                    qr_baidu_title=e(t['qr_baidu_title']), qr_baidu_hint=e(t['qr_baidu_hint']),
+                ) if qr_markup_tmpl else '',
+                qrcode_script=qrcode_script_tmpl.format(prefix=asset_prefix) if qrcode_script_tmpl else '',
                 qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']),
                 qr_quark_title=e(t['qr_quark_title']), qr_quark_hint=e(t['qr_quark_hint']),
                 qr_baidu_title=e(t['qr_baidu_title']), qr_baidu_hint=e(t['qr_baidu_hint']))

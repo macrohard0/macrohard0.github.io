@@ -1,8 +1,7 @@
 /* ============================================================
    静态站点的渐进增强脚本（内容已在 HTML 中，JS 仅增强交互）
    - 复制按钮（data-copy）
-   - 打开网盘（data-open）—— 夸克/百度链接改为弹窗二维码，其余网盘正常新开标签页
-     （移动端访客直接跳转，不弹二维码：手机上本来就能直接打开对应网盘 App 或网页）
+   - 打开网盘（data-open）—— 仅在页面配置启用时，对指定网盘改为弹窗二维码；其余网盘正常新开标签页
    - 参数表展开/收起（.box .toggle），移动端默认只展开第一个 box
    - 移动端侧栏汉堡菜单
    ============================================================ */
@@ -10,6 +9,10 @@
   'use strict';
   var toastEl, toastTimer;
   var qrLastFocus;
+  var qrModalPanTypes = (document.body.getAttribute('data-qr-pan-types') || '')
+    .split(',')
+    .map(function (item) { return item.trim(); })
+    .filter(Boolean);
 
   function toast(msg) {
     if (!toastEl) toastEl = document.getElementById('toast');
@@ -27,6 +30,10 @@
 
   function isMobile() {
     return /Android|iPhone|iPad|iPod|Windows Phone|Mobile|HarmonyOS/i.test(navigator.userAgent);
+  }
+
+  function shouldOpenQrModal(pan) {
+    return qrModalPanTypes.indexOf(pan) !== -1 && !isMobile();
   }
 
   function copyText(text) {
@@ -54,7 +61,7 @@
     if (btn) btn.setAttribute('aria-expanded', 'false');
   }
 
-  // 桌面端对夸克/百度网盘改为弹窗展示二维码，并根据网盘类型显示对应的 App 提示
+  // 仅对配置中启用的网盘展示二维码弹窗，并根据网盘类型显示对应的 App 提示
   // 二维码在本地生成（assets/js/qrcode.js），不请求任何第三方接口
   function openQrModal(url, pan) {
     var modal = document.getElementById('qr-modal');
@@ -123,8 +130,12 @@
     if (t.matches('[data-open]')) {
       var url = t.getAttribute('data-open');
       var pan = t.getAttribute('data-pan');
-      if ((pan === 'quark' || pan === 'baidu') && !isMobile()) { openQrModal(url, pan); }
-      else { window.open(url, '_blank', 'noopener'); }
+      if (shouldOpenQrModal(pan)) {
+        ev.preventDefault();
+        openQrModal(url, pan);
+      } else {
+        window.open(url, '_blank', 'noopener');
+      }
       return;
     }
     if (t.id === 'qr-close' || t.id === 'qr-mask') { closeQrModal(); return; }
