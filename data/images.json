@@ -1764,6 +1764,30 @@
       ]
     },
     {
+      "id": "winvista-ms981yjo",
+      "category": "winvista",
+      "version": "",
+      "title": "Windows Vista SP2 x86",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2009-05-26",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_vista_with_sp2_x86_dvd_x15-36285.iso",
+        "SHA-256": "b836e26f5f48bee0d7fe9abb9314db799e48800b4dc6ca7faf8ccefef32bcd6f",
+        "SHA-1": "da7f7bdc841ddffabff7ddab6b1158873bf1246d",
+        "MD5": "fc91386dd85ea8dfd87d705aaeadee46",
+        "文件大小": "2.867 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/086b97c7bf90",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "winvista-002",
       "category": "winvista",
       "version": "",
@@ -1785,6 +1809,30 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/6a2a889a4e2e",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "winvista-ms983g0d",
+      "category": "winvista",
+      "version": "",
+      "title": "Windows Vista 企业版 SP2 x86",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "2009-05-26",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_vista_enterprise_with_sp2_x86_dvd_x15-40257.iso",
+        "SHA-256": "a77e3e53178e30aed7cd45809ac6398030420bf633a9dbe7a970f9293a258556",
+        "SHA-1": "15472ebf0509ed56f46f6f5848d869c320c0b8d5",
+        "MD5": "c20b0f3f296cd422f875d37b848c942f",
+        "文件大小": "2.187 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/1cd75c415d30",
           "password": ""
         }
       ]
