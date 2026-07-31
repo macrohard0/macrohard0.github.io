@@ -37,6 +37,7 @@
     - 路径按页面深度用相对前缀（本地 file://、localhost、根域名都能跑）
 """
 import json, os, html, shutil, datetime
+from urllib.parse import urlsplit
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, 'data', 'images.json')
@@ -159,6 +160,10 @@ STRINGS = {
         qr_quark_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
         qr_baidu_title='百度网盘扫码转存',
         qr_baidu_hint='请使用百度网盘 App 扫描二维码，先将资源转存到你的网盘后，再用电脑端百度网盘客户端下载。',
+        site_search_title='站内搜索',
+        site_search_desc='通过谷歌快速检索本站已收录的镜像页面，支持输入文件名、SHA-256、SHA-1 或 MD5。',
+        site_search_placeholder='输入文件名或哈希值',
+        site_search_button='谷歌搜索',
         info_sections=[
             ('关于本站', [
                 '{brand} 收集并整理微软官方发布的 Windows 与 Office 原版 ISO 镜像，按系统版本、语言、位数分类展示，每个镜像均标注文件名及 SHA-256、SHA-1、MD5 校验值，方便下载后自行核对完整性。',
@@ -210,6 +215,10 @@ STRINGS = {
         qr_quark_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
         qr_baidu_title='Scan to save via Baidu Netdisk',
         qr_baidu_hint='Scan this QR code with the Baidu Netdisk app, save the file to your cloud drive first, then continue downloading with the Baidu Netdisk desktop client.',
+        site_search_title='Site Search',
+        site_search_desc='Use Google to search indexed pages on this site by filename, SHA-256, SHA-1, or MD5.',
+        site_search_placeholder='Enter filename or hash',
+        site_search_button='Search Google',
         info_sections=[
             ('About This Site', [
                 '{brand} curates official Microsoft Windows and Office ISO images, organized by version, language, and architecture. Every image is listed with its filename and SHA-256 / SHA-1 / MD5 checksum so you can verify integrity after downloading.',
@@ -257,6 +266,10 @@ STRINGS = {
         qr_quark_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
         qr_baidu_title='바이두 클라우드로 스캔하여 저장',
         qr_baidu_hint='바이두 클라우드 앱으로 QR 코드를 스캔해 먼저 내 클라우드에 저장한 뒤, PC용 바이두 클라우드 클라이언트로 이어서 다운로드하세요.',
+        site_search_title='사이트 검색',
+        site_search_desc='Google로 이 사이트에 수록된 페이지를 파일명, SHA-256, SHA-1 또는 MD5 값으로 빠르게 검색할 수 있습니다.',
+        site_search_placeholder='파일명 또는 해시 입력',
+        site_search_button='Google 검색',
         info_sections=[
             ('이 사이트 소개', [
                 '{brand}는 마이크로소프트가 공식 배포한 Windows 및 Office 원본 ISO 이미지를 버전, 언어, 아키텍처별로 정리해 제공합니다. 각 이미지에는 파일명과 SHA-256 / SHA-1 / MD5 체크섬을 함께 표기해 다운로드 후 무결성을 직접 확인할 수 있습니다.',
@@ -442,6 +455,30 @@ def render_vps_ad(t, compact=False):
     )
 
 
+def render_site_search(t, base_url):
+    site_host = urlsplit(base_url).netloc or base_url.replace('https://', '').replace('http://', '').strip('/')
+    return (
+        '<section class="site-search">'
+        '<div class="site-search-head">'
+        '<h2>%s</h2>'
+        '<p>%s</p>'
+        '</div>'
+        '<form class="site-search-form" action="https://www.google.com/search" method="get" target="_blank" rel="noopener">'
+        '<input type="hidden" name="sitesearch" value="%s">'
+        '<input class="site-search-input" type="search" name="q" placeholder="%s" aria-label="%s" required>'
+        '<button class="site-search-btn" type="submit">%s</button>'
+        '</form>'
+        '</section>'
+    ) % (
+        e(t['site_search_title']),
+        e(t['site_search_desc']),
+        e(site_host),
+        e(t['site_search_placeholder']),
+        e(t['site_search_placeholder']),
+        e(t['site_search_button']),
+    )
+
+
 def render_qr_modal(t):
     if not QR_MODAL_PAN_TYPES:
         return '', ''
@@ -550,6 +587,12 @@ def render_jsonld(t, brand_plain, base_url, home_path, crumbs=None):
         'url': base_url + '/' + home_path,
         'inLanguage': t['html_lang'],
     }]
+    if not crumbs:
+        objs[0]['potentialAction'] = {
+            '@type': 'SearchAction',
+            'target': 'https://www.google.com/search?q={search_term_string}&sitesearch=' + (urlsplit(base_url).netloc or ''),
+            'query-input': 'required name=search_term_string',
+        }
     if crumbs:
         items = [{'@type': 'ListItem', 'position': 1, 'name': t['home'], 'item': base_url + '/' + home_path}]
         for i, (name, path) in enumerate(crumbs, start=2):
@@ -863,6 +906,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
             '<a href="%s.html">%s</a>' % (e(cat_slug(c)), e(c['name'])) for c in cats) + '</div>'
         home_body = (
             notice_block() +
+            render_site_search(t, base_url) +
             render_info_sections(t, brand_plain) +
             render_vps_ad(t) +
             '<h2 style="font-size:15px;margin:22px 0 12px;color:#374151;">%s</h2>' % e(t['os_categories']) + cat_links +
