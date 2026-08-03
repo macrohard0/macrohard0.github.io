@@ -156,4 +156,5 @@
     }
     if (!t.closest('#lang-switch')) { closeLangSwitch(); }
   });
+
 })();
