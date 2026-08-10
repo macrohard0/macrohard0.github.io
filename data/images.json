@@ -610,6 +610,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/ec0ce26d031a",
           "password": ""
+        },
+        {
+          "type": "other",
+          "url": "https://drive.uc.cn/s/25dd9cc602294",
+          "password": ""
         }
       ]
     },
@@ -639,6 +644,11 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/c28f322bf96c",
+          "password": ""
+        },
+        {
+          "type": "other",
+          "url": "https://drive.uc.cn/s/9a64261890e84",
           "password": ""
         }
       ]
