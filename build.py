@@ -67,10 +67,12 @@ SITES = [
 ]
 
 DEFAULT_LANG = 'zh-cn'
-DISABLED_PAN_TYPES = {'xunlei','baidu'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
-QR_MODAL_PAN_TYPES = set()  # 需要改为二维码弹窗的网盘类型；当前为空，baidu/quark 不再弹窗
+DISABLED_PAN_TYPES = {'baidu','xunlei'}  # 暂停合作的网盘来源，生成 HTML 时统一忽略
+QR_MODAL_PAN_TYPES = {'quark'}  # 需要改为二维码弹窗的网盘类型；当前为空，baidu/quark 不再弹窗
 BWH_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
 BAIDU_CLOUD_AFF_URL = 'https://cloud.baidu.com/campaign/ambassador-product/index.html?ambassadorId=e76f2decb59145789efcd45b90551cd9#knowledge-bcc'
+BING_REWARDS_AFF_URL = 'https://rewards.bing.com/welcome?rh=8-O56pQMBuA&ref=rafsrchae'
+ENABLE_VPS_AD = True  # 全站广告开关；False=不渲染首页/分类页广告卡片
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
@@ -147,12 +149,12 @@ STRINGS = {
         title_plain_tmpl='%s 原版镜像下载 - %s系统下载',
         desc_tmpl='提供 %s %s 原版 ISO 镜像的网盘下载（夸克/百度等），%s等版本，附文件名与 SHA-256 校验值，微软官方原版未修改。',
         vps_ad_badge='广告位',
-        vps_ad_title='百度智能云特惠：2核2G 云服务器仅 59元/年',
-        vps_ad_desc='新手建站、个人博客、WordPress、小型项目和 Linux 学习都适用，入门成本更低，拿来练手或正式上线都很划算。',
-        vps_ad_points=['网站搭建练手', 'Linux 学习环境', '个人博客部署'],
-        vps_ad_url=BAIDU_CLOUD_AFF_URL,
-        vps_ad_cta='百度智能云',
-        vps_ad_note='前往百度智能云活动页',
+        vps_ad_title='Microsoft Rewards：免费领积分，顺手换礼品卡',
+        vps_ad_desc='注册并使用 Microsoft Rewards，日常搜索、签到和任务都能累计积分，适合长期白嫖礼品卡或会员福利。',
+        vps_ad_points=['Bing 搜索积分', '任务签到奖励', '礼品卡兑换'],
+        vps_ad_url=BING_REWARDS_AFF_URL,
+        vps_ad_cta='立即加入 Microsoft Rewards',
+        vps_ad_note='前往 Microsoft Rewards',
         qr_close='关闭',
         qr_title='扫码打开网盘链接',
         qr_hint='请使用手机扫描二维码，在对应网盘 App 或浏览器中打开链接；如需下载，请按网盘页面提示继续操作。',
@@ -161,9 +163,9 @@ STRINGS = {
         qr_baidu_title='百度网盘扫码转存',
         qr_baidu_hint='请使用百度网盘 App 扫描二维码，先将资源转存到你的网盘后，再用电脑端百度网盘客户端下载。',
         site_search_title='站内搜索',
-        site_search_desc='通过谷歌快速检索本站已收录的镜像页面，支持输入文件名、SHA-256、SHA-1 或 MD5。',
+        site_search_desc='通过 Google 快速检索本站已收录的镜像页面，适合搜索文件名、SHA-256、SHA-1 或 MD5。',
         site_search_placeholder='输入文件名或哈希值',
-        site_search_button='谷歌搜索',
+        site_search_button='Google 搜索',
         info_sections=[
             ('关于本站', [
                 '{brand} 收集并整理微软官方发布的 Windows 与 Office 原版 ISO 镜像，按系统版本、语言、位数分类展示，每个镜像均标注文件名及 SHA-256、SHA-1、MD5 校验值，方便下载后自行核对完整性。',
@@ -426,6 +428,8 @@ def render_info_sections(t, brand_plain):
 
 
 def render_vps_ad(t, compact=False):
+    if not ENABLE_VPS_AD:
+        return ''
     points = ''.join('<span>%s</span>' % e(pp) for pp in t.get('vps_ad_points', []))
     cls = 'promo-card promo-card-compact' if compact else 'promo-card'
     return (
@@ -578,33 +582,53 @@ def max_date(imgs):
     return max(dates) if dates else None
 
 
-def render_jsonld(t, brand_plain, base_url, home_path, crumbs=None):
-    """WebSite（每页都有）+ BreadcrumbList（非首页，反映 Home > 分类 > 版本 的层级）结构化数据。"""
-    objs = [{
-        '@context': 'https://schema.org',
-        '@type': 'WebSite',
-        'name': brand_plain,
-        'url': base_url + '/' + home_path,
-        'inLanguage': t['html_lang'],
-    }]
+def render_jsonld(t, brand_plain, base_url, home_path, page_title, desc, canonical, crumbs=None):
+    """首页输出 WebSite+SearchAction；内容页输出 CollectionPage+BreadcrumbList。"""
+    site_url = base_url + '/' + home_path
+    host = urlsplit(base_url).netloc or ''
     if not crumbs:
-        objs[0]['potentialAction'] = {
-            '@type': 'SearchAction',
-            'target': 'https://www.google.com/search?q={search_term_string}&sitesearch=' + (urlsplit(base_url).netloc or ''),
-            'query-input': 'required name=search_term_string',
-        }
-    if crumbs:
-        items = [{'@type': 'ListItem', 'position': 1, 'name': t['home'], 'item': base_url + '/' + home_path}]
-        for i, (name, path) in enumerate(crumbs, start=2):
-            item = {'@type': 'ListItem', 'position': i, 'name': name}
-            if path:
-                item['item'] = base_url + '/' + path
-            items.append(item)
-        objs.append({
+        objs = [{
             '@context': 'https://schema.org',
-            '@type': 'BreadcrumbList',
-            'itemListElement': items,
-        })
+            '@type': 'WebSite',
+            'name': brand_plain,
+            'url': site_url,
+            'inLanguage': t['html_lang'],
+            'potentialAction': {
+                '@type': 'SearchAction',
+                'target': 'https://www.google.com/search?q={search_term_string}&sitesearch=' + host,
+                'query-input': 'required name=search_term_string',
+            }
+        }]
+    else:
+        raw_title = html.unescape(page_title or '')
+        raw_desc = html.unescape(desc or '')
+        about = [{'@type': 'Thing', 'name': html.unescape(name)} for name, _ in crumbs if name]
+        page_obj = {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            'name': raw_title,
+            'headline': raw_title,
+            'description': raw_desc,
+            'url': canonical,
+            'inLanguage': t['html_lang'],
+            'isPartOf': {'@type': 'WebSite', 'name': brand_plain, 'url': site_url},
+        }
+        if about:
+            page_obj['about'] = about
+        items = [{'@type': 'ListItem', 'position': 1, 'name': t['home'], 'item': site_url}]
+        for i, (name, path) in enumerate(crumbs, start=2):
+            crumb_item = {'@type': 'ListItem', 'position': i, 'name': html.unescape(name)}
+            if path:
+                crumb_item['item'] = base_url + '/' + path
+            items.append(crumb_item)
+        objs = [
+            page_obj,
+            {
+                '@context': 'https://schema.org',
+                '@type': 'BreadcrumbList',
+                'itemListElement': items,
+            }
+        ]
     payload = json.dumps(objs, ensure_ascii=False).replace('</', '<\\/')
     return '  <script type="application/ld+json">%s</script>\n' % payload
 
@@ -870,7 +894,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 default_path = resolve_lang_path(group, version_id, default_conf)
                 hreflang += '  <link rel="alternate" hreflang="x-default" href="%s">\n' % e(base_url + '/' + default_path)
 
-            jsonld = render_jsonld(t, brand_plain, base_url, home_path, crumbs)
+            jsonld = render_jsonld(t, brand_plain, base_url, home_path, title, desc, canonical, crumbs)
             hm_script = HM_SCRIPT.format(hm=hm) if is_default else ''
 
             html_out = PAGE.format(
@@ -955,7 +979,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                          t['title_ver_tmpl'] % (cname, v['name'], brand),
                          make_desc(cname, v['name'], v_imgs, t, pan_allowed),
                          '%s,%s %s,%s' % (cname, cname, v['name'], base_kw),
-                         cid, crumb, body, group=cat_group(c), version_id=v['id'])
+                         cid, crumb, body, group=cat_group(c), version_id=v['id'],
+                         crumbs=[(cname, p('%s.html' % cslug)), (v['name'], None)])
             else:
                 all_imgs = imgs
                 crumb = '%s <small>%s</small>' % (e(cname), subtitle)
@@ -964,7 +989,8 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                      t['title_plain_tmpl'] % (cname, brand),
                      make_desc(cname, '', all_imgs, t, pan_allowed),
                      '%s,%s' % (cname, base_kw),
-                     cid, crumb, body, group=cat_group(c), version_id=None)
+                     cid, crumb, body, group=cat_group(c), version_id=None,
+                     crumbs=[(cname, None)])
 
     # ---------- 各语言首页跳转（如配置了 redirect_home_to）----------
     # 用于站点整体迁移场景：内容和另一域名完全重复被搜索引擎判定为镜像站时，
