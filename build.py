@@ -77,6 +77,7 @@ ENABLE_VPS_AD = True  # 全站广告开关；False=不渲染首页/分类页广�
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
     'quark':   ('夸克网盘', '#2D5BFF'),
+    'uc':      ('UC网盘',   '#FFB300'),
     'baidu':   ('百度网盘', '#06A7FF'),
     'aliyun':  ('阿里云盘', '#FF6A00'),
     'tianyi':  ('天翼云盘', '#D9001B'),
@@ -91,6 +92,7 @@ PAN = {
 # 统一走英文/罗马化名称即可，不需要按语言再细分。未列出的 provider 回退用 PAN 里的中文名。
 PAN_NAME_INTL = {
     'quark':   'Quark',
+    'uc':      'UC Drive',
     'baidu':   'baidu',
     'aliyun':  'Aliyun',
     'tianyi':  'Tianyi',
@@ -347,26 +349,26 @@ def render_links(links, t, pan_allowed=None):
     out = ''
     for lk in links:
         ptype = lk.get('type', '')
-        name, color = pan(ptype, t['code'])
+        name, _ = pan(ptype, t['code'])
         url = lk.get('url', '')
         if not url:
             continue
         pwd = lk.get('password', '')
         url_item = (
             '<div class="dl-item">'
-            '<div class="dl-label" style="background:%s">%s</div>'
+            '<div class="dl-label">%s</div>'
             '<input class="dl-input" readonly value="%s">'
             '<button class="dl-open" data-open="%s" data-pan="%s">%s</button>'
-            '</div>' % (color, e(name), e(url), e(url), e(ptype), e(t['open_link']))
+            '</div>' % (e(name), e(url), e(url), e(ptype), e(t['open_link']))
         )
         pass_item = ''
         if pwd:
             pass_item = (
                 '<div class="dl-item pass">'
-                '<div class="dl-label" style="background:%s">%s</div>'
+                '<div class="dl-label">%s</div>'
                 '<input class="dl-input" readonly value="%s">'
                 '<button class="dl-copy" data-copy="%s">%s</button>'
-                '</div>' % (color, e(t['extract_code']), e(pwd), e(pwd), e(t['copy']))
+                '</div>' % (e(t['extract_code']), e(pwd), e(pwd), e(t['copy']))
             )
         out += '<div class="dl-row">%s%s</div>' % (url_item, pass_item)
     return out or '<div style="color:#999;font-size:13px;">%s</div>' % e(t['no_link'])

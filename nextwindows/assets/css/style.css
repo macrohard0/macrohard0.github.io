@@ -413,11 +413,15 @@ table.param .param-value { word-break: break-all; font-family: "SFMono-Regular",
   align-items: center;
   justify-content: center;
   font-size: 12.5px;
-  color: #fff;
+  background: #e8f0ff;
+  color: #1f5fbf;
+  border: 1px solid var(--line);
+  border-right: none;
   border-radius: 6px 0 0 6px;
   padding: 0 6px;
   text-align: center;
   line-height: 1.2;
+  font-weight: 600;
 }
 .dl-input {
   flex: 1;

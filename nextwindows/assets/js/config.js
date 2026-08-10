@@ -12,6 +12,7 @@
  */
 window.PAN_TYPES = {
   quark:  { name: '夸克网盘',   color: '#2D5BFF', needPassword: false, hint: 'https://pan.quark.cn/s/...' },
+  uc:     { name: 'UC网盘',     color: '#FFB300', needPassword: false, hint: 'https://drive.uc.cn/s/...' },
   baidu:  { name: '百度网盘',   color: '#06A7FF', needPassword: true,  hint: 'https://pan.baidu.com/s/...' },
   aliyun: { name: '阿里云盘',   color: '#FF6A00', needPassword: false, hint: 'https://www.alipan.com/s/...' },
   tianyi: { name: '天翼云盘',   color: '#D9001B', needPassword: true,  hint: 'https://cloud.189.cn/t/...' },
@@ -29,7 +30,7 @@ window.panType = function (key) {
 };
 
 // 默认网盘排序（前台展示与管理工具下拉的顺序）
-window.PAN_ORDER = ['quark', 'baidu', 'aliyun', 'tianyi', 'xunlei', 'weiyun', 'yidong', 'pan123', 'terabox', 'other'];
+window.PAN_ORDER = ['quark', 'uc', 'baidu', 'aliyun', 'tianyi', 'xunlei', 'weiyun', 'yidong', 'pan123', 'terabox', 'other'];
 
 // 参数表的标准字段（顺序即展示顺序）。管理工具按此渲染输入框。
 window.PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小'];
