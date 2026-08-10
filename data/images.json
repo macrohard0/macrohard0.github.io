@@ -484,6 +484,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/4070e85ff743",
           "password": ""
+        },
+        {
+          "type": "uc",
+          "url": "https://drive.uc.cn/s/7f30fd86eaf64",
+          "password": ""
         }
       ]
     },
@@ -507,6 +512,11 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/a01a9400997a",
+          "password": ""
+        },
+        {
+          "type": "uc",
+          "url": "https://drive.uc.cn/s/4f558583a34e4",
           "password": ""
         }
       ]
@@ -2659,6 +2669,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/16b82c602e7b",
           "password": ""
+        },
+        {
+          "type": "uc",
+          "url": "https://drive.uc.cn/s/81cd91de92ef4",
+          "password": ""
         }
       ]
     },
@@ -2682,6 +2697,11 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/9845dcb25dec",
+          "password": ""
+        },
+        {
+          "type": "uc",
+          "url": "https://drive.uc.cn/s/7890fcfa984f4",
           "password": ""
         }
       ]
