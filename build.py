@@ -125,7 +125,7 @@ def filter_links(links, pan_allowed=None):
 LANG_NAMES = {
     'zh-cn': '简体中文',
     'en-us': 'English',
-    'ko-kr': '한국어',
+    'ko-kr': 'Korean',
 }
 
 PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
@@ -133,7 +133,7 @@ PARAM_FIELDS = ['文件名', 'SHA-256', 'SHA-1', 'MD5', '文件大小']
 PARAM_LABELS = {
     'zh-cn': {'文件名': '文件名', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': '文件大小'},
     'en-us': {'文件名': 'File name', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': 'File size'},
-    'ko-kr': {'文件名': '파일명', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': '파일 크기'},
+    'ko-kr': {'文件名': 'File name', 'SHA-256': 'SHA-256', 'SHA-1': 'SHA-1', 'MD5': 'MD5', '文件大小': 'File size'},
 }
 
 # 每种语言的界面文案（导航、按钮、提示语、标题/描述模板等）
@@ -164,6 +164,8 @@ STRINGS = {
         qr_quark_hint='请使用夸克 App 扫描二维码，将资源转存到网盘后，再用电脑端夸克客户端打开下载。',
         qr_baidu_title='百度网盘扫码转存',
         qr_baidu_hint='请使用百度网盘 App 扫描二维码，先将资源转存到你的网盘后，再用电脑端百度网盘客户端下载。',
+        mirror_lang_label='镜像语言',
+        mirror_lang_hint='切换不同语言的 Windows 镜像页面',
         site_search_title='站内搜索',
         site_search_desc='通过 Google 快速检索本站已收录的镜像页面，适合搜索文件名、SHA-256、SHA-1 或 MD5。',
         site_search_placeholder='输入文件名或哈希值',
@@ -219,6 +221,8 @@ STRINGS = {
         qr_quark_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
         qr_baidu_title='Scan to save via Baidu Netdisk',
         qr_baidu_hint='Scan this QR code with the Baidu Netdisk app, save the file to your cloud drive first, then continue downloading with the Baidu Netdisk desktop client.',
+        mirror_lang_label='Mirror Language',
+        mirror_lang_hint='Switch to Windows ISO pages in another language',
         site_search_title='Site Search',
         site_search_desc='Use Google to search indexed pages on this site by filename, SHA-256, SHA-1, or MD5.',
         site_search_placeholder='Enter filename or hash',
@@ -245,53 +249,55 @@ STRINGS = {
         ],
     ),
     'ko-kr': dict(
-        code='ko-kr', html_lang='ko-KR',
-        home='홈', toggle='[ 펼치기/접기 ]',
-        open_link='열기', extract_code='비밀번호', copy='복사',
-        no_link='아직 다운로드 링크가 없습니다. 곧 업데이트됩니다',
-        no_image_title='이미지 없음', no_image_sub='이 버전에는 아직 게시된 이미지가 없습니다',
-        os_categories='OS 분류', latest_images='최신 이미지',
-        base_kw='Windows ISO,윈도우 다운로드,원본 이미지,MSDN,ISO 다운로드,클라우드 드라이브',
-        home_title_tmpl='%s ISO 다운로드',
-        title_ver_tmpl='%s %s 정품 ISO 다운로드 - %s',
-        title_plain_tmpl='%s 정품 ISO 다운로드 - %s',
-        desc_tmpl='%s %s 정품 ISO 이미지를 클라우드 드라이브(Quark/baidu/TeraBox 등)로 다운로드하세요. %s등 버전을 지원하며 파일명과 SHA-256 체크섬을 제공합니다. 마이크로소프트 공식 원본 이미지이며 수정되지 않았습니다.',
-        vps_ad_badge='광고',
+        code='ko-kr', html_lang='en',
+        home='Home', toggle='[ Expand/Collapse ]',
+        open_link='Open', extract_code='Password', copy='Copy',
+        no_link='No download link yet, check back soon',
+        no_image_title='No images yet', no_image_sub='No images have been published for this version yet',
+        os_categories='OS Categories', latest_images='Latest Images',
+        base_kw='Windows ISO,Windows download,original image,MSDN,ISO download,cloud drive',
+        home_title_tmpl='%s ISO Downloads',
+        title_ver_tmpl='%s %s Original ISO Download - %s',
+        title_plain_tmpl='%s Original ISO Download - %s',
+        desc_tmpl='Download the original %s %s ISO image via cloud drive (Quark/baidu/TeraBox, etc.), covering %sversions, with filename and SHA-256 checksum. Unmodified official Microsoft image.',
+        vps_ad_badge='Ad',
         vps_ad_title='BandwagonHost VPS',
-        vps_ad_desc='웹사이트, 블로그, Linux 학습에 적합합니다.',
-        vps_ad_points=['웹사이트 구축', 'Linux 학습', '개인 블로그'],
+        vps_ad_desc='Good for websites, blogs, and Linux practice.',
+        vps_ad_points=['Website hosting', 'Linux practice', 'Personal blog'],
         vps_ad_url=BWH_AFF_URL,
         vps_ad_cta='BandwagonHost',
-        vps_ad_note='BandwagonHost 공식 페이지',
-        qr_close='닫기',
-        qr_title='QR 코드로 클라우드 링크 열기',
-        qr_hint='휴대폰으로 QR 코드를 스캔한 뒤, 해당 클라우드 드라이브 앱이나 브라우저에서 링크를 여세요. 다운로드는 각 서비스 안내에 따라 진행하세요.',
-        qr_quark_title='퀄크로 스캔하여 저장',
-        qr_quark_hint='퀄크(Quark) 앱으로 QR 코드를 스캔해 리소스를 클라우드 드라이브에 저장한 뒤, PC용 퀄크 클라이언트로 열어 다운로드하세요.',
-        qr_baidu_title='바이두 클라우드로 스캔하여 저장',
-        qr_baidu_hint='바이두 클라우드 앱으로 QR 코드를 스캔해 먼저 내 클라우드에 저장한 뒤, PC용 바이두 클라우드 클라이언트로 이어서 다운로드하세요.',
-        site_search_title='사이트 검색',
-        site_search_desc='Google로 이 사이트에 수록된 페이지를 파일명, SHA-256, SHA-1 또는 MD5 값으로 빠르게 검색할 수 있습니다.',
-        site_search_placeholder='파일명 또는 해시 입력',
-        site_search_button='Google 검색',
+        vps_ad_note='Official BandwagonHost page.',
+        qr_close='Close',
+        qr_title='Scan to open the cloud drive link',
+        qr_hint='Scan this QR code with your phone and open it in the matching cloud drive app or browser. Follow the provider page for the next download steps.',
+        qr_quark_title='Scan to save via Quark',
+        qr_quark_hint='Scan this QR code with the Quark app to save the file to your cloud drive, then open and download it using the Quark desktop client.',
+        qr_baidu_title='Scan to save via Baidu Netdisk',
+        qr_baidu_hint='Scan this QR code with the Baidu Netdisk app, save the file to your cloud drive first, then continue downloading with the Baidu Netdisk desktop client.',
+        mirror_lang_label='Mirror Language',
+        mirror_lang_hint='Switch to Windows ISO pages in another language',
+        site_search_title='Site Search',
+        site_search_desc='Use Google to search indexed pages on this site by filename, SHA-256, SHA-1, or MD5.',
+        site_search_placeholder='Enter filename or hash',
+        site_search_button='Search Google',
         info_sections=[
-            ('이 사이트 소개', [
-                '{brand}는 마이크로소프트가 공식 배포한 Windows 및 Office 원본 ISO 이미지를 버전, 언어, 아키텍처별로 정리해 제공합니다. 각 이미지에는 파일명과 SHA-256 / SHA-1 / MD5 체크섬을 함께 표기해 다운로드 후 무결성을 직접 확인할 수 있습니다.',
-                '흩어진 게시물과 달리, 동일 버전 내 리테일판과 볼륨 라이선스판을 명확히 구분해 정리하여 잘못된 이미지를 받는 실수를 줄였습니다.',
+            ('About This Site', [
+                '{brand} curates official Microsoft Windows and Office ISO images, organized by version, language, and architecture. Every image is listed with its filename and SHA-256 / SHA-1 / MD5 checksum so you can verify integrity after downloading.',
+                'Rather than scattering links across forum posts, we keep retail and volume-license variants of the same release clearly separated to help you avoid grabbing the wrong build.',
             ]),
-            ('정품 이미지와 "최적화" 시스템의 차이', [
-                '인터넷에 떠도는 시스템 이미지는 크게 두 가지로 나뉩니다. 하나는 드라이버나 소프트웨어가 미리 설치된 제3자 "최적화판"(고스트 버전)으로, 설치는 빠르지만 광고 삽입, 홈페이지 변조, 심지어 백도어가 포함될 위험이 있습니다. 다른 하나는 마이크로소프트가 수정 없이 배포한 정품 이미지로, 설치 후 유효한 키로 활성화해야 하지만 순정 상태를 유지할 수 있습니다.',
-                '{brand}는 오직 후자, 즉 전혀 수정되지 않은 정품 이미지만 게시합니다.',
+            ('Official Images vs. "Modified" Builds', [
+                'System images circulating online generally fall into two categories: third-party "optimized" or Ghost builds that install quickly but may bundle adware, alter your homepage, or even hide backdoors; and unmodified images released directly by Microsoft, which require a valid key to activate but stay clean and predictable.',
+                '{brand} only hosts the latter - genuine, untouched Microsoft images.',
             ]),
-            ('볼륨 라이선스판과 리테일판', [
-                '파일명에 VOL, VL이 포함되어 있으면 기업/교육기관용 볼륨 라이선스(Volume License)판이며, 표기가 없으면 일반적으로 개인용 리테일(Retail)판입니다. 다운로드한 이미지 버전과 보유한 키가 일치하는지 반드시 확인하세요. 일치하지 않으면 활성화가 실패합니다.',
+            ('Volume License vs. Retail', [
+                'Filenames containing VOL or VL denote Volume License editions intended for bulk deployment by businesses and schools; builds without those markers are typically Retail editions meant for individual installs. Make sure your key matches the edition you download, or activation will fail.',
             ]),
-            ('다운로드 후에는 반드시 체크섬을 확인하세요', [
-                '다운로드가 끝나면 Windows 기본 제공 certutil이나 서드파티 체크섬 도구로 SHA-256 / MD5 값을 이 페이지에 표기된 값과 비교한 뒤 설치하세요. 전송 중 손상되거나 변조된 파일을 걸러낼 수 있습니다.',
+            ('Always Verify After Downloading', [
+                'After downloading, use the built-in certutil or a third-party checksum tool to compare the SHA-256 / MD5 value against the one listed on this site before installing - this catches corruption or tampering introduced during transfer.',
             ]),
-            ('면책 조항', [
-                '{brand}에 게시된 이미지는 공개적으로 접근 가능한 경로에서 수집해 정리한 것이며, 원본 파일은 마이크로소프트가 배포한 정품 이미지를 수정 없이 그대로 사용합니다. 학습 및 기술 연구 목적으로만 제공됩니다.',
-                '서드파티 클라우드 드라이브의 가용성이나 다운로드 속도는 보장하지 않으며, 활성화 및 사용 과정에서 발생하는 문제는 사용자 본인의 책임입니다. 관련 마이크로소프트 라이선스 약관을 준수하여 사용하시기 바랍니다.',
+            ('Disclaimer', [
+                '{brand} organizes images gathered from publicly available sources; the underlying files are unmodified official Microsoft releases, provided here for learning and technical research only.',
+                'We make no guarantees about the availability or speed of third-party cloud drives. Any issues arising from activation or use are the responsibility of the end user, who should comply with the applicable Microsoft license terms.',
             ]),
         ],
     ),
@@ -396,7 +402,7 @@ def render_nav(cats, active_cat, prefix, t):
     return out
 
 
-def render_lang_switch(lang_links):
+def render_lang_switch(lang_links, t):
     """右上角语言切换下拉；只有一种语言时不渲染（避免空壳控件）。"""
     if len(lang_links) <= 1:
         return ''
@@ -409,12 +415,14 @@ def render_lang_switch(lang_links):
     return (
         '<div class="lang-switch" id="lang-switch">'
         '<button type="button" class="lang-switch-btn" id="lang-switch-btn" aria-haspopup="listbox" aria-expanded="false">'
-        '<span class="lang-switch-globe" aria-hidden="true">\U0001F310</span>'
+        '<span class="lang-switch-label">%s:</span>'
         '<span class="lang-switch-current">%s</span>'
         '<span class="lang-switch-caret" aria-hidden="true">▾</span>'
         '</button>'
-        '<div class="lang-switch-menu" id="lang-switch-menu" role="listbox">%s</div>'
-        '</div>' % (e(current['name']), items)
+        '<div class="lang-switch-menu" id="lang-switch-menu" role="listbox">'
+        '<div class="lang-switch-hint">%s</div>%s'
+        '</div>'
+        '</div>' % (e(t['mirror_lang_label']), e(current['name']), e(t['mirror_lang_hint']), items)
     )
 
 
@@ -679,12 +687,12 @@ def make_home_desc(brand_plain, subtitle, notice, cats, images, t):
         )
     if t['code'] == 'ko-kr':
         cats_part = ', '.join(cat_names[:8])
-        latest_part = (' 최신 업데이트 %s.' % latest) if latest else '.'
-        return ('%s는 Microsoft 공식 원본 Windows 및 Office ISO 이미지를 정리한 다운로드 허브로, %s 카테고리를 제공합니다. '
-                '%s 파일명과 SHA-256/SHA-1/MD5 체크섬 정보를 함께 제공해 원하는 버전을 빠르게 찾고 안전하게 검증할 수 있습니다%s') % (
+        latest_part = (' Latest update: %s.' % latest) if latest else '.'
+        return ('%s is a download hub for official Microsoft Windows and Office ISO images, covering %s. '
+                '%s Each page includes filenames, SHA-256/SHA-1/MD5 checksums, and version details so users can quickly choose the right build and verify file integrity%s') % (
             brand_plain,
             cats_part or 'Windows and Office',
-            subtitle or '클라우드 드라이브 다운로드를 지원합니다.',
+            subtitle or 'Fast cloud drive downloads are available.',
             latest_part,
         )
     cats_part = ', '.join(cat_names[:8])
@@ -709,10 +717,10 @@ def make_desc(cat_name, ver_name, images, t, pan_allowed=None):
                 '并附带文件名、SHA-256、SHA-1、MD5 与文件大小等校验信息，便于检索、下载和验证原版系统镜像。') % (
             cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
     if t['code'] == 'ko-kr':
-        ed_part = ('%s 에디션을 포함하며, ' % bits['editions']) if bits['editions'] else ''
-        provider_part = ('%s 등의 클라우드 드라이브 링크를 정리했고, ' % bits['providers']) if bits['providers'] else '여러 클라우드 드라이브 다운로드 방식을 정리했고, '
-        latest_part = ('최근 업데이트는 %s이며, ' % bits['latest']) if bits['latest'] else ''
-        return ('%s%s Microsoft 공식 원본 ISO 다운로드 페이지입니다. %s%s%s총 %s개의 이미지 항목과 파일명, SHA-256/SHA-1/MD5, 파일 크기 정보를 제공하여 적절한 버전을 찾고 무결성을 검증할 수 있습니다.') % (
+        ed_part = ('covering %s editions, ' % bits['editions']) if bits['editions'] else ''
+        provider_part = ('with download options from %s, ' % bits['providers']) if bits['providers'] else 'with multiple cloud drive download options, '
+        latest_part = ('last updated on %s, ' % bits['latest']) if bits['latest'] else ''
+        return ('Download official Microsoft %s%s ISO images on this page, %s%s%sincluding %s image entries with filename, SHA-256, SHA-1, MD5, and file size details for easier selection, download, and integrity verification.') % (
             cat_name, ver, ed_part, provider_part, latest_part, bits['count'])
     ed_part = ('covering %s editions, ' % bits['editions']) if bits['editions'] else ''
     provider_part = ('with download options from %s, ' % bits['providers']) if bits['providers'] else 'with multiple cloud drive download options, '
@@ -741,7 +749,7 @@ REDIRECT_PAGE = """<!DOCTYPE html>
 REDIRECT_STRINGS = {
     'zh-cn': dict(html_lang='zh-CN', msg='{brand} 已迁移至新域名，正在跳转，请稍候… 如果没有自动跳转，请点击'),
     'en-us': dict(html_lang='en-US', msg='{brand} has moved to a new domain. Redirecting… If you are not redirected automatically, click'),
-    'ko-kr': dict(html_lang='ko-KR', msg='{brand}가 새 도메인으로 이전되었습니다. 곧 이동합니다… 자동으로 이동하지 않으면 아래 링크를 클릭하세요'),
+    'ko-kr': dict(html_lang='en', msg='{brand} has moved to a new domain. Redirecting... If you are not redirected automatically, click'),
 }
 
 
@@ -884,6 +892,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
             if len(languages) > 1:
                 for lc in languages:
                     code2 = lc.get('code', DEFAULT_LANG)
+                    hreflang_code = lc.get('hreflang', code2)
                     target_path = resolve_lang_path(group, version_id, lc)
                     lang_links.append({
                         'code': code2,
@@ -891,7 +900,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                         'href': asset_prefix + target_path,
                         'current': code2 == code,
                     })
-                    hreflang += '  <link rel="alternate" hreflang="%s" href="%s">\n' % (e(code2), e(base_url + '/' + target_path))
+                    hreflang += '  <link rel="alternate" hreflang="%s" href="%s">\n' % (e(hreflang_code), e(base_url + '/' + target_path))
                 default_conf = next((lc for lc in languages if lc.get('code', DEFAULT_LANG) == DEFAULT_LANG), languages[0])
                 default_path = resolve_lang_path(group, version_id, default_conf)
                 hreflang += '  <link rel="alternate" hreflang="x-default" href="%s">\n' % e(base_url + '/' + default_path)
@@ -906,7 +915,7 @@ def build_site(base_url, out_dir, hm, data, config, site_overrides=None, redirec
                 prefix=asset_prefix, home_prefix=home_prefix, brand=brand,
                 qr_pan_types=e(','.join(sorted(QR_MODAL_PAN_TYPES))),
                 nav=render_nav(cats, active_cat, home_prefix, t), subtitle=subtitle,
-                lang_switch=render_lang_switch(lang_links),
+                lang_switch=render_lang_switch(lang_links, t),
                 crumb=crumb, body=body,
                 qr_markup=qr_markup_tmpl.format(
                     qr_title=e(t['qr_title']), qr_hint=e(t['qr_hint']), qr_close=e(t['qr_close']),
