@@ -2360,6 +2360,30 @@
       ]
     },
     {
+      "id": "win10-mszr4cox-copy",
+      "category": "win10",
+      "version": "ltsc",
+      "title": "Windows 10 企业版 LTSC 2021 x86",
+      "arch": "32位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "zh-cn_windows_10_enterprise_ltsc_2021_x86_dvd_30600d9c.iso",
+        "SHA-256": "9f855fcc4cb44c119f9ce73dabe569fcb7f4f4d85f922206bf2e108116a34f25",
+        "SHA-1": "50ed6860535fddf9d0418efd99ef7f40daa696f5",
+        "MD5": "a4f6f8f67d9a59ad462ff51506c5cd3a",
+        "文件大小": "3.372 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/cc8303ed5d11",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "win10-mru0mrbx",
       "category": "win10",
       "version": "ltsc",
@@ -2384,6 +2408,30 @@
         {
           "type": "xunlei",
           "url": "https://pan.xunlei.com/s/VOzxy2Vq46nX8Yb2XnPHLtriA1?pwd=9rqa#",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win10-mszr5ra1-copy",
+      "category": "win10",
+      "version": "ltsc",
+      "title": "Windows 10 企业版 LTSC 2019 x86",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [],
+      "params": {
+        "文件名": "cn_windows_10_enterprise_ltsc_2019_x86_dvd_1814dbab.iso",
+        "SHA-256": "1d2affdd38240a7deeebf3c8d25bb9e372d7a2e478dc0aee2382f711d3eceb87",
+        "SHA-1": "ba2169edd94f123211cd4aaca68352f1ab6195d9",
+        "MD5": "69eb7b311b910fe49a5270c054edde09",
+        "文件大小": "2.977 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/e9c146cfad61",
           "password": ""
         }
       ]
