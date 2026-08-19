@@ -317,6 +317,7 @@
           '<div class="ti"><b>'+esc(im.title||'(未命名)')+'</b>'+
           '<div class="meta">'+esc(im.arch||'')+(im.version?' · '+esc(im.version):'')+
           (im.date?' · '+esc(im.date):'')+' &nbsp; '+links+'</div></div>'+
+          '<button class="btn ghost sm" data-copy="'+esc(im.id)+'">复制</button>'+
           '<button class="btn ghost sm" data-edit="'+esc(im.id)+'">编辑</button>'+
           '<button class="btn danger sm" data-del="'+esc(im.id)+'">删除</button></div>';
       });
@@ -324,6 +325,8 @@
     });
     host.innerHTML=html;
 
+    Array.prototype.forEach.call(host.querySelectorAll('[data-copy]'),function(b){
+      b.onclick=function(){ duplicateImage(b.getAttribute('data-copy')); }; });
     Array.prototype.forEach.call(host.querySelectorAll('[data-edit]'),function(b){
       b.onclick=function(){ openEdit(b.getAttribute('data-edit')); }; });
     Array.prototype.forEach.call(host.querySelectorAll('[data-del]'),function(b){
@@ -386,6 +389,29 @@
     if(!confirm('确认删除镜像：\n'+(im.title||id)+' ？')) return;
     state.data.images=state.data.images.filter(function(x){return x.id!==id;});
     markDirty(true); renderList(); toast('已从列表删除（记得保存到 GitHub）');
+  }
+
+  function duplicateImage(id){
+    if(!state.data || !state.data.images) return;
+    var idx = state.data.images.map(function(x){ return x.id; }).indexOf(id);
+    if(idx < 0) return;
+    var im = state.data.images[idx];
+    var copy = {
+      id: (im.category || 'img') + '-' + Date.now().toString(36) + '-copy',
+      category: im.category || '',
+      version: im.version || '',
+      title: (im.title || '未命名') + '副本',
+      arch: im.arch || '',
+      lang: im.lang || '',
+      date: im.date || '',
+      editions: (im.editions || []).slice(),
+      params: {},
+      links: []
+    };
+    state.data.images.splice(idx + 1, 0, copy);
+    markDirty(true);
+    renderList();
+    toast('已复制到下方（记得提交到 GitHub）');
   }
 
   /* ---------- 编辑弹窗 ---------- */
