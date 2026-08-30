@@ -2969,8 +2969,8 @@
           "password": ""
         },
         {
-          "type": "quark",
-          "url": "https://pan.quark.cn/s/c20e8296b8d2",
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1sy_p_O_-m21HDnj8Eubb8g?pwd=i2ds",
           "password": ""
         }
       ]
@@ -3232,6 +3232,11 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/6187f26e6151",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1bZwXEWNKQm2Iha-glGXFJQ?pwd=s6uv",
+          "password": ""
         }
       ]
     },
@@ -3257,8 +3262,8 @@
       },
       "links": [
         {
-          "type": "quark",
-          "url": "https://pan.quark.cn/s/2119170ed776",
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1K2A775i7na_yQdua5AHFMw?pwd=wurg",
           "password": ""
         }
       ]
