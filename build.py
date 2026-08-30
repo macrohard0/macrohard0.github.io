@@ -52,10 +52,6 @@ SITES = [
         'hm': '54f24ee5c82c27e994fb615aa3173346',
         'brand': 'MacroHard',
         'title': 'MacroHard 系统下载',
-        # 与 nextwindows.org 内容完全重复导致被搜索引擎判定为镜像站、两边都不收录，
-        # 因此根目录首页改为跳转到新域名（GitHub Pages 无法做服务端 301，用 meta refresh + canonical
-        # 是 Google 官方认可的静态站点迁移替代方案）；只影响根目录 index.html，其余分类/版本页不受影响。
-        'redirect_home_to': 'https://nextwindows.org/',
     },
     {
         'base_url': 'https://nextwindows.org',
