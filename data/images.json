@@ -254,6 +254,10 @@
         {
           "id": "21h2",
           "name": "21H2"
+        },
+        {
+          "id": "ltsc",
+          "name": "LTSC"
         }
       ]
     },
@@ -267,6 +271,10 @@
         {
           "id": "22h2",
           "name": "22H2"
+        },
+        {
+          "id": "ltsc",
+          "name": "LTSC"
         }
       ]
     },
@@ -3502,6 +3510,58 @@
       ]
     },
     {
+      "id": "ko-win11-mtfpnh6g-copy",
+      "category": "ko-win11",
+      "version": "26h1",
+      "title": "Windows 11 Business Editions 26H1 (Updated August 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "",
+      "editions": [
+        "Business"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_business_editions_version_26h1_updated_aug_2026_x64_dvd_c2bc5d06.iso",
+        "SHA-256": "8d5080d427be4dc6285b4ffa990449dfdfd4ff9d71e6302e42f1fd728b43dc58",
+        "SHA-1": "47ad6306a363ce8f29a02d7bbf582002194aa97b",
+        "MD5": "6eeb335fe0e1374996aa20db65668829",
+        "文件大小": "7.598 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1O_5rDlWWgG2R-dzhgSTkBQ?pwd=p5u6",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win11-mtfpnlmr-copy",
+      "category": "ko-win11",
+      "version": "26h1",
+      "title": "Windows 11 Consumer Editions 26H1 (Updated August 2026) x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "",
+      "editions": [
+        "Consumer"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_consumer_editions_version_26h1_updated_aug_2026_x64_dvd_c2bc5d06.iso",
+        "SHA-256": "21434aa98a8f123cbb78138e633ed9d6ae09b01aad0ebec0385f4e4afae7080f",
+        "SHA-1": "7882eb596d3b3cc53a224d6cb54a7807cfb25c31",
+        "MD5": "71f8df36b38ce4017357f518c3bfb8bf",
+        "文件大小": "7.648 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1pR7l6qwJdRMZej2w8vvfWQ?pwd=9esi",
+          "password": ""
+        }
+      ]
+    },
+    {
       "id": "ko-win11-001",
       "category": "ko-win11",
       "version": "26h1",
@@ -3696,6 +3756,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/1HpfezuxRtTP0iQMfhOICXg",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1ifWzbpOS6sMeNy-evEFg1w?pwd=x953",
+          "password": ""
         }
       ]
     },
@@ -3722,6 +3787,65 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/1VXjkGDUCAUZS4EbWhAf3ig",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1QxOofiZzLlbdL9QKy84oJQ?pwd=p82v",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win10-mtfpzdik-copy",
+      "category": "ko-win10",
+      "version": "ltsc",
+      "title": "Windows 10 Enterprise LTSC 2021 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "",
+      "editions": [
+        "Enterprise",
+        "LTSC"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_10_enterprise_ltsc_2021_x64_dvd_6d26f398.iso",
+        "SHA-256": "b77e23a4cbd8c593cbcda0eda530a15ce4628c21286aa98019f7be62168a6553",
+        "SHA-1": "38f20b7ca50bdd0580cf17e6415043079dadaf40",
+        "MD5": "f0873dbf99422ae4eae6251d57689239",
+        "文件大小": "4.476 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1bzorrWqPanAGuoXk7uU7Sg?pwd=y5sh",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win10-mtfq2pqw-copy",
+      "category": "ko-win10",
+      "version": "ltsc",
+      "title": "Windows 10 Enterprise LTSC 2019 x64",
+      "arch": "x64",
+      "lang": "한국어",
+      "date": "",
+      "editions": [
+        "Enterprise",
+        "LTSC"
+      ],
+      "params": {
+        "文件名": "ko_windows_10_enterprise_ltsc_2019_x64_dvd_67887e3e.iso",
+        "SHA-256": "f904278a0fff26f98164021b8d051a3d9aff40eb91686fb543875b87222fbc31",
+        "SHA-1": "cf99919061fe95563c126fd7c17fc5d6a0d383a1",
+        "MD5": "87d8bd6847e3a50432f3ecf29ab294f9",
+        "文件大小": "3.951 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1ip50GygJY5JaWk-4IYWxiw?pwd=p5e6",
+          "password": ""
         }
       ]
     },
@@ -3747,6 +3871,11 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1E3MHgwn6mUwEIgRQ-JXC8w",
+          "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1uhQ0DcW24oKhktUaQAJgjQ?pwd=5h9t",
           "password": ""
         }
       ]
@@ -3826,6 +3955,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/17S_eObWNZEWs4EkCdV31Yg",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1Z89XOMKVdEH9vFcpPJ1XVw?pwd=s2zg",
+          "password": ""
         }
       ]
     },
@@ -3878,6 +4012,11 @@
         {
           "type": "terabox",
           "url": "https://1024terabox.com/s/1K-i1eJVl-xy3ryrexfQqgA",
+          "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1kTcTQCH4qGP9BM1NpeAwEQ?pwd=6vts",
           "password": ""
         }
       ]
@@ -4213,6 +4352,33 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/a27dbe383d5a",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win11-mtfqk9gk",
+      "category": "ko-win11",
+      "version": "ltsc",
+      "title": "Windows 11 Enterprise LTSC 2024 x64",
+      "arch": "64位",
+      "lang": "",
+      "date": "",
+      "editions": [
+        "Enterprise",
+        "LTSC"
+      ],
+      "params": {
+        "文件名": "ko-kr_windows_11_enterprise_ltsc_2024_x64_dvd_b6b6eb18.iso",
+        "SHA-256": "8c9eff33cc82e2c7984973e9445bb0c79e6794542dc095f74de9c790700bceec",
+        "SHA-1": "9215eaddde1bd5534ae778d91791a02d2de089bf",
+        "MD5": "b2be5c21f017289e33c93d7a7b9e0d14",
+        "文件大小": "4.706 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1ScOiIRxcDHjzEa2KWAqz3Q?pwd=vv6s",
           "password": ""
         }
       ]
