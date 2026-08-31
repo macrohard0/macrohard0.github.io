@@ -58,6 +58,7 @@
     .imgrow .ti { flex:1; min-width:0; }
     .imgrow .ti b { font-size:13.5px; font-weight:600; }
     .imgrow .ti .meta { font-size:12px; color:var(--soft); margin-top:2px; }
+    .imgrow .ti .fname { font-size:12px; color:#4b5563; margin-top:4px; word-break:break-all; }
     .pill { display:inline-block; font-size:11px; padding:1px 7px; border-radius:9px; margin-right:5px; color:#fff; }
 
     /* 弹窗 */
@@ -310,13 +311,15 @@
       // 注意：这里按 images 数组的原始顺序展示（不再按日期重排），因为这个顺序就是拖拽调整、
       // 也是 build.py 生成分类/版本页时使用的顺序
       groups[cid].forEach(function(im){
+        var fileName = (im.params && im.params['文件名']) || '';
         var links=(im.links||[]).map(function(lk){ var t=window.panType(lk.type);
           return '<span class="pill" style="background:'+t.color+'">'+esc(t.name)+'</span>'; }).join('');
         html+='<div class="imgrow" draggable="true" data-id="'+esc(im.id)+'">'+
           '<span class="drag-handle" title="拖动调整顺序">⠿</span>'+
           '<div class="ti"><b>'+esc(im.title||'(未命名)')+'</b>'+
           '<div class="meta">'+esc(im.arch||'')+(im.version?' · '+esc(im.version):'')+
-          (im.date?' · '+esc(im.date):'')+' &nbsp; '+links+'</div></div>'+
+          (im.date?' · '+esc(im.date):'')+' &nbsp; '+links+'</div>'+
+          (fileName ? '<div class="fname">文件名：'+esc(fileName)+'</div>' : '')+'</div>'+
           '<button class="btn ghost sm" data-copy="'+esc(im.id)+'">复制</button>'+
           '<button class="btn ghost sm" data-edit="'+esc(im.id)+'">编辑</button>'+
           '<button class="btn danger sm" data-del="'+esc(im.id)+'">删除</button></div>';
