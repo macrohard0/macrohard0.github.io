@@ -68,7 +68,7 @@ QR_MODAL_PAN_TYPES = {'quark'}  # 需要改为二维码弹窗的网盘类型；�
 BWH_AFF_URL = 'https://bwh81.net/aff.php?aff=79095'
 BAIDU_CLOUD_AFF_URL = 'https://cloud.baidu.com/campaign/ambassador-product/index.html?ambassadorId=e76f2decb59145789efcd45b90551cd9#knowledge-bcc'
 BING_REWARDS_AFF_URL = 'https://rewards.bing.com/welcome?rh=8-O56pQMBuA&ref=rafsrchae'
-ENABLE_VPS_AD = True  # 全站广告开关；False=不渲染首页/分类页广告卡片
+ENABLE_VPS_AD = False  # 全站广告开关；False=不渲染首页/分类页广告卡片
 
 # 与 assets/js/config.js 的 PAN_TYPES 保持一致（改这里也要改那边）
 PAN = {
