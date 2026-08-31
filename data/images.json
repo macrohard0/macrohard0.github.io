@@ -2903,6 +2903,11 @@
           "type": "terabox",
           "url": "https://1024terabox.com/s/12oqFm4sPpYO1CD8Tt120sw",
           "password": ""
+        },
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/1BAmOw53GMJRrisO7fcT7mg?pwd=ung5",
+          "password": ""
         }
       ]
     },
@@ -3081,7 +3086,13 @@
         "MD5": "115d7c4203417e52c09d16b50043b10d",
         "文件大小": "3.86GB"
       },
-      "links": []
+      "links": [
+        {
+          "type": "baidu",
+          "url": "https://pan.baidu.com/s/169qZ6rwzr9JG_4COdmv_tA?pwd=fk6d",
+          "password": ""
+        }
+      ]
     },
     {
       "id": "en-win7-003",
@@ -4389,6 +4400,34 @@
         {
           "type": "baidu",
           "url": "https://pan.baidu.com/s/1ScOiIRxcDHjzEa2KWAqz3Q?pwd=vv6s",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "ko-win11-mtgpv1n8-copy",
+      "category": "ko-win11",
+      "version": "ltsc",
+      "title": "Windows 11 IOT Enterprise LTSC 2024 x64",
+      "arch": "64位",
+      "lang": "English",
+      "date": "",
+      "editions": [
+        "Enterprise",
+        "LTSC",
+        "IOT"
+      ],
+      "params": {
+        "文件名": "en-us_windows_11_iot_enterprise_ltsc_2024_x64_dvd_f6b14814.iso",
+        "SHA-256": "4f59662a96fc1da48c1b415d6c369d08af55ddd64e8f1c84e0166d9e50405d7a",
+        "SHA-1": "d5dd0a493b6a9c92f7f2a54bb2fb2544587a15fd",
+        "MD5": "66608a96a4f2d73b4a1d054e76e6eae4",
+        "文件大小": "4.791 GB"
+      },
+      "links": [
+        {
+          "type": "baidu",
+          "url": "en-us_windows_11_iot_enterprise_ltsc_2024_x64_dvd_f6b14814.iso 链接: https://pan.baidu.com/s/1BINlO7AyamgZnEnS_5RL4Q?pwd=psya",
           "password": ""
         }
       ]
