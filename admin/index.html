@@ -68,7 +68,10 @@
     .modal { background:#fff; border-radius:12px; width:100%; max-width:720px; padding:22px 24px;
              box-shadow:0 20px 60px rgba(0,0,0,.3); }
     .modal h2 { margin:0 0 16px; font-size:17px; }
-    .link-item { display:grid; grid-template-columns:130px 1fr 130px auto; gap:8px; align-items:center; margin-bottom:8px; }
+    .link-item { display:grid; grid-template-columns:auto 130px 1fr 130px auto; gap:8px; align-items:center; margin-bottom:8px; border:1px solid transparent; border-radius:8px; }
+    .link-item.dragging { opacity:.4; }
+    .link-item.drag-over { border-color:var(--primary); }
+    .link-item .drag-handle { color:#b8bfcc; font-size:15px; line-height:1; user-select:none; cursor:grab; padding:0 2px; }
     .modal-foot { display:flex; justify-content:space-between; gap:10px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
     .ver-item { display:grid; grid-template-columns:auto 1fr 1fr auto; gap:8px; align-items:center; margin-bottom:8px; border:1px solid transparent; border-radius:8px; }
     .ver-item.dragging { opacity:.4; }
@@ -79,7 +82,7 @@
     .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
     .topbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
     .dirty-dot { color:var(--danger); font-weight:700; }
-    @media (max-width:640px){ .grid2,.grid3{grid-template-columns:1fr;} .link-item{grid-template-columns:1fr;} .ver-item{grid-template-columns:auto 1fr;} }
+    @media (max-width:640px){ .grid2,.grid3{grid-template-columns:1fr;} .link-item{grid-template-columns:auto 1fr;} .ver-item{grid-template-columns:auto 1fr;} }
   </style>
 </head>
 <body>
@@ -466,6 +469,7 @@
     }).join('');
   }
 
+  var linkDrag=null;
   function linkRow(lk, allowed){
     lk=lk||{type:(allowed&&allowed[0])||'quark',url:'',password:''};
     var opts=(window.PAN_ORDER||Object.keys(window.PAN_TYPES)).map(function(k){
@@ -473,11 +477,36 @@
       return '<option value="'+k+'"'+(k===lk.type?' selected':'')+'>'+label+'</option>'; }).join('');
     var div=document.createElement('div');
     div.className='link-item';
-    div.innerHTML='<select class="lk-type">'+opts+'</select>'+
+    div.innerHTML='<span class="drag-handle" draggable="true" title="拖动排序">⋮⋮</span>'+
+      '<select class="lk-type">'+opts+'</select>'+
       '<input type="text" class="lk-url" placeholder="网盘分享链接" value="'+esc(lk.url)+'">'+
       '<input type="text" class="lk-pass" placeholder="提取码(可空)" value="'+esc(lk.password||'')+'">'+
       '<button class="btn danger sm lk-del">删除</button>';
     div.querySelector('.lk-del').onclick=function(){ div.remove(); };
+    // 拖动排序：只有手柄可拖，避免影响输入框选字
+    var handle=div.querySelector('.drag-handle');
+    handle.addEventListener('dragstart',function(e){
+      linkDrag=div; div.classList.add('dragging');
+      e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('text/plain','link');
+      if(e.dataTransfer.setDragImage) e.dataTransfer.setDragImage(div,10,10);
+    });
+    handle.addEventListener('dragend',function(){
+      linkDrag=null; div.classList.remove('dragging');
+      Array.prototype.forEach.call(document.querySelectorAll('.link-item.drag-over'),function(r){ r.classList.remove('drag-over'); });
+    });
+    div.addEventListener('dragover',function(e){
+      if(!linkDrag || linkDrag===div) return;
+      e.preventDefault(); e.dataTransfer.dropEffect='move'; div.classList.add('drag-over');
+    });
+    div.addEventListener('dragleave',function(){ div.classList.remove('drag-over'); });
+    div.addEventListener('drop',function(e){
+      if(!linkDrag || linkDrag===div) return;
+      e.preventDefault(); div.classList.remove('drag-over');
+      var rows=Array.prototype.slice.call(div.parentNode.children);
+      // 向下拖放到目标之后，向上拖放到目标之前
+      if(rows.indexOf(linkDrag)<rows.indexOf(div)) div.parentNode.insertBefore(linkDrag,div.nextSibling);
+      else div.parentNode.insertBefore(linkDrag,div);
+    });
     var urlInput=div.querySelector('.lk-url');
     div.querySelector('.lk-type').onchange=function(){
       urlInput.placeholder = window.panType(this.value).hint || '网盘分享链接'; };
