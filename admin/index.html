@@ -70,13 +70,16 @@
     .modal h2 { margin:0 0 16px; font-size:17px; }
     .link-item { display:grid; grid-template-columns:130px 1fr 130px auto; gap:8px; align-items:center; margin-bottom:8px; }
     .modal-foot { display:flex; justify-content:space-between; gap:10px; margin-top:18px; padding-top:16px; border-top:1px solid var(--line); }
-    .ver-item { display:grid; grid-template-columns:1fr 1fr auto; gap:8px; align-items:center; margin-bottom:8px; }
+    .ver-item { display:grid; grid-template-columns:auto 1fr 1fr auto; gap:8px; align-items:center; margin-bottom:8px; border:1px solid transparent; border-radius:8px; }
+    .ver-item.dragging { opacity:.4; }
+    .ver-item.drag-over { border-color:var(--primary); }
+    .ver-item .drag-handle { color:#b8bfcc; font-size:15px; line-height:1; user-select:none; cursor:grab; padding:0 2px; }
     .toast { position:fixed; left:50%; bottom:34px; transform:translateX(-50%) translateY(18px); background:rgba(20,26,38,.95);
              color:#fff; padding:10px 20px; border-radius:8px; opacity:0; pointer-events:none; transition:.25s; z-index:200; }
     .toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
     .topbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; }
     .dirty-dot { color:var(--danger); font-weight:700; }
-    @media (max-width:640px){ .grid2,.grid3{grid-template-columns:1fr;} .link-item{grid-template-columns:1fr;} .ver-item{grid-template-columns:1fr;} }
+    @media (max-width:640px){ .grid2,.grid3{grid-template-columns:1fr;} .link-item{grid-template-columns:1fr;} .ver-item{grid-template-columns:auto 1fr;} }
   </style>
 </head>
 <body>
@@ -568,7 +571,8 @@
     var host=$('cat-list');
     host.innerHTML = state.editCats.map(function(c,ci){
       var vers=(c.versions||[]).map(function(v,vi){
-        return '<div class="ver-item">'+
+        return '<div class="ver-item" data-vrow="'+ci+'_'+vi+'">'+
+          '<span class="drag-handle" draggable="true" title="拖动排序">⋮⋮</span>'+
           '<input type="text" data-c="'+ci+'" data-vk="id" data-v="'+vi+'" value="'+esc(v.id)+'" placeholder="版本id 如 26h1">'+
           '<input type="text" data-c="'+ci+'" data-vk="name" data-v="'+vi+'" value="'+esc(v.name)+'" placeholder="显示名 如 26H1">'+
           '<button class="btn danger sm" data-delver="'+ci+'_'+vi+'">删</button></div>';
@@ -603,6 +607,36 @@
         state.editCats[c].versions.push({id:'',name:''}); renderCatEditor(); }; });
     Array.prototype.forEach.call(host.querySelectorAll('[data-delver]'),function(b){
       b.onclick=function(){ var p=b.getAttribute('data-delver').split('_'); state.editCats[+p[0]].versions.splice(+p[1],1); renderCatEditor(); }; });
+    // 版本子菜单拖动排序（仅限同一分类内）
+    var vDrag=null;
+    Array.prototype.forEach.call(host.querySelectorAll('.ver-item'),function(row){
+      var p=row.getAttribute('data-vrow').split('_'), c=+p[0], v=+p[1];
+      var handle=row.querySelector('.drag-handle');
+      handle.addEventListener('dragstart',function(e){
+        vDrag={c:c,v:v}; row.classList.add('dragging');
+        e.dataTransfer.effectAllowed='move'; e.dataTransfer.setData('text/plain','ver');
+        if(e.dataTransfer.setDragImage) e.dataTransfer.setDragImage(row,10,10);
+      });
+      handle.addEventListener('dragend',function(){
+        vDrag=null; row.classList.remove('dragging');
+        Array.prototype.forEach.call(host.querySelectorAll('.ver-item.drag-over'),function(r){ r.classList.remove('drag-over'); });
+      });
+      row.addEventListener('dragover',function(e){
+        if(!vDrag || vDrag.c!==c) return;
+        e.preventDefault(); e.dataTransfer.dropEffect='move'; row.classList.add('drag-over');
+      });
+      row.addEventListener('dragleave',function(){ row.classList.remove('drag-over'); });
+      row.addEventListener('drop',function(e){
+        if(!vDrag || vDrag.c!==c) return;
+        e.preventDefault();
+        var arr=state.editCats[c].versions, from=vDrag.v;
+        vDrag=null;
+        if(from===v) { renderCatEditor(); return; }
+        var item=arr.splice(from,1)[0];
+        arr.splice(v,0,item);
+        renderCatEditor();
+      });
+    });
     Array.prototype.forEach.call(host.querySelectorAll('[data-delcat]'),function(b){
       b.onclick=function(){ if(confirm('删除此分类？其下镜像不会被删除。')){ state.editCats.splice(+b.getAttribute('data-delcat'),1); renderCatEditor(); } }; });
   }
