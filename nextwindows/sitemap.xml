@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://nextwindows.org/</loc><lastmod>2026-10-12</lastmod><priority>1.0</priority></url>
   <url><loc>https://nextwindows.org/win11.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://nextwindows.org/win11/26h1.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win11/25h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win11/24h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://nextwindows.org/win11/ltsc.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win11/23h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win11/22h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win11/21h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://nextwindows.org/win11/ltsc.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
-  <url><loc>https://nextwindows.org/win11/26h2.html</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win10.html</loc><lastmod>2026-10-11</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win10/21h2.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
   <url><loc>https://nextwindows.org/win10/21h1.html</loc><lastmod>2026-08-31</lastmod><priority>0.8</priority></url>
