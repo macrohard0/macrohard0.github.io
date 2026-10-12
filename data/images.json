@@ -320,7 +320,7 @@
       "title": "Windows 11 消费者版本 26H2 x64",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2026-09-29",
       "editions": [
         "专业版",
         "家庭版",
@@ -351,7 +351,7 @@
       "title": "Windows 11 商业版 26H2 x64",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2026-09-29",
       "editions": [
         "专业版",
         "企业版",
@@ -728,7 +728,7 @@
       "title": "Windows 11 企业版本 LTSC 2024",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "2024-10",
+      "date": "2024-10-01",
       "editions": [
         "企业版本",
         "LTSC",
@@ -779,16 +779,6 @@
           "password": ""
         },
         {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1xPLkAO-qWRdBcMeMGILstg",
-          "password": ""
-        },
-        {
-          "type": "uc",
-          "url": "https://drive.uc.cn/s/27d6e5a535e14",
-          "password": ""
-        },
-        {
           "type": "xunlei",
           "url": "https://pan.xunlei.com/s/VP3fZxtE8_AxJDl0_75iswwOA1?pwd=aua6#",
           "password": ""
@@ -821,11 +811,6 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/86939a9e0d36",
-          "password": ""
-        },
-        {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1ybc8smeSR06NwbQjaZadBA",
           "password": ""
         },
         {
@@ -903,7 +888,7 @@
       "title": "Windows 10 企业版 LTSC 2021 x64",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2021-11-16",
       "editions": [],
       "params": {
         "文件名": "zh-cn_windows_10_enterprise_ltsc_2021_x64_dvd_033b7312.iso",
@@ -916,11 +901,6 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/8598a798df58",
-          "password": ""
-        },
-        {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1SQOJFpBOw0lK_nqf8EPvrw",
           "password": ""
         },
         {
@@ -937,7 +917,7 @@
       "title": "Windows 10 企业版 LTSC 2021 x86",
       "arch": "32位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2021-11-16",
       "editions": [],
       "params": {
         "文件名": "zh-cn_windows_10_enterprise_ltsc_2021_x86_dvd_30600d9c.iso",
@@ -966,7 +946,7 @@
       "title": "Windows 10 企业版 LTSC 2019 x64",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2018-11-13",
       "editions": [],
       "params": {
         "文件名": "cn_windows_10_enterprise_ltsc_2019_x64_dvd_9c09ff24.iso",
@@ -995,7 +975,7 @@
       "title": "Windows 10 企业版 LTSC 2019 x86",
       "arch": "64位",
       "lang": "中文简体",
-      "date": "",
+      "date": "2018-11-13",
       "editions": [],
       "params": {
         "文件名": "cn_windows_10_enterprise_ltsc_2019_x86_dvd_1814dbab.iso",
@@ -1286,16 +1266,6 @@
           "password": ""
         },
         {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1hvgPq2gyoZ1CVqlsDx9LqA",
-          "password": ""
-        },
-        {
-          "type": "uc",
-          "url": "https://drive.uc.cn/s/ef1229fdc8764",
-          "password": ""
-        },
-        {
           "type": "xunlei",
           "url": "https://pan.xunlei.com/s/VP3faoPU-WVugBKem2vCzz59A1?pwd=ewek#",
           "password": ""
@@ -1324,11 +1294,6 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/e72bd4cb9ac8",
-          "password": ""
-        },
-        {
-          "type": "uc",
-          "url": "https://drive.uc.cn/s/00a0320b02d94",
           "password": ""
         },
         {
@@ -1459,11 +1424,6 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/2e907dc1327a",
           "password": ""
-        },
-        {
-          "type": "uc",
-          "url": "https://drive.uc.cn/s/65b463988f804",
-          "password": ""
         }
       ]
     },
@@ -1494,11 +1454,6 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/dee490d944cd",
-          "password": ""
-        },
-        {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/12hmLMuXwSAH4qcAeruHgdQ",
           "password": ""
         }
       ]
@@ -1562,11 +1517,6 @@
           "type": "quark",
           "url": "https://pan.quark.cn/s/6702c75626e1",
           "password": ""
-        },
-        {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1_uVLCxQQjOe-skoQAqGjVA",
-          "password": ""
         }
       ]
     },
@@ -1628,11 +1578,6 @@
         {
           "type": "quark",
           "url": "https://pan.quark.cn/s/375aa64e95b9",
-          "password": ""
-        },
-        {
-          "type": "terabox",
-          "url": "https://1024terabox.com/s/1mHEzeqoq-0XNtAHnFIA-PQ",
           "password": ""
         }
       ]
