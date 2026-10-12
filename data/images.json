@@ -12,6 +12,10 @@
       "name": "Windows 11",
       "versions": [
         {
+          "id": "26h2",
+          "name": "26H2"
+        },
+        {
           "id": "26h1",
           "name": "26H1"
         },
@@ -24,6 +28,10 @@
           "name": "24H2"
         },
         {
+          "id": "ltsc",
+          "name": "LTSC"
+        },
+        {
           "id": "23h2",
           "name": "23H2"
         },
@@ -34,14 +42,6 @@
         {
           "id": "21h2",
           "name": "21H2"
-        },
-        {
-          "id": "ltsc",
-          "name": "LTSC"
-        },
-        {
-          "id": "26h2",
-          "name": "26H2"
         }
       ]
     },
