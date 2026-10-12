@@ -38,6 +38,10 @@
         {
           "id": "ltsc",
           "name": "LTSC"
+        },
+        {
+          "id": "26h2",
+          "name": "26H2"
         }
       ]
     },
@@ -309,6 +313,67 @@
     }
   ],
   "images": [
+    {
+      "id": "win11-mv4qvejf-copy",
+      "category": "win11",
+      "version": "26h2",
+      "title": "Windows 11 消费者版本 26H2 x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "专业版",
+        "家庭版",
+        "家庭单语言版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_consumer_editions_version_26h2_x64_dvd_3622091b.iso",
+        "SHA-256": "b795b52d598bf8fdea5975844731f4a50c5713876cefc513884354272b023af0",
+        "SHA-1": "4f00b3f99fbced02e0395fbe768c571d6f89217d",
+        "MD5": "c845264d68eab15f9d1b9c4a02709365",
+        "文件大小": "8.487 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/52299eaf0d68",
+          "password": ""
+        }
+      ]
+    },
+    {
+      "id": "win11-mv4qvgsr-copy",
+      "category": "win11",
+      "version": "26h2",
+      "title": "Windows 11 商业版 26H2 x64",
+      "arch": "64位",
+      "lang": "中文简体",
+      "date": "",
+      "editions": [
+        "专业版",
+        "企业版",
+        "教育版",
+        "专业教育版",
+        "专业工作站版"
+      ],
+      "params": {
+        "文件名": "zh-cn_windows_11_business_editions_version_26h2_x64_dvd_74d48a06.iso",
+        "SHA-256": "63fc3d2497f891d64946cb1e9a50c87fe24c605984712391c3441e2f78bc0eb5",
+        "SHA-1": "859cf3992dbe7321ee15de3ee0202bdf56bfb275",
+        "MD5": "642d771ae732fdd371ca3826790bce5a",
+        "文件大小": "8.381 GB"
+      },
+      "links": [
+        {
+          "type": "quark",
+          "url": "https://pan.quark.cn/s/aae54a6ee555",
+          "password": ""
+        }
+      ]
+    },
     {
       "id": "win11-ms1l0wm1",
       "category": "win11",
